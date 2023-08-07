@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-flex">
+  <div class="footer-flex ft-main-marginTop">
     <div class="ft-main">
       <h5>
         Sobre Nós
@@ -69,5 +69,13 @@
 }
 p{
   margin-bottom: 12px;
+  font-size: 15px;
+  
+}
+h5{
+  font-size: 17px;
+}
+.ft-main-marginTop{
+  margin-top: 5px;
 }
 </style>

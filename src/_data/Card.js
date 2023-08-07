@@ -1,10 +1,11 @@
-const cards = [
+const cardsCosmeticos = [
     {
     id: 1,
-    pergunta: '',
+    nome: '',
+    preco: '',
     img: '',
 
   },
 ]
 
-export {cards}
+export {cardsCosmeticos}

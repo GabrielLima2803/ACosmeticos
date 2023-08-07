@@ -10,7 +10,7 @@
         <!-- Header Logo -->
         <div class="header-logo">
             <div class="logo">
-                <img src="@/img/icon-Header/logoAC.png" alt="">
+                <img src="@/img/icon-Header/logoAC.png" alt="" class="hd-logo-margin">
             </div>
             <div class="header-icons">
                 <img src="@/img/icon-Header/icon _Search_.png" alt="" class="icons-margin">
@@ -98,5 +98,8 @@
 }
 .icons-margin{
     margin-right: 5px;
+}
+.hd-logo-margin{
+    margin-right: 40px ;
 }
 </style>

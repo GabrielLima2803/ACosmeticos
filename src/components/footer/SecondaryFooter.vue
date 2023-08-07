@@ -1,55 +1,43 @@
 <template>
-  <div class="footer-flex">
-    <div class="ft-main">
+  <div class="footer-flex ft-main-marginTop">
+    <div class="ft-main ">
       <h5>
         Pagamentos
       </h5>
-      <img src="@/img/Footer-Pay/masterCardPay.png" alt="" class="ImgPay-Margin">
-      <img src="@/img/Footer-Pay/visaPay.png" alt="" class="ImgPay-Margin">
-      <img src="@/img/Footer-Pay/amexPay.png" alt="" class="ImgPay-Margin">
-      <img src="@/img/Footer-Pay/eloPay.png" alt="" class="ImgPay-Margin">
-      <img src="@/img/Footer-Pay/hiperCardPay.png" alt="" class="ImgPay-Margin">
+      <img src="@/img/Footer-img/Footer-Pay/masterCardPay.png" alt="" class="ft-img-Margin">
+      <img src="@/img/Footer-img/Footer-Pay/visaPay.png" alt="" class="ft-img-Margin">
+      <img src="@/img/Footer-img/Footer-Pay/amexPay.png" alt="" class="ft-img-Margin">
+      <img src="@/img/Footer-img/Footer-Pay/eloPay.png" alt="" class="ft-img-Margin">
+      <img src="@/img/Footer-img/Footer-Pay/hiperCardPay.png" alt="" class="ft-img-Margin">
     </div>
 
     <div class="ft-main">
       <h5>
         Nossas Marcas
       </h5>
-      <p>
-        Inicio
-      </p>
-      <p>
-        Sobre Nós
-      </p>
-      <p>
-        Kit & Presentes
-      </p>
+      <img src="@/img/Footer-Pay/.png" alt="">
+      <img src="@/img/Footer-img/Footer-Marcas/maryKayMarcas.png" alt="">
+      <img src="@/img/Footer-img/Footer-Marcas/eudoraMarcas.png" alt="">
+      <img src="@/img/Footer-img/Footer-Marcas/oboticarioMarcas.png" alt="">
+      <img src="@/img/Footer-img/Footer-Marcas/jequetiMarcas.png" alt="">
+      <img src="@/img/Footer-img/Footer-Marcas/naturaMarcas.png" alt="">
+      <img src="@/img/Footer-img/Footer-Marcas/avonMarcas.png" alt="">
     </div>
 
     <div class="ft-main">
       <h5>
         Nossas Redes
       </h5>
-      <p>
-        Prazos e Entregas
-      </p>
-      <p>
-        Troca e devoluções
-      </p>
-      <p>
-        Termos e Condições
-      </p>
-      <p>
-        Política e Privacidade
-      </p>
-      <p>
-        Perguntas Frequentes
-      </p>
-      <p>
-        Alerta
-      </p>
+        <div class="ft-redes">
+          <img src="@/img/Footer-img/Footer-Redes/instaRedes.png" alt="" class="ft-img-Margin">
+          <img src="@/img/Footer-img/Footer-Redes/twitterRedes.png" alt="" class="ft-img-Margin">
+          <img src="@/img/Footer-img/Footer-Redes/faceRedes.png" alt="" class="ft-img-Margin">
+        </div>
     </div>
+
   </div>
+  <p class="ft-cop">© 2023 A cosméticos ©Copyright 2023 A COSMÉTICOS.</p>
+ 
 </template>
 
 
@@ -72,7 +60,24 @@
 p{
   margin-bottom: 12px;
 }
-.ImgPay-Margin{
+.ft-img-Margin{
   margin-right: 5px;
+}
+.ft-redes{
+  background-color: #43055D;
+
+  width: 82px;
+}
+h5{
+  font-size: 17px;
+}
+.ft-main-marginTop{
+  margin-top: 5px;
+}
+.ft-cop{
+  text-align: center;
+  font-size: 15px;
+  margin-top: 15px;
+  margin-right: 60px;
 }
 </style>

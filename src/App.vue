@@ -11,6 +11,12 @@ import FullFooter from './components/footer/FullFooter.vue';
 
   <div class="container">
     <main>
+      <!-- Centralizar Logo do Header!!! -->
+      <!-- Centralizar Menu do Footer!!! -->
+
+      <div class="card-cosmeticos">
+        
+      </div>
     </main>
 
     <full-footer />
