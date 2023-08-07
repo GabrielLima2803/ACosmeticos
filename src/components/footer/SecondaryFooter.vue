@@ -4,11 +4,11 @@
       <h5>
         Pagamentos
       </h5>
-      <img src="@/img/Footer-Pay/masterCardPay.png" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
-      <img src="" alt="">
+      <img src="@/img/Footer-Pay/masterCardPay.png" alt="" class="ImgPay-Margin">
+      <img src="@/img/Footer-Pay/visaPay.png" alt="" class="ImgPay-Margin">
+      <img src="@/img/Footer-Pay/amexPay.png" alt="" class="ImgPay-Margin">
+      <img src="@/img/Footer-Pay/eloPay.png" alt="" class="ImgPay-Margin">
+      <img src="@/img/Footer-Pay/hiperCardPay.png" alt="" class="ImgPay-Margin">
     </div>
 
     <div class="ft-main">
@@ -71,5 +71,8 @@
 }
 p{
   margin-bottom: 12px;
+}
+.ImgPay-Margin{
+  margin-right: 5px;
 }
 </style>
