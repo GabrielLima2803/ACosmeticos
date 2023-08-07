@@ -15,7 +15,7 @@ import FullFooter from './components/footer/FullFooter.vue';
       <!-- Centralizar Menu do Footer!!! -->
 
       <div class="card-cosmeticos">
-        
+      <div></div>  
       </div>
     </main>
 
