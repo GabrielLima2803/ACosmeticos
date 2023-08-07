@@ -1,0 +1,102 @@
+<script setup>
+
+</script>
+
+<template>
+    <header class="PBarra">
+        <div class="header-roxa">
+            <!-- Header Roxo -->
+        </div>
+        <!-- Header Logo -->
+        <div class="header-logo">
+            <div class="logo">
+                <img src="@/img/icon-Header/logoAC.png" alt="">
+            </div>
+            <div class="header-icons">
+                <img src="@/img/icon-Header/icon _Search_.png" alt="" class="icons-margin">
+                <img src="@/img/icon-Header/icon_Bolsa.png" alt="" class="icons-margin">
+                <img src="@/img/icon-Header/icon_Coração.png" alt="" class="icons-margin">
+                <img src="@/img/icon-Header/icon_Pessoa.png" alt="" class="icons-margin">
+            </div>
+        </div>
+        <!-- Header Icons -->
+
+        <nav class="header-nav">
+            <span class="header-links"> Inicio </span>
+            <span class="header-links"> Marcas </span>
+            <span class="header-links"> Tutoriais </span>
+            <span class="header-links"> Sobre nós </span>
+            <span class="header-links"> Ajuda </span>
+        </nav>
+        <!-- NavBar -->
+    </header>
+</template>
+
+<style scoped>
+.header-roxa {
+    width: 100%;
+    background-color: #43055d;
+    color: white;
+    height: 9px;
+}
+
+.PBarra {
+    position: sticky;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 2px 15px 1px rgb(94, 94, 94);
+    border: none;
+}
+
+.navBarPrincipal {
+    margin-top: -300px;
+    height: 93px;
+}
+
+.linkRouters {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.header-links {
+    margin-right: 14px;
+    font-size: 18px;
+    font-family: 'Jost', sans-serif;
+}
+
+.header-links:hover {
+    color: #43055D;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.logo {
+    flex-grow: 9;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    margin-left: 250px
+}
+
+.header-logo {
+    display: flex;
+    width: 100%;
+    align-content: center;
+}
+
+.header-icons {
+    flex-grow: 1;
+    align-self: center;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+.icons-margin{
+    margin-right: 5px;
+}
+</style>

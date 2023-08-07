@@ -1,6 +1,6 @@
 <script setup>
-import { } from 'vue-router'
-import HeaderPrincipal from './components/HeaderPrincipal.vue'; 
+
+import HeaderPrincipal from './components/header/HeaderPrincipal.vue'; 
 import FullFooter from './components/footer/FullFooter.vue';
 </script>
 
