@@ -1,7 +1,9 @@
 <script setup>
-
 import HeaderPrincipal from './components/header/HeaderPrincipal.vue'; 
 import FullFooter from './components/footer/FullFooter.vue';
+
+
+
 </script>
 
 <template>
@@ -15,7 +17,19 @@ import FullFooter from './components/footer/FullFooter.vue';
       <!-- Centralizar Menu do Footer!!! -->
 
       <div class="card-cosmeticos">
-      <div></div>  
+      <div class="wrap-img">
+        <img :src="img" alt="Capa do livro" class="capa-livro" />
+      </div>  
+      <h5 class="titulo-Cos">
+        Titulo {{  }}        
+      </h5>
+      <p class="descricao-Cos">
+        aa
+      </p>
+      <p class="preco-Cos">
+        aa
+      </p>
+      <button type="button" class="Button-CardPay"> <img src="@/img/Main-img/Main-Cards/BtnCardPay.png" alt="" class="Btn-Pay"> </button>
       </div>
     </main>
 
@@ -24,3 +38,20 @@ import FullFooter from './components/footer/FullFooter.vue';
 </template>
 
 
+<style scoped>
+.card-cosmeticos{
+  background-color: gray;
+  width: 300px;
+  height: 261px;  
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  }
+.Button-CardPay{
+  border: 1px solid #43055D
+  }
+  .Btn-Pay{
+    width: 10px;
+  }
+</style>
