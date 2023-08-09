@@ -36,8 +36,6 @@
     </div>
 
   </div>
-  <p class="ft-cop">© 2023 A cosméticos ©Copyright 2023 A COSMÉTICOS.</p>
- 
 </template>
 
 
