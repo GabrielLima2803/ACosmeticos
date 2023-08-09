@@ -10,6 +10,28 @@ const cosmeticos = [
     preco: 'R$ 284,90',
     img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
   },
+  {
+    id: 2,
+    nome: 'Zaad Expedition',
+    descicao: 'Eau De Parfum 95ml',
+    preco: 'R$ 284,90',
+    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
+  },
+  {
+    id: 3,
+    nome: 'Zaad Expedition',
+    descicao: 'Eau De Parfum 95ml',
+    preco: 'R$ 284,90',
+    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
+  },
+  {
+    id: 4,
+    nome: 'Zaad Expedition',
+    descicao: 'Eau De Parfum 95ml',
+    preco: 'R$ 284,90',
+    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
+  },
+  
 ]
 
 
@@ -27,7 +49,7 @@ const cosmeticos = [
       <!-- Centralizar Menu do Footer!!! -->
 
       <div class="card-cosmeticos">
-        <div v-for="(cosmetico) in cosmeticos" :key="cosmetico.id">
+        <div v-for="(cosmetico) in cosmeticos" :key="cosmetico.id" class="card-margin">
           <div class="wrap-img">
             <img :src="cosmetico.img" alt="Capa do livro" class="capa-img" />
           </div>
@@ -59,9 +81,11 @@ const cosmeticos = [
   height: 340px;
   padding: 25px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   border-radius: 10px;
+
 }
 
 .wrap-img {
@@ -72,7 +96,8 @@ const cosmeticos = [
 
 .Button-CardPay {
   width: 100%;
-  border: 2px solid #43055D
+  border: 2px solid #43055D;
+  background-color: #F4F4F4;
 }
 
 .Btn-Pay {
@@ -84,5 +109,8 @@ const cosmeticos = [
   margin-right: 10px;
   padding: 5px;
   cursor: pointer;
+}
+.card-margin{
+  margin-right: 100px;
 }
 </style>
