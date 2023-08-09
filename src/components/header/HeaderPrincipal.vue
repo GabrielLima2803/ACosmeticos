@@ -13,7 +13,7 @@
                 <img src="@/img/icon-Header/logoAC.png" alt="" class="hd-logo-margin">
             </div>
             <div class="header-icons">
-                <img src="@/img/icon-Header/icon _Search_.png" alt="" class="icons-margin">
+                <img src="@/img/icon-Header/icon _Search.png" alt="" class="icons-margin">
                 <img src="@/img/icon-Header/icon_Bolsa.png" alt="" class="icons-margin">
                 <img src="@/img/icon-Header/icon_Coração.png" alt="" class="icons-margin">
                 <img src="@/img/icon-Header/icon_Pessoa.png" alt="" class="icons-margin">
