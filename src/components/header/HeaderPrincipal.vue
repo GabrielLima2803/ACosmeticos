@@ -69,6 +69,10 @@
     font-family: 'Jost', sans-serif;
 }
 
+.header-links:last-child {
+    margin-right: 0;
+}
+
 .header-links:hover {
     color: #43055D;
     cursor: pointer;

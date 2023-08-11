@@ -39,6 +39,9 @@ const cosmeticos = [
             <div class="">
                 <img :src="cosmetico.img" alt="Capa do livro" class="capa-img" />
             </div>
+            <div class="img-oboticario">
+                <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" />
+            </div>
             <h5 class="titulo-Cos">
                 {{ cosmetico.nome }}
             </h5>
@@ -59,18 +62,19 @@ const cosmeticos = [
 .card-cosmeticos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: -75px;
+    /* justify-content: space-between; */
+    margin: 0 auto;
 
 }
 
 .flexCard {
     flex: 0 0 calc(25% - 20px);
     /*Vai Colocar cada card em 25%*/
-    margin: 10px;
+    /* margin: 10px; */
     /* align-items: center;  Debater com a equipe*/
     display: flex;
     flex-direction: column;
+    
     justify-content: space-around;
 }
 
@@ -98,5 +102,9 @@ const cosmeticos = [
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
+}
+.img-oboticario{
+    justify-content: end;
+    align-items: end;
 }
 </style>

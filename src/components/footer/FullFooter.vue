@@ -5,7 +5,7 @@
 <template>
     <footer>
         <main-footer />
-        <hr>
+        
         <secondary-footer />
 
     </footer>

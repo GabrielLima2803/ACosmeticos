@@ -58,6 +58,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin-left: -40px;
+  border-bottom: 1px black solid;
 }
 
 .ft-main {
