@@ -1,116 +1,64 @@
 <script setup>
 import HeaderPrincipal from './components/header/HeaderPrincipal.vue';
-// import FullFooter from './components/footer/FullFooter.vue';
-
-const cosmeticos = [
-    {
-    id: 1,
-    nome: 'Zaad Expedition',
-    descicao: 'Eau De Parfum 95ml',
-    preco: 'R$ 284,90',
-    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
-  },
-  {
-    id: 2,
-    nome: 'Zaad Expedition',
-    descicao: 'Eau De Parfum 95ml',
-    preco: 'R$ 284,90',
-    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
-  },
-  {
-    id: 3,
-    nome: 'Zaad Expedition',
-    descicao: 'Eau De Parfum 95ml',
-    preco: 'R$ 284,90',
-    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
-  },
-  {
-    id: 4,
-    nome: 'Zaad Expedition',
-    descicao: 'Eau De Parfum 95ml',
-    preco: 'R$ 284,90',
-    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
-  },
-  
-]
-
-
+import FullFooter from './components/footer/FullFooter.vue';
+import FullCard from './components/main/FullCard.vue'
 
 </script>
-
+<!-- Centralizar Logo do Header!!! -->
+<!-- Centralizar Menu do Footer!!! -->
 <template>
   <header>
     <header-principal />
   </header>
 
+  <main>
+    <full-card/>
+    <br>
+      <h1 class="h1-main-caixa">Confira nossas marcas!</h1>
+    <div class="wrap-caixa-preta">
+      <div class="caixa-preta-img ">
+        1
+    </div>
+    </div>
+    <br>
+    <div class="wrap-caixa-preta">
+      <div class="caixa-preta-img ">
+        1
+    </div>
+    </div>
+  </main>
+
   <div class="container">
-    <main>
-      <!-- Centralizar Logo do Header!!! -->
-      <!-- Centralizar Menu do Footer!!! -->
-
-      <div class="card-cosmeticos">
-        <div v-for="(cosmetico) in cosmeticos" :key="cosmetico.id" class="card-margin">
-          <div class="wrap-img">
-            <img :src="cosmetico.img" alt="Capa do livro" class="capa-img" />
-          </div>
-          <h5 class="titulo-Cos">
-            {{ cosmetico.nome}}
-          </h5>
-          <p class="descricao-Cos">
-            {{ cosmetico.descicao }}
-          </p>
-          <p class="preco-Cos">
-            {{ cosmetico.preco }}
-          </p>
-          <button type="button" class="Button-CardPay"> <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay"> </button>
-
-        </div>
-
-      </div>
-    </main>
-
-    <!-- <full-footer/> -->
-    
+      <full-footer />
   </div>
+
 </template>
 
 
 <style scoped>
-.card-cosmeticos {
-  width: 300px;
-  height: 340px;
-  padding: 25px;
+.container {
+  padding: 0;
+  max-width: 100%;
+  margin: 0 75px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 10px;
+
 
 }
-
-.wrap-img {
+.caixa-preta-img{
+  background-color: black;
+  width: 1600px;
+  height: 600px;
+  margin-top: 20px;
+}
+.wrap-caixa-preta{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.Button-CardPay {
-  width: 100%;
-  border: 2px solid #43055D;
-  background-color: #F4F4F4;
+.h1-main-caixa{
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 30px;
 }
 
-.Btn-Pay {
-  width: 15px;
-  
-}
-.capa-img{
-  width: 240px;
-  margin-right: 10px;
-  padding: 5px;
-  cursor: pointer;
-}
-.card-margin{
-  margin-right: 100px;
-}
 </style>

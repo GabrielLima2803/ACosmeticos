@@ -1,5 +1,5 @@
 <script setup>
-import HeaderOboticario  from './components/header/HeaderOboticario.vue';
+// import HeaderOboticario  from './components/header/HeaderOboticario.vue';
 // import FullFooter from './components/footer/FullFooter.vue';
 
 
@@ -7,7 +7,7 @@ import HeaderOboticario  from './components/header/HeaderOboticario.vue';
 
 <template>
   <header>
-    <header-oboticario />
+    <!-- <header-oboticario /> -->
   </header>
 
   <div class="container">

@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: -40px;
 }
 
 .ft-main {
@@ -76,6 +77,6 @@ h5{
   font-size: 17px;
 }
 .ft-main-marginTop{
-  margin-top: 5px;
+  margin-top: 400px;
 }
 </style>

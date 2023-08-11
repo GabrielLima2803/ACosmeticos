@@ -45,6 +45,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+  
 }
 
 .ft-main {
