@@ -51,6 +51,7 @@
 .ft-main {
   width: 20%;
   margin: 0 50px;
+  margin-left: 7px;
 }
 
 .about-text {

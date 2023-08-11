@@ -1,16 +1,16 @@
 <script setup>
 import PrimeiroCardTPrincipal from './main-cards-principal/PrimeiroCardTPrincipal.vue';
-import SegundoCardTPrincipal from './main-cards-principal/SegundoCardTPrincipal.vue';
+
 </script>
 
 <template>
-      <h1 class="h1-card-main">Laçamentos</h1>
+    <h1 class="h1-card-main">Laçamentos</h1>
     <div class="container">
       <primeiro-card-t-principal />
     </div>
     <h1 class="h1-card-main mt-5">Mais Vendidos</h1>
     <div class="container">
-      <segundo-card-t-principal/>
+      <primeiro-card-t-principal />
     </div>
 </template>
 
@@ -25,5 +25,8 @@ import SegundoCardTPrincipal from './main-cards-principal/SegundoCardTPrincipal.
   text-align: center;
   margin-top: 20px;
   margin-bottom: 30px;
+}
+h1{
+  font-size: 30px;
 }
 </style>
