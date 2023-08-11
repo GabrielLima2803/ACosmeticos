@@ -48,8 +48,9 @@ const cosmeticos = [
             <p class="preco-Cos">
                 {{ cosmetico.preco }}
             </p>
-            <button type="button" class="Button-CardPay"> <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt=""
-                    class="Btn-Pay"> </button>
+            <button type="button" class="Button-CardPay"> 
+                <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt=""  class="Btn-Pay"/>
+                </button>
         </div>
     </div>
 </template>
@@ -59,26 +60,30 @@ const cosmeticos = [
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 0;
+    margin-left: -75px;
+
 }
 
 .flexCard {
-    flex: 0 0 calc(25% - 60px);
+    flex: 0 0 calc(25% - 20px);
     /*Vai Colocar cada card em 25%*/
     margin: 10px;
     /* align-items: center;  Debater com a equipe*/
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 .Button-CardPay {
-    width: 67%;
+    margin-left: -1px;
+    width: 68%;
     border: 2px solid #43055D;
     background-color: #F4F4F4;
 }
 
 .Btn-Pay {
     width: 15px;
+    margin-left: -1px;
 }
 
 .capa-img {

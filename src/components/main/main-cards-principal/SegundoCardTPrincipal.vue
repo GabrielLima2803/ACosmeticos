@@ -55,15 +55,17 @@ const cosmeticos = [
 </template>
 
 <style scoped>
+
 .card-cosmeticos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0;
+    margin-left: -85px;
 }
 
 .flexCard {
-    flex: 0 0 calc(25% - 60px);
+    flex: 0 0 calc(25% - 20px);
     /*Vai Colocar cada card em 25%*/
     margin: 10px;
     /* align-items: center;  Debater com a equipe*/

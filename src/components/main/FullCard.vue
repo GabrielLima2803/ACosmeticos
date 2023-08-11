@@ -19,6 +19,7 @@ import SegundoCardTPrincipal from './main-cards-principal/SegundoCardTPrincipal.
   padding: 0;
   max-width: 100%;
   margin: 0 75px;
+  /* padding: 0px 100px 0px 100px; */
 }
 .h1-card-main {
   text-align: center;

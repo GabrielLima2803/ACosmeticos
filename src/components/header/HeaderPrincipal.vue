@@ -27,6 +27,7 @@
             <span class="header-links"> Tutoriais </span>
             <span class="header-links"> Sobre nós </span>
             <span class="header-links"> Ajuda </span>
+            <router-link to="/oboticario">Oboticario</router-link>
         </nav>
         <!-- NavBar -->
     </header>
@@ -48,6 +49,7 @@
     align-items: center;
     box-shadow: 2px 2px 15px 1px rgb(94, 94, 94);
     border: none;
+    max-width: 100%;
 }
 
 .navBarPrincipal {
