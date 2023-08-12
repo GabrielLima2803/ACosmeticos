@@ -1,6 +1,8 @@
 <script setup>
 // import HeaderOboticario  from './components/header/HeaderOboticario.vue';
 // import FullFooter from './components/footer/FullFooter.vue';
+import PropagandaCard from '@/components/main/PropagandaCard.vue';
+import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCard1.vue';
 
 
 </script>
@@ -15,20 +17,11 @@
       <!-- Centralizar Logo do Header!!! -->
       <!-- Centralizar Menu do Footer!!! -->
      <div class="propagandas">
-      <img src="@/img/propagandas-oboticario/propaganda1.png" alt="">
-      <img src="@/img/propagandas-oboticario/propaganda2.png" alt="">
-      <img src="@/img/propagandas-oboticario/propaganda3.png" alt="">
-      <img src="@/img/propagandas-oboticario/propaganda4.png" alt="">
-      <img src="@/img/propagandas-oboticario/propaganda5.png" alt="">
-      <img src="@/img/propagandas-oboticario/propaganda6.png" alt="">
+      <propaganda-card/>
      </div>
-
+     <h1 class="h1-card-main">Perfumaria</h1>
      <div class="perfumaria">
-      <img src="@/img/perfumaria/malbec.png" alt="">
-      <img src="@/img/perfumaria/coffe.png" alt="">
-      <img src="@/img/perfumaria/drbotica.png" alt="">
-      <img src="@/img/perfumaria/egeo.png" alt="">
-      <img src="@/img/perfumaria/lily.png" alt="">
+      <perfumaria-card1/>
      </div>
     </main>
 
@@ -39,10 +32,13 @@
 
 
 <style scoped>
-
-.propaganda{
-  background-color: #393939;
+.h1-card-main {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
-
+h1{
+  font-size: 30px;
+}
 
 </style>
