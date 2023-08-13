@@ -13,21 +13,20 @@
                 <img src="@/img/icon-Header/logoAC.png" alt="" class="hd-logo-margin">
             </div>
             <div class="header-icons">
-                <img src="@/img/icon-Header/icon _Search.png" alt="" class="icons-margin">
-                <img src="@/img/icon-Header/icon_Bolsa.png" alt="" class="icons-margin">
-                <img src="@/img/icon-Header/icon_Coração.png" alt="" class="icons-margin">
-                <img src="@/img/icon-Header/icon_Pessoa.png" alt="" class="icons-margin">
+                <router-link to="/carrinho" class="header-links"><img src="@/img/icon-Header/icon_Bolsa.png" alt="" class=""></router-link>
+                <router-link to="/favorito" class="header-links"><img src="@/img/icon-Header/icon_Coração.png" alt="" class=""></router-link>
+                <router-link to="/perfil" class="header-links"><img src="@/img/icon-Header/icon_Pessoa.png" alt="" class=""></router-link>
             </div>
         </div>
         <!-- Header Icons -->
 
         <nav class="header-nav">
-            <span class="header-links"> Inicio </span>
+            <router-link to="/" class="header-links">Inicio</router-link>
             <span class="header-links"> Marcas </span>
             <span class="header-links"> Tutoriais </span>
             <span class="header-links"> Sobre nós </span>
             <span class="header-links"> Ajuda </span>
-            <router-link to="/oboticario">Oboticario</router-link>
+            <router-link to="/oboticario" class="header-links">Oboticario</router-link>
         </nav>
         <!-- NavBar -->
     </header>
@@ -67,6 +66,8 @@
     margin-right: 14px;
     font-size: 18px;
     font-family: 'Jost', sans-serif;
+    text-decoration: none;
+    color: black;
 }
 
 .header-links:last-child {

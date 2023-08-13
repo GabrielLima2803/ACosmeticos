@@ -36,7 +36,7 @@ const cosmeticos = [
 <template>
     <div class="card-cosmeticos">
         <div v-for="(cosmetico) in cosmeticos" :key="cosmetico.id" class="card-margin flexCard">
-            <div class="">
+            <div class="tamanho-card">
                 <img :src="cosmetico.img" alt="Capa do livro" class="capa-img" />
             </div>
             <div class="img-oboticario">
@@ -62,7 +62,6 @@ const cosmeticos = [
 .card-cosmeticos {
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
     margin: 0 auto;
 
 }
@@ -103,8 +102,6 @@ const cosmeticos = [
     margin-top: 20px;
     margin-bottom: 30px;
 }
-.img-oboticario{
-    justify-content: end;
-    align-items: end;
-}
+
+
 </style>

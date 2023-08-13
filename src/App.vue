@@ -23,7 +23,7 @@ import FullFooter from './components/footer/FullFooter.vue';
 
 <style scoped>
 .container-Principal {
-  max-width: 1220px;
+  max-width: 1420px;
   clear: both;
   margin: 0 auto
 }
