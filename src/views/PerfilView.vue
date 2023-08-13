@@ -2,6 +2,26 @@
 import { ref } from 'vue'
 const email = ref('')
 const senha = ref('')
+
+const error = ref('');
+
+const validateEmail = () => {
+  if (!email.value) {
+    error.value = 'O email é obrigatório.';
+  } else if (!isValidEmail(email.value)) {
+    error.value = 'Por favor, insira um email válido.';
+  } else {
+    error.value = '';
+  }
+};
+
+const isValidEmail = (email) => {
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailPattern.test(email);
+};
+
+
+
 </script>
 
 <template>
@@ -14,8 +34,9 @@ const senha = ref('')
                     <h4>Olá!</h4>
                      <p class="FormP">Para continuar, digite seu e-mail</p>  
                 <form action="" @submit.prevent = "" class="wrapForm">
-                     <input type="text" v-model="email" placeholder="Insira seu e-mail..." class="inputForm" > 
-                     <input type="text" v-model="senha" placeholder="Insira sua senha..." minlength="3" maxlength="20" class="marginForm inputForm">
+                     <input type="email" id="email" v-model="email" @input="validateEmail" placeholder="Insira seu e-mail..." class="inputForm" >
+                     <input type="password" id="senha"  v-model="senha" placeholder="Insira sua senha..." minlength="3" maxlength="20" class="marginForm inputForm">
+                     <p v-if="error" style="color: red;" id="PC">{{ error }}</p> 
                      <button type="button" class="btnSenha">Esqueci minha senha</button>
                      <button type="submit" class="btnLogin mt-3">Entrar</button>
                      <router-link to="/criarLogin" > <button type="button" class="btnCriar mt-3">Criar conta</button> </router-link>
@@ -96,8 +117,10 @@ const senha = ref('')
     font-size: 18px;
     font-weight: bold;
 }
-.Pf{
-    font-size: 12px;
-    margin: 0;
+#PC{
+  margin-top: 15px; 
+    margin-bottom: -5px;
 }
+
+
 </style>
