@@ -44,7 +44,7 @@ const propaganda = [
   display: flex;
   /* align-items: center;
   justify-content: center; */
-  width: 1120px;
+  width: 1121px;
   background-color: #464646;
 }
 .card-margin {
