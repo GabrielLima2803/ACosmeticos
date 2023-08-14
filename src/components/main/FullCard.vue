@@ -8,7 +8,7 @@ import PrimeiroCardTPrincipal from './main-cards-principal/PrimeiroCardTPrincipa
     <div class="container">
       <primeiro-card-t-principal />
     </div>
-    <h1 class="h1-card-main mt-5">Mais Vendidos</h1>
+    <h1 class="h1-card-main mt">Mais Vendidos</h1>
     <div class="container">
       <primeiro-card-t-principal />
     </div>
@@ -28,5 +28,8 @@ import PrimeiroCardTPrincipal from './main-cards-principal/PrimeiroCardTPrincipa
 }
 h1{
   font-size: 30px;
+}
+.mt{
+  margin-top: 4rem;
 }
 </style>
