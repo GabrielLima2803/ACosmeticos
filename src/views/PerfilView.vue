@@ -34,8 +34,8 @@ const isValidEmail = (email) => {
                     <h4>Olá!</h4>
                      <p class="FormP">Para continuar, digite seu e-mail</p>  
                 <form action="" @submit.prevent = "" class="wrapForm">
-                    <input type="email" id="email" v-model="email" @input="validateEmail" placeholder="Insira seu e-mail..." class="inputForm" >
-                    <input type="password" id="senha"  v-model="senha" placeholder="Insira sua senha..." minlength="3" maxlength="20" class="marginForm inputForm">
+                    <input type="email" id="email" v-model="email" @input="validateEmail" placeholder="Insira seu e-mail..." required class="inputForm" >
+                    <input type="password" id="senha"  v-model="senha" placeholder="Insira sua senha..." minlength="3" maxlength="20" required class="marginForm inputForm">
                      <p v-if="error" style="color: red;" id="PC">{{ error }}</p> 
                      <button type="button" class="btnSenha">Esqueci minha senha</button>
                      <button type="submit" class="btnLogin mt-3">Entrar</button>

@@ -9,6 +9,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const app = createApp(App)
 
+// import Vue from "vue"
+// import VueSimpleAlert from "vue-simple-alert";
+
+// Vue.use(VueSimpleAlert);
+
+
 app.use(router)
 
 app.mount('#app')
