@@ -33,6 +33,8 @@
     </div>
 </template>
 
-<style scoped>.marginCarrosel {
+<style scoped>
+.marginCarrosel {
     margin-top: 50px;
-}</style>
+}
+</style>

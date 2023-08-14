@@ -19,7 +19,7 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
      <div class="propagandas">
       <propaganda-card/>
      </div>
-     <h1 class="h1-card-main">Perfumaria</h1>
+     <h1 class="h1-card-main">Perfumariaa</h1>
      <div class="perfumaria">
       <perfumaria-card1/>
      </div>
@@ -36,6 +36,8 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
   text-align: center;
   margin-top: 20px;
   margin-bottom: 30px;
+  text-decoration: none;
+  font-size: 23px;
 }
 h1{
   font-size: 30px;
