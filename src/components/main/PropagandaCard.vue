@@ -42,8 +42,6 @@ const propaganda = [
 
 .card-cosmeticos {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
   width: 1121px;
   background-color: #464646;
 }

@@ -42,7 +42,7 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
   margin-top: 20px;
   margin-bottom: 30px;
   text-decoration: none;
-  font-size: 23px;
+  font-size: 24px;
 }
 h1{
   font-size: 30px;
