@@ -32,6 +32,11 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
 
 
 <style scoped>
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .h1-card-main {
   text-align: center;
   margin-top: 20px;
@@ -41,6 +46,11 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
 }
 h1{
   font-size: 30px;
+}
+.propagandas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 </style>
