@@ -2,7 +2,6 @@ import { ref, computed } from 'vue'
 
 const carrinho = ref({
     total: 0,
-    quantidade: 0
     itens: []
 })
 const valorTotal = ref(0)

@@ -42,7 +42,7 @@ const propaganda = [
 
 .card-cosmeticos {
   display: flex;
-  width: 1121px;
+  width: 1120px;
   background-color: #464646;
 }
 .card-margin {
