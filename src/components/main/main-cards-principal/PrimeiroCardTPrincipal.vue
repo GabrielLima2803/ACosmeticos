@@ -80,10 +80,13 @@ const cosmeticos = [
 .Button-CardPay {
     margin-left: -1px;
     width: 68%;
-    border: 2px solid #43055D;
+    border: 2px solid #4d066b;
     background-color: #F4F4F4;
 }
-
+.Button-CardPay:hover{
+    border: 2px solid #2d0241;
+    transition: 0.6s ease;
+}
 .Btn-Pay {
     width: 20px;
     padding-bottom: 2px;

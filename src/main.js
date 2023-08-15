@@ -9,11 +9,18 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const app = createApp(App)
 
-// import Vue from "vue"
-// import VueSimpleAlert from "vue-simple-alert";
+// Vuetify
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-// Vue.use(VueSimpleAlert);
+const vuetify = createVuetify({
+  components,
+  directives,
+})
 
+createApp(App).use(vuetify).mount('#app')
 
 app.use(router)
 
