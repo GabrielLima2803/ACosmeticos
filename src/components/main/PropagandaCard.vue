@@ -54,10 +54,4 @@ const propaganda = [
   margin-right: 12px;
 }
 
-.wrapImg{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 </style>

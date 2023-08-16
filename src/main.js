@@ -7,7 +7,6 @@ import router from './router'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const app = createApp(App)
 
 // Vuetify
 import 'vuetify/styles'
@@ -20,8 +19,9 @@ const vuetify = createVuetify({
   directives,
 })
 
-createApp(App).use(vuetify).mount('#app')
+const app = createApp(App)
 
 app.use(router)
+app.use(vuetify)
 
 app.mount('#app')
