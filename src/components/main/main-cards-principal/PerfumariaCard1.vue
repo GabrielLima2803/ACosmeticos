@@ -1,4 +1,6 @@
 <script setup>
+import { RouterLink } from 'vue-router';
+
 
 const perfumaria = [
   {
@@ -37,21 +39,15 @@ const perfumaria = [
     >
     <v-hover slot="{ hover }">
       <img
-            :src="produto.img"
-            class="img"
-          />
+      :src="produto.img"
+      class="img"
+      />
+          <RouterLink to="/">
+            <span class="title">legendaaaaa</span>
+          </RouterLink>
       </v-hover>
     </v-col>
   </v-row>
-  
-      <div class="natds2415" data-gtm-vis-has-fired-49267163_2347="1"><p class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter" 
-        data-gtm-vis-has-fired-49267163_2347="1"><b data-gtm-vis-has-fired-49267163_2347="1">AROMÁTICOS</b></p></div><div 
-        class="natds2416" data-gtm-vis-has-fired-49267163_2347="1"><div class="natds2417" data-gtm-vis-has-fired-49267163_2347="1"></div>
-        <div class="natds2418" data-gtm-vis-has-fired-49267163_2347="1"><span class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter" 
-          data-gtm-vis-has-fired-49267163_2347="1"><p data-gtm-vis-has-fired-49267163_2347="1">Destacados pelas notas de alecrim, menta, estoraque, poejo, 
-            pataqueira e lavanda.</p>
-</span></div></div>
-
 </template>
 
 <style scoped>
@@ -60,6 +56,8 @@ const perfumaria = [
 }
 .col {
   padding: 0;
+  position: relative;
+  overflow: hidden;
 }
 .img{
   height: 420px;
@@ -67,104 +65,55 @@ const perfumaria = [
 }
 /* Defina a largura da imagem */
 img {
+  position: relative;
   width: 100%;
-  height: auto;
+  height: auto; 
+  transition: all .3s ease-in-out;
 }
-.img:hover{
+
+.show {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
   cursor: pointer;
-  width: 240px;
-  transition: width 0.3s ease-in-out;
+  transform: scale(1.1);
+  transition: all .1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.col:hover img{
+  transform: scale(1.1);
+}
+
+.show:hover {
+  opacity: 1;
+}
+
+.title {
+  font-size: 1.1em;
+  font-weight: 600;
+  text-transform: capitalize;
+  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
 }
 
 
-/* tentativa */
-.natds2393 {
-    min-width: 1200px;
-    flex-wrap: nowrap;
-}
-.natds2392 {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-}
-.natds2393 {
-    min-width: 1200px;
-    flex-wrap: nowrap;
-}
-.natds2392 {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-}
-.natds2422 {
-    padding: 0px;
-}
 
-.natds2413 {
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.48);
-}.natds2415 {
-    margin: 8px;
-    display: flex;
-    transition: all 1s ease-in-out;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-.MuiTypography-alignCenter {
-    text-align: center;
-}
-.MuiTypography-body1 {
-    font-size: 16px;
-    font-family: "Roboto", Arial;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.51px;
-}
-.MuiTypography-root {
-    margin: 0;
-}
-.MuiTypography-alignCenter {
-    text-align: center;
-}
-.MuiTypography-body1 {
-    font-size: 16px;
-    font-family: "Roboto", Arial;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.51px;
-}
-.MuiTypography-root {
-    margin: 0;
-}
-.natds2416 {
-    display: flex;
-    opacity: 0;
-    max-height: 0;
-    transition: opacity 0.3s 0.2s, visibility 0.5s, max-height 0.5s;
-    visibility: hidden;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
-.natds2417 {
-    width: 42px;
-    height: 3px;
-    margin-bottom: 24px;
-    background-color: #f4ab34;
-}
-.natds2418 {
-    padding-left: 16px;
-    margin-bottom: 16px;
-    padding-right: 16px;
+.title:hover {
 }
 
 </style>
