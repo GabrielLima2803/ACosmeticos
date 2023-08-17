@@ -19,7 +19,19 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
      <div class="propagandas">
       <propaganda-card/>
      </div>
-     <h1 class="h1-card-main">Perfumariaa</h1>
+     <h1 class="h1-card-main">Perfumaria</h1>
+     <div class="perfumaria">
+      <perfumaria-card1/>
+     </div>
+     <h1 class="h1-card-main">Corpo e Banho</h1>
+     <div class="perfumaria">
+      <perfumaria-card1/>
+     </div>
+     <h1 class="h1-card-main">Maquiagem</h1>
+     <div class="perfumaria">
+      <perfumaria-card1/>
+     </div>
+     <h1 class="h1-card-main">Cabelos</h1>
      <div class="perfumaria">
       <perfumaria-card1/>
      </div>

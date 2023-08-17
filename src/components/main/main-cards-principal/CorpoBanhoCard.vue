@@ -6,12 +6,12 @@ const perfumaria = [
     marca: 'Malbec',
     img: 'https://i.ibb.co/CVNLhqm/malbec-2.png',
     hover: 'Com fragrâncias marcantes como um bom vinho, as fragrâncias Malbec são as primeiras do mundo a serem feitas com álcool vínico.'
+    
+
   },
   {
     id: 2,
-    marca: 'Coffe',
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png',
-    hover: ''
+    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
   },
   {
     id: 3,
