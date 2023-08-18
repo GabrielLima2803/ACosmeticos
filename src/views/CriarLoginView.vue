@@ -61,7 +61,7 @@ const onSubmit = (event) => {
                     <input type="text" id="nome" v-model="nome" placeholder="Insira sua senha..." required class="marginForm inputForm">
                     <input type="email" id="email" v-model="email" placeholder="Insira seu e-mail..." @input="validateEmail" required class="marginForm inputForm">
                     <input type="password" id="senha" required  v-model="senha" placeholder="Insira sua senha..." minlength="3" maxlength="20" class="marginForm inputForm">
-                    <input type="password" id="senhaConfirmar" required  v-model="senhaConfirmar" placeholder="Insira sua senha..." minlength="3" maxlength="20" class="marginForm inputForm">
+                    <input type="password" id="senhaConfirmar" required  v-model="senhaConfirmar" placeholder="Confirme sua senha..." minlength="3" maxlength="20" class="marginForm inputForm">
                     <button type="submit" class="BtnCriar">Criar Conta</button>
                 </form>
             </div>
