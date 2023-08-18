@@ -23,18 +23,6 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
      <div class="perfumaria">
       <perfumaria-card1/>
      </div>
-     <h1 class="h1-card-main">Corpo e Banho</h1>
-     <div class="perfumaria">
-      <perfumaria-card1/>
-     </div>
-     <h1 class="h1-card-main">Maquiagem</h1>
-     <div class="perfumaria">
-      <perfumaria-card1/>
-     </div>
-     <h1 class="h1-card-main">Cabelos</h1>
-     <div class="perfumaria">
-      <perfumaria-card1/>
-     </div>
     </main>
 
     <!-- <full-footer/> -->
