@@ -16,10 +16,10 @@
         Menu
       </h5>
       <p>
-        Inicio
+        <router-link to="/" class="header-links">Inicio</router-link>
       </p>
       <p>
-        Sobre Nós
+        <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
       </p>
       <p>
         Kit & Presentes
@@ -31,22 +31,22 @@
         Ajuda
       </h5>
       <p>
-        Prazos e Entregas
+      <router-link to="/duvidas" class="header-links">Prazo e Entrega</router-link>
       </p>
       <p>
-        Troca e devoluções
+        <router-link to="/duvidas" class="header-links">Trocas e Devoluções</router-link>
       </p>
       <p>
-        Termos e Condições
+        <router-link to="/duvidas" class="header-links">Termos e Condições</router-link>
       </p>
       <p>
-        Política e Privacidade
+        <router-link to="/duvidas" class="header-links">Política e Privacidade</router-link>
       </p>
       <p>
-        Perguntas Frequentes
+        <router-link to="/duvidas" class="header-links">Perguntas Frequentes</router-link>
       </p>
       <p>
-        Alerta
+        <router-link to="/duvidas" class="header-links">Alerta</router-link>
       </p>
     </div>
   </div>
@@ -79,5 +79,36 @@ h5{
 }
 .ft-main-marginTop{
   margin-top: 400px;
+}
+
+
+
+.header-links {
+
+    text-decoration: none;
+    color: #000000;
+    position: relative; /* Importante para posicionar a borda */
+    transition: border-bottom 0.3s ease; /* Adiciona uma transição suave à borda */
+    cursor: pointer;
+}
+
+.header-links::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #43055D; /* Cor da borda */
+    transition: width 0.3s ease; /* Adiciona uma transição suave à largura da borda */
+ 
+  }
+
+  .header-links:hover::after {
+    width: 100%;
+  }
+
+.header-links:last-child {
+    margin-right: 0;
 }
 </style>
