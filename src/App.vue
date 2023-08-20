@@ -1,19 +1,17 @@
 <script setup>
-import HeaderPrincipal from './components/header/HeaderPrincipal.vue';
+
 import FullFooter from './components/footer/FullFooter.vue';
+import HeaderPrincipal from '@/components/header/HeaderPrincipal.vue';
 
 </script>
 <!-- Centralizar Logo do Header!!! -->
 <!-- Centralizar Menu do Footer!!! -->
 <template>
-  <header>
-    <header-principal />
-  </header>
-
+   <header-principal />
   <div class="container-Principal">
-    <main>
+   
       <router-view />
-    </main>
+
     <div class="container max-footer">
       <full-footer />
     </div>

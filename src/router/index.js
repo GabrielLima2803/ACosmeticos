@@ -8,6 +8,7 @@ import EudoraView from '@/views/EudoraView.vue'
 import CriarLoginView from '@/views/CriarLoginView.vue'
 import FavoritoView from '@/views/FavoritoView.vue'
 import EsqueciSenhaView from '@/views/EsqueciSenhaView.vue'
+import DuvidasView from '@/views/DuvidasView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -56,6 +57,11 @@ const router = createRouter({
       path: '/esqueciSenha',
       name: 'esqueciSenha',
       component: EsqueciSenhaView
+    },
+    {
+      path: '/duvidas',
+      name: 'duvidas',
+      component: DuvidasView
     }
 
   ]

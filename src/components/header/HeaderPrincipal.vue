@@ -3,6 +3,7 @@
 </script>
 
 <template>
+    <div class="grudendo">
     <header class="PBarra">
         <div class="header-roxa">
             <!-- Header Roxo -->
@@ -27,9 +28,12 @@
             <span class="header-links"> Sobre nós </span>
             <span class="header-links"> Ajuda </span>
             <router-link to="/oboticario" class="header-links">Oboticario</router-link>
+            <router-link to="/duvidas" class="header-links">Duvidas frequentes</router-link>
         </nav>
         <!-- NavBar -->
     </header>
+
+    </div>
 </template>
 
 <style scoped>
@@ -67,23 +71,37 @@
     font-size: 18px;
     font-family: 'Jost', sans-serif;
     text-decoration: none;
-    color: black;
+    color: #000000;
+    position: relative; /* Importante para posicionar a borda */
+    transition: border-bottom 0.3s ease; /* Adiciona uma transição suave à borda */
+    cursor: pointer;
 }
+
+.header-links::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #43055D; /* Cor da borda */
+    transition: width 0.3s ease; /* Adiciona uma transição suave à largura da borda */
+ 
+  }
+
+  .header-links:hover::after {
+    width: 100%;
+  }
 
 .header-links:last-child {
     margin-right: 0;
-}
-
-.header-links:hover {
-    color: #43055D;
-    cursor: pointer;
-    transition: 0.8s;
 }
 
 .logo {
     flex-grow: 9;
     display: flex;
     justify-content: center;
+    margin-left: -30px;
 }
 
 .logo img {
@@ -109,4 +127,8 @@
 .hd-logo-margin{
     margin-right: 40px ;
 }
+/* .grudendo{
+    position: sticky;
+    top: 0px;
+} */
 </style>
