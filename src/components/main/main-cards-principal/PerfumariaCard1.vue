@@ -129,8 +129,8 @@ a {
 
 .card.hover {
   transform: scaleX(1.1);
-  border-top: 3px solid green;
-  border-bottom: 3px solid green;
+  border-top: 3px solid #43055D;
+  border-bottom: 3px solid #43055D;
   transition: 0.3s ease-in-out;
   /* justify-content: top; */
 }
@@ -146,7 +146,7 @@ a {
 .border-top {
   width: 45px;
   height: 3px;
-  background-color: green;
+  background-color: #43055D;
   opacity: 0; /* Initially hidden */
   transition: opacity 0.3s ease-in-out;
 }

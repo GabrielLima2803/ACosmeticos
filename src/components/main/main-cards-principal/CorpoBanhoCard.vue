@@ -1,13 +1,28 @@
 <script setup>
 
+import { onMounted, ref } from 'vue';
+import { RouterLink } from 'vue-router';
+
+
+function enterImage(index) {
+  expand.value[index] = true
+}
+
+
+function leaveImage(index) {
+  expand.value[index] = false
+}
+
+
+const expand = ref([])
+
+
 const corpo = [
   {
     id: 1,
     marca: 'Cuide-se-bem',
     img: 'https://i.ibb.co/r5LyhfT/cuide-se-bem.png',
-    hover: 'Com fragrâncias envolventes, os produtos da linha Cuide-se Bem promovem a hidratação que você precisa com ativos que cuidam da pele, das mãos, dos lábios e dos cabelos em diferentes ocasiões de uso.'
-    
-
+    hover: 'Com fragrâncias envolventes, os produtos da linha Cuide-se Bem promovem a hidratação que você precisa com ativos que cuidam da pele em diferentes ocasiões de uso.'
   },
   {
     id: 2,
@@ -19,7 +34,7 @@ const corpo = [
     id: 3,
     marca: 'Nativa-spa',
     img: 'https://i.ibb.co/cCNGR9X/spa.png',
-    hover: 'Os produtos Nativa Spa são perfeitos para quem valoriza experiencias sensoriais com resultados eficazes. Suas linhas completas entregam tratamentos com ingredientes naturais, ativos poderosos e fragrâncias incríveis, sofisticadas e marcantes.'
+    hover: 'Os produtos Nativa Spa são perfeitos para quem valoriza experiencias sensoriais com resultados eficazes. Suas linhas completas entregam tratamentos com ingredientes naturais. '
   },
   {
     id: 4,
@@ -31,148 +46,151 @@ const corpo = [
     id: 5,
     marca: 'Zaad',
     img: 'https://i.ibb.co/qgMZDgW/zaad.png',
-    hover: 'Zaad é ideal para homens sofisticados e sonhadores, que levam a vida com intensidade, sempre seguindo a intuição e se mantendo aberto a grandes paixões. Com 4 opções de Eau de Parfum, as fragrâncias Zaad são perfeitas para os homens que desejam conquistar o mundo.'
+    hover: 'Zaad é ideal para homens sofisticados e sonhadores, que levam a vida com intensidade, sempre seguindo a intuição e se mantendo aberto a grandes paixões.'
   },
 ]
+onMounted(() => {
+  corpo.forEach(() =>
+    expand.value.push(false)
+  )
+})
 </script>
 
+
 <template>
-   <v-row>
-    <v-col
-      v-for="(produto, index) in corpo"
-      :key="produto.id"
-      class="col"
-    >
-    <v-hover slot="{ hover }">
-      <img
-            :src="produto.img"
-            class="img"
-          />
-      </v-hover>
+  <v-row>
+    <v-col v-for="(produto, index) in corpo" :key="index" class="col card-perfumaria">
+      <!-- <div > -->
+      <img @mouseenter="enterImage(index)" @mouseleave="leaveImage(index)" :src="produto.img" class="image-perfumaria" />
+      <div class="card" :class="expand[index] ? 'hover' : ''" @mouseenter="enterImage(index)"
+        @mouseleave="leaveImage(index)">
+        <div class="card-content">
+            <h2 class="card-title" :class="expand[index] ? 'hover' : ''">{{ produto.marca }}</h2>
+            <div class="wrapBorde" >
+              <div class="border-top" :class="expand[index] ? 'hover' : ''"></div>
+            </div>
+            
+          <p class="card-body" :class="expand[index] ? 'hover' : ''">{{ produto.hover }}</p>
+        </div>
+      </div>
+      <!-- </div> -->
     </v-col>
   </v-row>
-  
-      <div class="natds2415" data-gtm-vis-has-fired-49267163_2347="1"><p class="MuiTypography-root MuiTypography-body1 MuiTypography-alignCenter" 
-        data-gtm-vis-has-fired-49267163_2347="1"><b data-gtm-vis-has-fired-49267163_2347="1">AROMÁTICOS</b></p></div><div 
-        class="natds2416" data-gtm-vis-has-fired-49267163_2347="1"><div class="natds2417" data-gtm-vis-has-fired-49267163_2347="1"></div>
-        <div class="natds2418" data-gtm-vis-has-fired-49267163_2347="1"><span class="MuiTypography-root MuiTypography-body2 MuiTypography-alignCenter" 
-          data-gtm-vis-has-fired-49267163_2347="1"><p data-gtm-vis-has-fired-49267163_2347="1">Destacados pelas notas de alecrim, menta, estoraque, poejo, 
-            pataqueira e lavanda.</p>
-</span></div></div>
-
 </template>
 
+
 <style scoped>
-.v-row{
+.v-row {
   margin: 0;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+
+a {
+  text-decoration: none;
 }
 .col {
+  position: relative;
   padding: 0;
 }
-.img{
-  height: 420px;
-  margin: 0;
+.col:hover img {
+  transform: scaleX(1.1);
 }
-/* Defina a largura da imagem */
-img {
+.card-perfumaria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image-perfumaria {
   width: 100%;
-  height: auto;
+  height: 100%;
+  transition: all .3s ease-in-out;
 }
-.img:hover{
-  cursor: pointer;
-  width: 240px;
-  transition: width 0.3s ease-in-out;
-}
-
-
-/* tentativa */
-.natds2393 {
-    min-width: 1200px;
-    flex-wrap: nowrap;
-}
-.natds2392 {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-}
-.natds2393 {
-    min-width: 1200px;
-    flex-wrap: nowrap;
-}
-.natds2392 {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-}
-.natds2422 {
-    padding: 0px;
+.card {
+  position: absolute;
+  background-color: #ffffff00;
+  border: #ffffff00;
+  color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  transition: transform .3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.natds2413 {
-    color: #fff;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.48);
-}.natds2415 {
-    margin: 8px;
-    display: flex;
-    transition: all 1s ease-in-out;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+.card.hover {
+  transform: scaleX(1.1);
+  border-top: 3px solid #43055D;
+  border-bottom: 3px solid #43055D;
+  transition: 0.3s ease-in-out;
+  /* justify-content: top; */
 }
-.MuiTypography-alignCenter {
-    text-align: center;
+
+.card.hover .card-title::after {
+  transform: scaleX(1);
 }
-.MuiTypography-body1 {
-    font-size: 16px;
-    font-family: "Roboto", Arial;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.51px;
+.wrapBorde{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.MuiTypography-root {
-    margin: 0;
+.border-top {
+  width: 45px;
+  height: 3px;
+  background-color: #43055D;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out;
 }
-.MuiTypography-alignCenter {
-    text-align: center;
+
+.card.hover .border-top {
+  opacity: 1; /* Displayed when parent .card is hovered */
 }
-.MuiTypography-body1 {
-    font-size: 16px;
-    font-family: "Roboto", Arial;
-    font-weight: 400;
-    line-height: 1.5;
-    letter-spacing: 0.51px;
+.card-content {
+  padding: 1.5em;
+  width: 200px; /* Adjust the width as needed */
+  height: 200px;
 }
-.MuiTypography-root {
-    margin: 0;
+
+.card.hover .card-content {
+  transform: translateY(0);
+  transition-delay: 0;
+  width: 220px; /* Adjust the expanded width as needed */
+  height: 220px; /* Adjust the expanded height as needed */
 }
-.natds2416 {
-    display: flex;
-    opacity: 0;
-    max-height: 0;
-    transition: opacity 0.3s 0.2s, visibility 0.5s, max-height 0.5s;
-    visibility: hidden;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+
+.card-body {
+  display: none;
+  opacity: 0; /* Initially hidden */
+  font-size: small;
+  text-align: center;
+  transform: translateY(50%); /* Start from the center */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, filter 0.5s ease-in-out, font-size 0.5s ease-in-out;
 }
-.natds2417 {
-    width: 42px;
-    height: 3px;
-    margin-bottom: 24px;
-    background-color: #f4ab34;
+
+.card-body.hover {
+  transition: display 5s ease-in-out;
+  display: block;
 }
-.natds2418 {
-    padding-left: 16px;
-    margin-bottom: 16px;
-    padding-right: 16px;
+.card.hover .card-body {
+  opacity: 1; /* Displayed when parent .card is hovered */
+  transform: translateY(0); /* Move to the top */
 }
+
 
 </style>
+
+
+
+
+
+
+
+

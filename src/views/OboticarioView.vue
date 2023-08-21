@@ -3,6 +3,9 @@
 // import FullFooter from './components/footer/FullFooter.vue';
 import PropagandaCard from '@/components/main/PropagandaCard.vue';
 import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCard1.vue';
+import CorpoBanhoCard from '@/components/main/main-cards-principal/CorpoBanhoCard.vue';
+import MaquiagemCard from '@/components/main/main-cards-principal/MaquiagemCard.vue';
+import CabeloCard from '../components/main/main-cards-principal/CabeloCard.vue';
 
 
 </script>
@@ -19,9 +22,21 @@ import PerfumariaCard1 from '@/components/main/main-cards-principal/PerfumariaCa
      <div class="propagandas">
       <propaganda-card/>
      </div>
+     <h1 class="h1-card-main">Cabelossssss</h1>
+     <div class="perfumaria">
+      <cabelo-card/>
+     </div>
      <h1 class="h1-card-main">Perfumaria</h1>
      <div class="perfumaria">
       <perfumaria-card1/>
+     </div>
+     <h1 class="h1-card-main">Corpo e Banho</h1>
+     <div class="perfumaria">
+      <corpo-banho-card/>
+     </div>
+     <h1 class="h1-card-main">Maquiagem</h1>
+     <div class="perfumaria">
+      <maquiagem-card/>
      </div>
     </main>
 
