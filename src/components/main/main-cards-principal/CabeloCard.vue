@@ -23,13 +23,13 @@ const cabelo = [
     id: 4,
     marca: 'Finalizar',
     img: 'https://i.ibb.co/qxZXRdK/finalizador.png',
-    hover: 'lorem'
+    hover: 'Eleve seu penteado com produtos de finalização capilar, adicionando o toque final para um estilo impressionante.'
   },
   {
     id: 5,
     marca: 'Kit',
     img: 'https://i.ibb.co/X5B2fgq/kit.png',
-    hover: 'lorem'
+    hover: 'Descubra a solução definitiva para cabelos incríveis com kits completos, projetados para cuidar, estilizar e elevar seus fios a um novo patamar de beleza.'
   },
 ]
 </script>

@@ -1,6 +1,6 @@
 <script setup>
 
-const corpo-e-banho = [
+const corpo = [
   {
     id: 1,
     marca: 'Cuide-se-bem',
@@ -39,7 +39,7 @@ const corpo-e-banho = [
 <template>
    <v-row>
     <v-col
-      v-for="(produto, index) in corpo-e-banho"
+      v-for="(produto, index) in corpo"
       :key="produto.id"
       class="col"
     >
