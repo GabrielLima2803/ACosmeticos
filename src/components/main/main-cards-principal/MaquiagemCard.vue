@@ -1,29 +1,37 @@
 <script setup>
 
-const perfumaria = [
+const maquiagem = [
   {
     id: 1,
-    marca: 'Malbec',
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png',
-    hover: 'Com fragrâncias marcantes como um bom vinho, as fragrâncias Malbec são as primeiras do mundo a serem feitas com álcool vínico.'
+    marca: 'Olho',
+    img: 'https://i.ibb.co/Mp2CNg1/image-134.png',
+    hover: 'Realce seus olhos com nossos produtos de maquiagem, destacando sua expressão de maneira autêntica e moderna.'
     
 
   },
   {
     id: 2,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Boca',
+    img: 'https://i.ibb.co/bB4W2Yy/image-119.png',
+    hover: 'Um batom cuidadosamente selecionado não apenas colore os lábios, mas também revela sua confiança e estilo de forma sutil e autêntica.'
   },
   {
     id: 3,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Blush',
+    img: 'https://i.ibb.co/TcF51wY/image-119-1.png',
+    hover: 'Com um toque suave de blush, as bochechas ganham um rubor sutil, irradiando um frescor que parece capturar a luminosidade do dia.'
   },
   {
     id: 4,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Rosto',
+    img: 'https://i.ibb.co/VSzg4k3/image-135.png',
+    hover: 'A maquiagem para o rosto realça a beleza única de cada pessoa, sem exageros, apenas realçando o que já é incrível.'
   },
   {
     id: 5,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Brilho',
+    img: 'https://i.ibb.co/syy2fFy/image-136.png',
+    hover: 'Descubra a luminosidade sofisticada que sua maquiagem pode ter, proporcionando um brilho que reflete sua beleza autêntica.'
   },
 ]
 </script>
@@ -31,7 +39,7 @@ const perfumaria = [
 <template>
    <v-row>
     <v-col
-      v-for="(produto, index) in perfumaria"
+      v-for="(produto, index) in maquiagem"
       :key="produto.id"
       class="col"
     >

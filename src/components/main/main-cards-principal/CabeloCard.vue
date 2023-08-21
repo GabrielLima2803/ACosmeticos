@@ -5,26 +5,31 @@ const cabelo = [
     id: 1,
     marca: 'Shampoo',
     img: 'https://i.ibb.co/Wyqwm54/image-151.png',
+    hover: 'Renove seus cabelos com shampoos que unem cuidado e vitalidade, revelando a beleza natural dos seus fios.'
   },
   {
     id: 2,
     marca: 'Condicionador',
-    img: 'https://i.ibb.co/GQF2Hg1/condicionador.png'
+    img: 'https://i.ibb.co/GQF2Hg1/condicionador.png',
+    hover: 'Alcance cabelos deslumbrantes, nutridos e suaves ao toque, graças a um condicionador que cuida da sua beleza capilar.'
   },
   {
     id: 3,
     marca: 'Creme-pentear',
-    img: 'https://i.ibb.co/PMTCScr/creme-Pentear.png'
+    img: 'https://i.ibb.co/PMTCScr/creme-Pentear.png',
+    hover: 'Obtenha controle total sobre seu estilo capilar com um creme de pentear que transforma cada fio em uma obra-prima.'
   },
   {
     id: 4,
     marca: 'Finalizar',
-    img: 'https://i.ibb.co/qxZXRdK/finalizador.png'
+    img: 'https://i.ibb.co/qxZXRdK/finalizador.png',
+    hover: 'lorem'
   },
   {
     id: 5,
     marca: 'Kit',
-    img: 'https://i.ibb.co/X5B2fgq/kit.png'
+    img: 'https://i.ibb.co/X5B2fgq/kit.png',
+    hover: 'lorem'
   },
 ]
 </script>

@@ -1,29 +1,37 @@
 <script setup>
 
-const perfumaria = [
+const corpo-e-banho = [
   {
     id: 1,
-    marca: 'Malbec',
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png',
-    hover: 'Com fragrâncias marcantes como um bom vinho, as fragrâncias Malbec são as primeiras do mundo a serem feitas com álcool vínico.'
+    marca: 'Cuide-se-bem',
+    img: 'https://i.ibb.co/r5LyhfT/cuide-se-bem.png',
+    hover: 'Com fragrâncias envolventes, os produtos da linha Cuide-se Bem promovem a hidratação que você precisa com ativos que cuidam da pele, das mãos, dos lábios e dos cabelos em diferentes ocasiões de uso.'
     
 
   },
   {
     id: 2,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Liz',
+    img: 'https://i.ibb.co/7V2FgGn/liz.png',
+    hover: 'Liz traz a exclusiva Base de Laire Íris Nobre, uma fórmula que, para alcançar o seu melhor, leva anos para ser produzida. Conheça a linha completa da nova fragrância intensa e marcante do Boticário!'
   },
   {
     id: 3,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Nativa-spa',
+    img: 'https://i.ibb.co/cCNGR9X/spa.png',
+    hover: 'Os produtos Nativa Spa são perfeitos para quem valoriza experiencias sensoriais com resultados eficazes. Suas linhas completas entregam tratamentos com ingredientes naturais, ativos poderosos e fragrâncias incríveis, sofisticadas e marcantes.'
   },
   {
     id: 4,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Malbec',
+    img: 'https://i.ibb.co/GW8K50P/malbec-1.png',
+    hover: 'Com fragrâncias marcantes como um bom vinho, as fragrâncias Malbec são as primeiras do mundo a serem feitas com álcool vínico. Um verdadeiro presente para o homem que sabe apreciar o que há de bom na vida.'
   },
   {
     id: 5,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Zaad',
+    img: 'https://i.ibb.co/qgMZDgW/zaad.png',
+    hover: 'Zaad é ideal para homens sofisticados e sonhadores, que levam a vida com intensidade, sempre seguindo a intuição e se mantendo aberto a grandes paixões. Com 4 opções de Eau de Parfum, as fragrâncias Zaad são perfeitas para os homens que desejam conquistar o mundo.'
   },
 ]
 </script>
@@ -31,7 +39,7 @@ const perfumaria = [
 <template>
    <v-row>
     <v-col
-      v-for="(produto, index) in perfumaria"
+      v-for="(produto, index) in corpo-e-banho"
       :key="produto.id"
       class="col"
     >
