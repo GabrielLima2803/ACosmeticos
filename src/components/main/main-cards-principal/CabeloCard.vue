@@ -1,29 +1,30 @@
 <script setup>
 
-const perfumaria = [
+const cabelo = [
   {
     id: 1,
-    marca: 'Malbec',
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png',
-    hover: 'Com fragrâncias marcantes como um bom vinho, as fragrâncias Malbec são as primeiras do mundo a serem feitas com álcool vínico.'
-    
-
+    marca: 'Shampoo',
+    img: 'https://i.ibb.co/Wyqwm54/image-151.png',
   },
   {
     id: 2,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Condicionador',
+    img: 'https://i.ibb.co/GQF2Hg1/condicionador.png'
   },
   {
     id: 3,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Creme-pentear',
+    img: 'https://i.ibb.co/PMTCScr/creme-Pentear.png'
   },
   {
     id: 4,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Finalizar',
+    img: 'https://i.ibb.co/qxZXRdK/finalizador.png'
   },
   {
     id: 5,
-    img: 'https://i.ibb.co/CVNLhqm/malbec-2.png'
+    marca: 'Kit',
+    img: 'https://i.ibb.co/X5B2fgq/kit.png'
   },
 ]
 </script>
@@ -31,7 +32,7 @@ const perfumaria = [
 <template>
    <v-row>
     <v-col
-      v-for="(produto, index) in perfumaria"
+      v-for="(produto, index) in cabelo"
       :key="produto.id"
       class="col"
     >
