@@ -52,16 +52,17 @@ function clear() {
 
             <v-text-field v-model="state.name" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="16"
             label="Confirme sua senha" required @input="v$.name.$touch" @blur="v$.name.$touch" class="marginForm inputForm"></v-text-field>
-
-
-          <div class="displayBtn">
-          <button type="submit" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
-            <button class="BtnClear" @click="clear">Clear</button>
+            
+            <div class="displayBtn">
+              <button type="submit" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
             </div>
-
-        </form>
+            
+          </form>
+        </div>
+        <div class="wrapBtn">
+          <v-btn @click="clear">Clear</v-btn>
+        </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -172,4 +173,12 @@ function clear() {
   padding: 5px;
   margin-top: 10px; 
 }
+.wrapBtn{
+  display: flex;
+    /* align-content: flex-end; */
+    justify-content: flex-end;
+    margin: 10px;
+    margin-right: 50px;
+    margin-top: -50px ;
+    }
 </style>

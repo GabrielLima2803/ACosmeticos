@@ -10,7 +10,7 @@
       </div>
       <v-expansion-panels class="marginPanel">
         <v-expansion-panel class="TamanhoPanel">
-          <v-expansion-panel-title expand-icon="mdi-plus" collapse-icon="mdi-minus" class="focus1">
+          <v-expansion-panel-title expand-icon="mdi-plus" collapse-icon="mdi-minus">
             <img src="@/img/Main-img/Main-Panel/bolsa.png" alt="" width="15">
             <p class="pTitle">Prazo e Entrega</p>
           </v-expansion-panel-title>

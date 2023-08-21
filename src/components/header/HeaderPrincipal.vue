@@ -28,7 +28,6 @@
             <span class="header-links"> Sobre nós </span>
             <span class="header-links"> Ajuda </span>
             <router-link to="/oboticario" class="header-links">Oboticario</router-link>
-            <router-link to="/duvidas" class="header-links">Duvidas frequentes</router-link>
         </nav>
         <!-- NavBar -->
     </header>
