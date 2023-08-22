@@ -28,7 +28,8 @@
             <span class="header-links"> Sobre nós </span>
             <span class="header-links"> Ajuda </span>
             <router-link to="/oboticario" class="header-links">Oboticario</router-link>
-            <router-link to="/perfumariaO" class="header-links">PerfumariaOboticariosad</router-link>
+            <router-link to="/perfumariaO" class="header-links">PerfumariaOboticarios</router-link>
+            <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
         </nav>
         <!-- NavBar -->
     </header>

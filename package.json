@@ -15,6 +15,7 @@
     "@vuelidate/validators": "^2.0.3",
     "axios": "^1.4.0",
     "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
     "sweetalert2": "^11.7.22",
     "vue": "^3.3.4",
     "vue-material-design-icons": "^5.2.0",

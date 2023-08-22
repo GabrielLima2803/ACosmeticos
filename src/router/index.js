@@ -10,7 +10,7 @@ import FavoritoView from '@/views/FavoritoView.vue'
 import EsqueciSenhaView from '@/views/EsqueciSenhaView.vue'
 import DuvidasView from '@/views/DuvidasView.vue'
 import PerfumariaOView from '@/views/PerfumariaOView.vue'
-
+import IndentificaçãoView from '@/views/IndentificaçãoView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -69,6 +69,11 @@ const router = createRouter({
       path: '/perfumariaO',
       name: 'perfumariaO',
       component: PerfumariaOView
+    },
+    {
+      path: '/indentificacao',
+      name: 'indentificacao',
+      component: IndentificaçãoView
     }
 
   ]

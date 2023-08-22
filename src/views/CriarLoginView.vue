@@ -7,19 +7,23 @@ const initialState = {
   name: '',
   email: '',
   senha: '',
+  confirmarSenha: '',
   select: null,
   checkbox: null,
 }
 
 const state = reactive({
   ...initialState,
+  showPassword: false,
+  showConfirmPassword: false,
 })
- 
+
 
 const rules = {
   name: { required },
   email: { required, email },
   senha: { required },
+  confirmarSenha: { required },
 }
 
 const v$ = useVuelidate(rules, state)
@@ -31,6 +35,7 @@ function clear() {
     state[key] = value
   }
 }
+
 </script>
 
 <template>
@@ -42,36 +47,48 @@ function clear() {
       <div class="forms ">
         <form class="wrapForm">
           <v-text-field v-model="state.name" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="40"
-            label="Insira seu nome" required @input="v$.name.$touch" @blur="v$.name.$touch" class="marginForm inputForm"></v-text-field>
+            label="Insira seu nome" required @input="v$.name.$touch" @blur="v$.name.$touch"
+            class="marginForm inputForm">
+          </v-text-field>
 
-          <v-text-field v-model="state.email" :error-messages="v$.email.$errors.map(e => e.$message)" label="Insira seu Email"
-            required @input="v$.email.$touch" @blur="v$.email.$touch" class="marginForm inputForm"></v-text-field>
+          <v-text-field v-model="state.email" :error-messages="v$.email.$errors.map(e => e.$message)"
+            label="Insira seu Email" required @input="v$.email.$touch" @blur="v$.email.$touch"
+            class="marginForm inputForm">
+          </v-text-field>
 
-            <v-text-field v-model="state.senha" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="16"
-            label="Insira sua senha" required @input="v$.name.$touch" @blur="v$.name.$touch"  class="marginForm inputForm"></v-text-field>
+          <v-text-field v-model="state.senha" :error-messages="v$.senha.$errors.map(e => e.$message)" :counter="16"
+            label="Insira sua senha" required @input="v$.senha.$touch" @blur="v$.senha.$touch"
+            :type="state.showPassword ? 'text' : 'password'" class="marginForm inputForm">
+            <i class="iconMostrar bi" :class="state.showPassword ? 'bi-eye' : 'bi-eye-slash'"
+              @click="state.showPassword = !state.showPassword"></i>
+          </v-text-field>
 
-            <v-text-field v-model="state.name" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="16"
-            label="Confirme sua senha" required @input="v$.name.$touch" @blur="v$.name.$touch" class="marginForm inputForm"></v-text-field>
-            
-            <div class="displayBtn">
-              <button type="submit" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
-            </div>
-            
-          </form>
-        </div>
-        <div class="wrapBtn">
-          <v-btn @click="clear">Clear</v-btn>
-        </div>
+          <v-text-field v-model="state.confirmarSenha" :error-messages="v$.confirmarSenha.$errors.map(e => e.$message)" :counter="16"
+            label="Insira sua confirmarSenha" required @input="v$.confirmarSenha.$touch" @blur="v$.confirmarSenha.$touch"
+            :type="state.showConfirmPassword ? 'text' : 'password'" class="marginForm inputForm">
+            <i class="iconMostrar bi" :class="state.showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'"
+              @click="state.showConfirmPassword = !state.showConfirmPassword"></i>
+          </v-text-field>
+
+          <div class="displayBtn">
+            <button type="submit" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
+          </div>
+
+        </form>
       </div>
+      <div class="wrapBtn">
+        <v-btn @click="clear">Clear</v-btn>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
-.displayBtn{
+.displayBtn {
   display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .wrapContainer {
@@ -150,17 +167,10 @@ function clear() {
   font-size: 18px;
   font-weight: bold;
   padding: 5px;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
-.BtnCriar:hover {
-  background-color: white;
-  transition: 0.6s ease-in;
-  color: #43055D;
-  border: #43055D 1px solid;
-}
-
-.BtnClear{
+.BtnClear {
   width: 350px;
   height: 50px;
   border: none;
@@ -171,14 +181,24 @@ function clear() {
   font-size: 18px;
   font-weight: bold;
   padding: 5px;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
-.wrapBtn{
+
+.wrapBtn {
   display: flex;
-    /* align-content: flex-end; */
-    justify-content: flex-end;
-    margin: 10px;
-    margin-right: 50px;
-    margin-top: -50px ;
-    }
+  /* align-content: flex-end; */
+  justify-content: flex-end;
+  margin: 10px;
+  margin-right: 50px;
+  margin-top: -70px;
+}
+
+.iconMostrar {
+  font-size: 25px;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  margin-top: -15px;
+  margin-right: 10px;
+}
 </style>
