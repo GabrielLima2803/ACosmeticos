@@ -1,6 +1,8 @@
-const malbec = [
+import { ref } from 'vue'
+const malbec = ref([
   {
     id: 1,
+<<<<<<< HEAD
     nome:'Malbec Black',
     descrição:'Desodorante Colônia 100ml',
     preço:'R$ 209,90',
@@ -14,6 +16,21 @@ const malbec = [
     descrição:'Desodorante Colônia 100ml',
     preço:'R$ 209,90',
     img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B80761/B80761_Malbec-Flame-Desodorante-Colonia-100ml_.jpg',
+=======
+    nome: 'Malbec Black',
+    descricao : 'Desodorante Colônia 100ml',
+    preco: 'R$ 209,90',
+    img: 'https://i.ibb.co/mSzjnZV/p-2-malbec.png',
+    hover:'https://i.ibb.co/9NzM17Y/p-2-malbec-1.png', 
+    original: 'https://i.ibb.co/mSzjnZV/p-2-malbec.png'
+  },
+  {
+    id: 2,
+    nome: 'Malbec Black',
+    descricao : 'Desodorante Colônia 100ml',
+    preco: 'R$ 209,90',
+    img: 'https://i.ibb.co/mSzjnZV/p-2-malbec.png',
+>>>>>>> 1a31123c3dfdcc1008c3b3625ee674c93bc00c18
     hover:'https://i.ibb.co/9NzM17Y/p-2-malbec-1.png', 
     original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B80761/B80761_Malbec-Flame-Desodorante-Colonia-100ml_.jpg'
   },
@@ -45,6 +62,7 @@ const malbec = [
     original: ''
   },
 ]
+)
 
 const coffe = [
     {
