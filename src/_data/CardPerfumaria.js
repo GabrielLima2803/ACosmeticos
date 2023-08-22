@@ -1,12 +1,19 @@
-const malbec = [
+import { ref } from 'vue'
+const malbec = ref([
   {
     id: 1,
-    img: 'https://i.ibb.co/mB1F6RL/p-1-malbec.png',
-    hover:'https://i.ibb.co/KFGjTW7/p-1-malbec-1.png',
-    origin: 'https://i.ibb.co/mB1F6RL/p-1-malbec.png'
+    nome: 'Malbec Black',
+    descricao : 'Desodorante Colônia 100ml',
+    preco: 'R$ 209,90',
+    img: 'https://i.ibb.co/mSzjnZV/p-2-malbec.png',
+    hover:'https://i.ibb.co/9NzM17Y/p-2-malbec-1.png', 
+    original: 'https://i.ibb.co/mSzjnZV/p-2-malbec.png'
   },
   {
     id: 2,
+    nome: 'Malbec Black',
+    descricao : 'Desodorante Colônia 100ml',
+    preco: 'R$ 209,90',
     img: 'https://i.ibb.co/mSzjnZV/p-2-malbec.png',
     hover:'https://i.ibb.co/9NzM17Y/p-2-malbec-1.png', 
     original: 'https://i.ibb.co/mSzjnZV/p-2-malbec.png'
@@ -30,6 +37,7 @@ const malbec = [
     original: 'https://i.ibb.co/8YnvWTk/p-5-malbec.png'
   },
 ]
+)
 
 const coffe = [
     {
