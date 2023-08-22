@@ -186,8 +186,6 @@ function clear() {
     padding: 15px;
 }
 .wrapCep{
-    display: flex;
-    align-items: start;
-    justify-content: start;
+    
 }
 </style>
