@@ -11,6 +11,9 @@ import EsqueciSenhaView from '@/views/EsqueciSenhaView.vue'
 import DuvidasView from '@/views/DuvidasView.vue'
 import PerfumariaOView from '@/views/PerfumariaOView.vue'
 import IndentificaçãoView from '@/views/IndentificaçãoView.vue'
+import CorpoEBanhoView from '@/views/CorpoEBanhoView.vue'
+import MaquiagemView from '@/views/MaquiagemView.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -74,8 +77,17 @@ const router = createRouter({
       path: '/indentificacao',
       name: 'indentificacao',
       component: IndentificaçãoView
+    },
+    {
+      path: '/corpoBanho',
+      name: 'corpoBanho',
+      component: CorpoEBanhoView
+    },
+    {
+      path: '/maquiagem',
+      name: 'maquiagem',
+      component: MaquiagemView
     }
-
   ]
 })
 

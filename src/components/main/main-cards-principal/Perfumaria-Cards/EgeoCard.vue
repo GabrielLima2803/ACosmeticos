@@ -1,28 +1,32 @@
 <script setup>
-import { malbec } from '@/_data/CardPerfumaria.js'
+import { egeo } from '@/_data/CardPerfumaria.js'
 </script>
 
 
 <template>
     <div class="card-cosmeticos">
         <div class="card-cosmeticos">
-            <div v-for="(malbecs, index) in malbec" :key="malbecs.id" class="card-margin flexCard">
+            <div v-for="(egeos) in egeo" :key="egeos.id" class="card-margin flexCard">
                 <!-- ... rest of your card content ... -->
-
+                <div class="img-coracao">
+                        <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img" />
+                    </div>
                 <!-- Modify the img tag to use the hover images -->
                 <div class="tamanho-card">
-                    <img :src="malbecs.img" @mouseover="malbecs.img = malbecs.hover" 
-                        @mouseleave="malbecs.img = malbecs.original" class="capa-img" />
+                    <img :src="egeos.img" @mouseover="egeos.img = egeos.hover" 
+                        @mouseleave="egeos.img = egeos.original" class="capa-img" />
                 </div>
-
+                <div class="img-oboticario">
+                <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
+            </div>
                 <h5 class="titulo-Cos">
-                    {{ malbecs.nome }}
+                    {{ egeos.nome }}
                 </h5>
                 <p class="descricao-Cos">
-                    {{ malbecs.descricao }}
+                    {{ egeos.descricao }}
                 </p>
                 <p class="preco-Cos">
-                    {{ malbecs.preco }}
+                    {{ egeos.preco }}
                 </p>
                 <button type="button" class="Button-CardPay">
                     <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
@@ -88,6 +92,12 @@ import { malbec } from '@/_data/CardPerfumaria.js'
 }
 
 .img-oboticario {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 227px;
+}
+
+.img-coracao {
     display: flex;
     justify-content: flex-end;
     max-width: 227px;

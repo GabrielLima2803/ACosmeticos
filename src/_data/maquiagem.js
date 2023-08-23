@@ -1,4 +1,4 @@
-const olhos = [
+const olho = [
     {
       id: 1,
       img: 'https://i.ibb.co/wSD1jFX/p-1-olhos.png',
@@ -116,4 +116,4 @@ const brilho = [
     },
     
 ]
-export{olhos, boca, blush, rosto, brilho}
+export{olho, boca, blush, rosto, brilho}

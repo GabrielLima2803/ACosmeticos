@@ -30,6 +30,10 @@
             <router-link to="/oboticario" class="header-links">Oboticario</router-link>
             <router-link to="/perfumariaO" class="header-links">PerfumariaOboticarios</router-link>
             <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
+            <router-link to="/produtoCarrosel" class="header-links">produtoCarrosel</router-link>
+            <router-link to="/corpoBanho" class="header-links">Corpo é Banho</router-link>
+            <router-link to="/maquiagem" class="header-links">Maquiagem</router-link>
+
         </nav>
         <!-- NavBar -->
     </header>

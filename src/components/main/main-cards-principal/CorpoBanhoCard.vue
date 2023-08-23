@@ -1,8 +1,6 @@
 <script setup>
 
 import { onMounted, ref } from 'vue';
-import { RouterLink } from 'vue-router';
-
 
 function enterImage(index) {
   expand.value[index] = true

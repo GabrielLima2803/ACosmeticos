@@ -9,9 +9,7 @@ import HeaderPrincipal from '@/components/header/HeaderPrincipal.vue';
 <template>
    <header-principal />
   <div class="container-Principal">
-   
       <router-view />
-
     <div class="container max-footer">
       <full-footer />
     </div>
