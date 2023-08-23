@@ -11,7 +11,7 @@
         <!-- Header Logo -->
         <div class="header-logo">
             <div class="logo">
-                <img src="@/img/icon-Header/logoAC.png" alt="" class="hd-logo-margin">
+                <img src="@/img/icon-Header/LogoAcosmeticos.png" alt="" class="hd-logo-margin">
             </div>
             <div class="header-icons">
                 <router-link to="/carrinho" class="header-links"><img src="@/img/icon-Header/icon_Bolsa.png" alt="" class=""></router-link>
@@ -23,16 +23,15 @@
 
         <nav class="header-nav">
             <router-link to="/" class="header-links">Inicio</router-link>
-            <span class="header-links"> Marcas </span>
-            <span class="header-links"> Tutoriais </span>
-            <span class="header-links"> Sobre nós </span>
+            <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
             <span class="header-links"> Ajuda </span>
-            <router-link to="/oboticario" class="header-links">Oboticario</router-link>
+            <router-link to="/oboticario" class="header-links logo-oboticario"><img src="@/img/icon-Header/logoOboticario.png" alt=""></router-link>
             <router-link to="/perfumariaO" class="header-links">PerfumariaOboticarios</router-link>
             <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
             <router-link to="/produtoCarrosel" class="header-links">produtoCarrosel</router-link>
             <router-link to="/corpoBanho" class="header-links">Corpo é Banho</router-link>
             <router-link to="/maquiagem" class="header-links">Maquiagem</router-link>
+            <router-link to="/cabelos" class="header-links">Cabelos</router-link>
 
         </nav>
         <!-- NavBar -->
@@ -50,14 +49,14 @@
 }
 
 .PBarra {
-    position: sticky;
-    top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-shadow: 2px 2px 15px 1px rgb(94, 94, 94);
     border: none;
     max-width: 100%;
+    position: sticky;
+    top: 0;
 }
 
 .navBarPrincipal {
@@ -106,11 +105,10 @@
     flex-grow: 9;
     display: flex;
     justify-content: center;
-    margin-left: -30px;
 }
 
 .logo img {
-    margin-left: 250px
+    margin-left: 260px
 }
 
 .header-logo {
@@ -118,7 +116,10 @@
     width: 100%;
     align-content: center;
 }
-
+.logo-oboticario{
+    width: 21px;
+    height: 21px;
+}
 .header-icons {
     flex-grow: 1;
     align-self: center;
