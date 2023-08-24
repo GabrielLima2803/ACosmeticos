@@ -29,6 +29,14 @@
             <router-link to="/oboticario" class="header-links logo-oboticario"><img src="@/img/icon-Header/logoOboticario.png" alt=""></router-link>
             <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
             <router-link to="/produtoCarrosel" class="header-links">produtoCarrosel</router-link>
+<<<<<<< HEAD
+=======
+            <router-link to="/corpoBanho" class="header-links">Corpo é Banho</router-link>
+            <router-link to="/maquiagem" class="header-links">Maquiagem</router-link>
+            <router-link to="/cabelos" class="header-links">Cabelos</router-link>
+            <router-link to="/eudora" class="header-links">Eudora</router-link>
+
+>>>>>>> df85c0bc7f2c41ddea15ad1e451c2adc4fd7e084
         </nav>
         <!-- NavBar -->
     </header>
