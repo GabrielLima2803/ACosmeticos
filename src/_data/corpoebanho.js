@@ -107,14 +107,11 @@ const liz = [
     },
     {
       id: 5,
-<<<<<<< HEAD
       nome:'Liz Sublime',
       descricao:'Desodorante Colônia 10ml',
       preco:'R$ 39,90',
       img: 'https://i.ibb.co/KjvCnPS/p-5-liz.png',
-=======
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B47342/LIZ-SUBLIME-FLANKER_B47342_.jpg',
->>>>>>> 029406690681b52b73a50cdb912ebfd7964f6488
     },
   
   
@@ -122,61 +119,39 @@ const liz = [
 const malbecCorpo = [
     {
       id: 1,
-<<<<<<< HEAD
       nome:'Creme Malbec Vert',
       descricao:'Loção Hidratante Desodorante 200ml',
       preco:'R$ 54,90',
-      img: 'https://i.ibb.co/xLsFbxM/p-1-malbec.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B48683/bee1d455-d09c-4e56-82fb-7ffb86d83b6b-malbec-loc-hid-cpo-vert-v3-b48683-frontal.jpg',
     },
     {
       id: 2,
       nome:'Body Spray Malbec Vert',
       descricao:'Desodorante Colônia 100ml',
       preco:'R$ 39,90',
-      img: 'https://i.ibb.co/wd3mzqS/p-2-malbec.png'
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B84055/MALBEC-VERT-BODY-SPRAY_B84055_FECHADO_.jpg'
     },
     {
       id: 3,
       nome:'Desodorante Malbec X',
       descricao:'Antitranspirante Aerossol 125ml',
       preco:'R$ 33,90',
-      img: 'https://i.ibb.co/Jn7N4nw/p-3-malbec.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B53074/malbec_x_aerosol_antitranspirante_75g_125ml_B53074.jpg',
     },
     {
       id: 4,
       nome:'Body Spray Malbec',
       descricao:'Desodorante Colônia 100ml',
       preco:'R$ 39,90',
-      img: 'https://i.ibb.co/hKS3T12/p-4-malbec.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B48785/MALBEC-DES-SPR-100ml-V5-PCK_B48785.jp',
     },
     {
       id: 5,
       nome:'Coleção Malbec ',
       descricao:'Experimentação (7 itens)',
       preco:'R$ 44,90',
-      img: 'https://i.ibb.co/fSq6Y8f/p-5-malbec.png',
-=======
-      nome:'',
-      descricao:'',
-      preco:'',
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B48683/bee1d455-d09c-4e56-82fb-7ffb86d83b6b-malbec-loc-hid-cpo-vert-v3-b48683-frontal.jpg',
-    },
-    {
-      id: 2,
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B84055/MALBEC-VERT-BODY-SPRAY_B84055_FECHADO_.jpg'
-    },
-    {
-      id: 3,
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B53074/malbec_x_aerosol_antitranspirante_75g_125ml_B53074.jpg',
-    },
-    {
-      id: 4,
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B48785/MALBEC-DES-SPR-100ml-V5-PCK_B48785.jpg',
-    },
-    {
-      id: 5,
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B54121/KIT-DEMONSTRADOR-MALBEC_COLONIA_V2_7x4ml_B54121_PRINCIPAL_1.jpg',
->>>>>>> 029406690681b52b73a50cdb912ebfd7964f6488
+
     },
    
   
@@ -184,61 +159,38 @@ const malbecCorpo = [
 const zaad = [
     {
       id: 1,
-<<<<<<< HEAD
       nome:'Desodorante Zaad Arctic',
       descricao:'Antitranspirante Aerossol 75g',
       preco:'R$ 33,90',
-      img: 'https://i.ibb.co/TWn7FVr/p-1-zaad.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B51873/BOT_51873_ZAAD-ARCTIC_DESODORANTE-ANTITRANSPIRANTE-SPRAY_FRONTAL_1.jpg'
     },
     {
       id: 2,
       nome:'Body Splash Zaad',
       descricao:'Desodorante clônia 200ml',
       preco:'R$ 87,90',
-      img: 'https://i.ibb.co/3fcMMGT/p-2-lzaad.png'
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B74401/6ff4b445-e0e8-40a4-970b-d5ebc8c04522-body-splash-desodorante-colonia-zaad-200ml.png'
     },
     {
       id: 3,
       nome:'Espuma de Barbear Zaad',
       descricao:'Espuma Hidratante 200ml',
       preco:'R$ 61,90',
-      img: 'https://i.ibb.co/m5qZpj9/p-3-zaad.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B74450/d77bfeae-84d9-40e4-b121-76f7e338a331-espuma-de-barbear-hidratante-zaad-200ml.png'
     },
     {
       id: 4,
       nome:'Zaad Arctic',
       descricao:'Eau De Parfum 10ml',
       preco:'R$ 49,90',
-      img: 'https://i.ibb.co/F6vJWQh/p-2-zaad.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B52209/BOT_52209_ZAAD_PRM_FRONTAL_1.jpg'
     },
     {
       id: 5,
       nome:'Kit Miniatura Perfumaria',
       descricao:'Masculina (4 itens)',
       preco:'R$ 59,90',
-      img: 'https://i.ibb.co/MMd10s6/p-5-zaad.png',
-=======
-      nome:'',
-      descricao:'',
-      preco:'',
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B51873/BOT_51873_ZAAD-ARCTIC_DESODORANTE-ANTITRANSPIRANTE-SPRAY_FRONTAL_1.jpg',
-    },
-    {
-      id: 2,
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B74401/6ff4b445-e0e8-40a4-970b-d5ebc8c04522-body-splash-desodorante-colonia-zaad-200ml.png'
-    },
-    {
-      id: 3,
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B74450/d77bfeae-84d9-40e4-b121-76f7e338a331-espuma-de-barbear-hidratante-zaad-200ml.png',
-    },
-    {
-      id: 4,
-      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B52209/BOT_52209_ZAAD_PRM_FRONTAL_1.jpg',
-    },
-    {
-      id: 5,
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B52482/bbf9c4e6-3a37-4b57-a18a-c4ccb47c9500-bot-52482-the-blend-zaad-kit-miniaturas-frontal-01.jpg',
->>>>>>> 029406690681b52b73a50cdb912ebfd7964f6488
     },
     
   

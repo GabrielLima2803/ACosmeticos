@@ -13,6 +13,7 @@ import PerfumariaOView from '@/views/Marcas/Oboticario/Oboticario-Cards/Perfumar
 import CorpoEBanhoView from '@/views/Marcas/Oboticario/Oboticario-Cards/CorpoEBanhoView.vue'
 import MaquiagemView from '@/views/Marcas/Oboticario/Oboticario-Cards/MaquiagemView.vue'
 import CabelosView from '@/views/Marcas/Oboticario/Oboticario-Cards/CabelosView.vue'
+import EudoraView from '@/views/EudoraView.vue'
 
 
 const router = createRouter({
@@ -87,7 +88,12 @@ const router = createRouter({
       path: '/cabelos',
       name: 'cabelos',
       component: CabelosView
-    }
+    },
+    {
+      path: '/eudora',
+      name: 'eudora',
+      component: EudoraView
+    },
   ]
 })
 

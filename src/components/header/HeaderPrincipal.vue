@@ -28,7 +28,7 @@
             <router-link to="/favorito" class="header-links">Favoritos</router-link>
             <router-link to="/oboticario" class="header-links logo-oboticario"><img src="@/img/icon-Header/logoOboticario.png" alt=""></router-link>
             <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
-            <router-link to="/produtoCarrosel" class="header-links">produtoCarrosel</router-link>
+            <router-link to="/eudora" class="header-links">Eudora</router-link>
         </nav>
         <!-- NavBar -->
     </header>
