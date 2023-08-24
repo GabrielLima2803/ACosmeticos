@@ -1,19 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import OboticarioView from '@/views/OboticarioView.vue'
 import HomeView from '@/views/HomeView.vue'
-import CarrinhoView from '@/views/CarrinhoView.vue'
-import PerfilView from '@/views/PerfilView.vue'
-import SobreNosView from '@/views/SobreNosView.vue'
-import EudoraView from '@/views/EudoraView.vue'
-import CriarLoginView from '@/views/CriarLoginView.vue'
-import FavoritoView from '@/views/FavoritoView.vue'
-import EsqueciSenhaView from '@/views/EsqueciSenhaView.vue'
-import DuvidasView from '@/views/DuvidasView.vue'
-import PerfumariaOView from '@/views/PerfumariaOView.vue'
-import IndentificaçãoView from '@/views/IndentificaçãoView.vue'
-import CorpoEBanhoView from '@/views/CorpoEBanhoView.vue'
-import MaquiagemView from '@/views/MaquiagemView.vue'
-import CabelosView from '@/views/CabelosView.vue'
+import CarrinhoView from '@/views/Carrinho/CarrinhoView.vue'
+import IndentificaçãoView from '@/views/Carrinho/IndentificaçãoView.vue'
+import PerfilView from '@/views/Login/PerfilView.vue'
+import CriarLoginView from '@/views/Login/CriarLoginView.vue'
+import SobreNosView from '@/views/SobreNos/SobreNosView.vue'
+import DuvidasView from '@/views/SobreNos/DuvidasView.vue'
+import FavoritoView from '@/views/Favorito/FavoritoView.vue'
+import EsqueciSenhaView from '@/views/Login/EsqueciSenhaView.vue'
+import OboticarioView from '@/views/Marcas/Oboticario/OboticarioView.vue'
+import PerfumariaOView from '@/views/Marcas/Oboticario/Oboticario-Cards/PerfumariaOView.vue'
+import CorpoEBanhoView from '@/views/Marcas/Oboticario/Oboticario-Cards/CorpoEBanhoView.vue'
+import MaquiagemView from '@/views/Marcas/Oboticario/Oboticario-Cards/MaquiagemView.vue'
+import CabelosView from '@/views/Marcas/Oboticario/Oboticario-Cards/CabelosView.vue'
 
 
 const router = createRouter({
@@ -43,11 +42,6 @@ const router = createRouter({
       path: '/sobreNos',
       name: 'sobreNos',
       component: SobreNosView
-    },
-    {
-      path: '/eudora',
-      name: 'eudora ',
-      component: EudoraView
     },
     {
       path: '/criarLogin',

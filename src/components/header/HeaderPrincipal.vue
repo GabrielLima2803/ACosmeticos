@@ -24,15 +24,11 @@
         <nav class="header-nav">
             <router-link to="/" class="header-links">Inicio</router-link>
             <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
-            <span class="header-links"> Ajuda </span>
+            <router-link to="/duvidas" class="header-links">Ajuda</router-link>
+            <router-link to="/favorito" class="header-links">Favoritos</router-link>
             <router-link to="/oboticario" class="header-links logo-oboticario"><img src="@/img/icon-Header/logoOboticario.png" alt=""></router-link>
-            <router-link to="/perfumariaO" class="header-links">PerfumariaOboticarios</router-link>
             <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
             <router-link to="/produtoCarrosel" class="header-links">produtoCarrosel</router-link>
-            <router-link to="/corpoBanho" class="header-links">Corpo é Banho</router-link>
-            <router-link to="/maquiagem" class="header-links">Maquiagem</router-link>
-            <router-link to="/cabelos" class="header-links">Cabelos</router-link>
-
         </nav>
         <!-- NavBar -->
     </header>

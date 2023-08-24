@@ -1,5 +1,5 @@
 const shampoo = [
-    {
+      {
       id: 1,
       nome:'',
       descricao:'loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm',

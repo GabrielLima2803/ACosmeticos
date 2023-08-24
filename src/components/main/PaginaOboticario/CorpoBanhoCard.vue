@@ -57,8 +57,7 @@ onMounted(() => {
 
 <template>
   <v-row>
-    <v-col v-for="(produto, index) in corpo" :key="index" class="col card-perfumaria">
-      <!-- <div > -->
+    <v-col v-for="(produto, index) in corpo" :key="index" class="col card-perfumaria">      
       <img @mouseenter="enterImage(index)" @mouseleave="leaveImage(index)" :src="produto.img" class="image-perfumaria" />
       <div class="card" :class="expand[index] ? 'hover' : ''" @mouseenter="enterImage(index)"
         @mouseleave="leaveImage(index)">
@@ -71,7 +70,6 @@ onMounted(() => {
           <p class="card-body" :class="expand[index] ? 'hover' : ''">{{ produto.hover }}</p>
         </div>
       </div>
-      <!-- </div> -->
     </v-col>
   </v-row>
 </template>
