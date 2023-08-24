@@ -93,20 +93,23 @@ const liz = [
     },
     {
       id: 3,
-      nome:'',
-      descricao:'',
+      nome:'Loção iluminadora Liz',
+      descricao:'Hidratante Desodorante Corporal 200ml',
       preco:'R$ 33,90',
       img: 'https://i.ibb.co/jyY0NxY/p-3-liz.png',
     },
     {
       id: 4,
-      nome:'',
+      nome:'Desodorante Liz',
       descricao:'Hidratante Desodorante Corporal 200ml',
       preco:'R$ 33,90',
       img: 'https://i.ibb.co/fvb5cbK/p-4-dr-botica.png',
     },
     {
       id: 5,
+      nome:'Liz Sublime',
+      descricao:'Desodorante Colônia 10ml',
+      preco:'R$ 39,90',
       img: 'https://i.ibb.co/KjvCnPS/p-5-liz.png',
     },
   
@@ -115,25 +118,37 @@ const liz = [
 const malbecCorpo = [
     {
       id: 1,
-      nome:'',
-      descricao:'',
-      preco:'',
+      nome:'Creme Malbec Vert',
+      descricao:'Loção Hidratante Desodorante 200ml',
+      preco:'R$ 54,90',
       img: 'https://i.ibb.co/xLsFbxM/p-1-malbec.png',
     },
     {
       id: 2,
+      nome:'Body Spray Malbec Vert',
+      descricao:'Desodorante Colônia 100ml',
+      preco:'R$ 39,90',
       img: 'https://i.ibb.co/wd3mzqS/p-2-malbec.png'
     },
     {
       id: 3,
+      nome:'Desodorante Malbec X',
+      descricao:'Antitranspirante Aerossol 125ml',
+      preco:'R$ 33,90',
       img: 'https://i.ibb.co/Jn7N4nw/p-3-malbec.png',
     },
     {
       id: 4,
+      nome:'Body Spray Malbec',
+      descricao:'Desodorante Colônia 100ml',
+      preco:'R$ 39,90',
       img: 'https://i.ibb.co/hKS3T12/p-4-malbec.png',
     },
     {
       id: 5,
+      nome:'Coleção Malbec ',
+      descricao:'Experimentação (7 itens)',
+      preco:'R$ 44,90',
       img: 'https://i.ibb.co/fSq6Y8f/p-5-malbec.png',
     },
    
@@ -142,25 +157,37 @@ const malbecCorpo = [
 const zaad = [
     {
       id: 1,
-      nome:'',
-      descricao:'',
-      preco:'',
+      nome:'Desodorante Zaad Arctic',
+      descricao:'Antitranspirante Aerossol 75g',
+      preco:'R$ 33,90',
       img: 'https://i.ibb.co/TWn7FVr/p-1-zaad.png',
     },
     {
       id: 2,
+      nome:'Body Splash Zaad',
+      descricao:'Desodorante clônia 200ml',
+      preco:'R$ 87,90',
       img: 'https://i.ibb.co/3fcMMGT/p-2-lzaad.png'
     },
     {
       id: 3,
+      nome:'Espuma de Barbear Zaad',
+      descricao:'Espuma Hidratante 200ml',
+      preco:'R$ 61,90',
       img: 'https://i.ibb.co/m5qZpj9/p-3-zaad.png',
     },
     {
       id: 4,
+      nome:'Zaad Arctic',
+      descricao:'Eau De Parfum 10ml',
+      preco:'R$ 49,90',
       img: 'https://i.ibb.co/F6vJWQh/p-2-zaad.png',
     },
     {
       id: 5,
+      nome:'Kit Miniatura Perfumaria',
+      descricao:'Masculina (4 itens)',
+      preco:'R$ 59,90',
       img: 'https://i.ibb.co/MMd10s6/p-5-zaad.png',
     },
     
