@@ -1,6 +1,9 @@
 const shampoo = [
     {
       id: 1,
+      nome:'',
+      descricao:'loremmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm',
+      preco:'',
       img: 'https://i.ibb.co/p3WjNzw/p-1-shampoo.png',
     },
     {

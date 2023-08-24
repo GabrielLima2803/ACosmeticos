@@ -23,9 +23,9 @@ const malbec = ref([
     nome:'Malbec Club intenso',
     descricao:'Desodorante Colônia 100ml',
     preco:'R$ 209,90',
-    img: '',
+    img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/e162f566-ac87-447d-b805-23782a3f0f8a-malbec-colonia-club-100ml-v3-b49031.jpg',
     hover:'https://i.ibb.co/sFJY1gW/p-3-malbec.png', 
-    original: ''
+    original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/e162f566-ac87-447d-b805-23782a3f0f8a-malbec-colonia-club-100ml-v3-b49031.jpg'
   },
   {
     id: 4,
