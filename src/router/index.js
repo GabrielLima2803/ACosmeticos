@@ -13,6 +13,7 @@ import PerfumariaOView from '@/views/PerfumariaOView.vue'
 import IndentificaçãoView from '@/views/IndentificaçãoView.vue'
 import CorpoEBanhoView from '@/views/CorpoEBanhoView.vue'
 import MaquiagemView from '@/views/MaquiagemView.vue'
+import CabelosView from '@/views/CabelosView.vue'
 
 
 const router = createRouter({
@@ -87,6 +88,11 @@ const router = createRouter({
       path: '/maquiagem',
       name: 'maquiagem',
       component: MaquiagemView
+    },
+    {
+      path: '/cabelos',
+      name: 'cabelos',
+      component: CabelosView
     }
   ]
 })
