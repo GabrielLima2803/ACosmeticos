@@ -32,6 +32,7 @@
             <router-link to="/corpoBanho" class="header-links">Corpo é Banho</router-link>
             <router-link to="/maquiagem" class="header-links">Maquiagem</router-link>
             <router-link to="/cabelos" class="header-links">Cabelos</router-link>
+            <router-link to="/eudora" class="header-links">Eudora</router-link>
 
         </nav>
         <!-- NavBar -->
