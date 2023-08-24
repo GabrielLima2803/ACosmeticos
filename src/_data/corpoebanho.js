@@ -4,35 +4,35 @@ const nativaSpa = [
       nome:'Creme Morango Ruby',
       descricao:'Loção Desodorante Corporal 400ml',
       preco:'R$ 74,90',
-      img: 'https://i.ibb.co/59tYNb4/p-1-spa-1.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/products/B01428/NSPA-MORANGO-RUBY-LOC-ANTIOX-400ML_B01428_frontal_.jpg',
     },
     {
       id: 2,
       nome:'Creme Acquagel Quinoa',
       descricao:'Loção Desodorante Corporal 250g',
       preco:'R$ 69,90',
-      img: 'https://i.ibb.co/59tYNb4/p-1-spa-1.png'
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/products/B83454/2000x2000_CARD_PDP_83454_1.jpg'
     },
     {
       id: 3,
       nome:'Creme Limão e Patchouli',
       descricao:'Loção Desodorante Corporal 400ml',
       preco:'R$ 74,90',
-      img: 'https://i.ibb.co/ww2bVsp/p-3-spa.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_1800,c_limit/e_trim/v1/imagens/products/B48772/Lo%C3%A7%C3%A3o-Hidratante-Desodorante-Corporal-Nativa-SPA-Lim%C3%A3o-e-Patchouli-400ml.jpg',
     },
     {
       id: 4,
       nome:'Creme Pitaya',
       descricao:'Loção Desodorante Corporal 250g',
       preco:'R$ 59,90',
-      img: 'https://i.ibb.co/sgjZ1V6/p-4-spa.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B52634/a41e3a89-bf54-439f-ad7b-7b2a14d7dfb1-bot-52634-nativa-spa-pitaya-creme-hidratante-frontal-01.jpg',
     },
     {
       id: 5,
       nome:'Creme Caviar',
       descricao:'Loção Desodorante Corporal 400ml',
       preco:'R$ 74,90',
-      img: 'https://i.ibb.co/hWgyXdw/p-5-spa.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B48256/NSPA-LOC-HID-DES-CPO-CVR-400ml-V3_B48256.jpg',
     },
    
   
@@ -43,14 +43,14 @@ const cuideSeBem = [
       nome:'Body Splash Biscoito',
       descricao:'Desodorante Colônia 100ml',
       preco:'R$ 69,90',                     
-      img: 'https://i.ibb.co/vZQbSv4/p-1-cuide-se-bem.png',
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/product/B53098/660d3bf8-26ae-49b4-a9ef-aeb9bc6ada11-bot-53098-cuide-se-bem-biscoito-bolacha-body-splash-frontal-01.jpg',
     },
     {
       id: 2,
       nome:'Body Splash Boa noite',
       descricao:'Desodorante Colônia 100ml',
       preco:'R$ 69,90',
-      img: 'https://i.ibb.co/nsV8Q04/p-2-cuide-se-bem.png'
+      img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B82037/82037.jpg'
     },
     {
       id: 3,
