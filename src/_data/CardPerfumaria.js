@@ -160,7 +160,7 @@ const egeo = ref([
       descricao:'Desodorante Colônia 90ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82685/Egeo-Des-Col-Bomb-Black-C-Car-90Ml-B82685_.jpg',
-      hover:'', 
+      hover:'https://i.ibb.co/P1nPY7s/p-2-egeo.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82685/Egeo-Des-Col-Bomb-Black-C-Car-90Ml-B82685_.jpg'
     },
     {
@@ -169,7 +169,7 @@ const egeo = ref([
       descricao:'Desodorante Colônia 90ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B49812/EGEO-DES-COL-ORIGNL-90ml-V2_B49812.jpg',
-      hover:'', 
+      hover:'https://i.ibb.co/qrxDYkj/p-3-egeo.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B49812/EGEO-DES-COL-ORIGNL-90ml-V2_B49812.jpg'
     },
     {
@@ -178,7 +178,7 @@ const egeo = ref([
       descricao:'Desodorante Colônia 90ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82690/Egeo-Des-Col-Red-C-Cart-90Ml-B82690_.jpg',
-      hover:'', 
+      hover:'https://i.ibb.co/2ZZVfky/p-4-egeo.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82690/Egeo-Des-Col-Red-C-Cart-90Ml-B82690_.jpg'
     },
     {
@@ -187,7 +187,7 @@ const egeo = ref([
       descricao:'Desodorante Colônia 90ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B84214/Egeo-Des-Col-Spcy-Vibe-C-Car-90Ml-B84214_.jpg',
-      hover:'', 
+      hover:'https://i.ibb.co/p3BgmvP/p-5-egeo.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B84214/Egeo-Des-Col-Spcy-Vibe-C-Car-90Ml-B84214_.jpg'
     },
   ])
@@ -199,7 +199,7 @@ const lily = ref([
       descricao:'Eau de Parfum 75ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77989/LILY_EDP_LUMIERE_75ml_B77989.jpg',
-      hover:'https://i.ibb.co/K2MSkTj/p-1-lily-2.png',
+      hover:'https://i.ibb.co/54Z837y/p-1-lily.png',
       origin: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77989/LILY_EDP_LUMIERE_75ml_B77989.jpg'
     },
     {
@@ -208,7 +208,7 @@ const lily = ref([
       descricao:'Eau de Parfum 75ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77988/LILY_EDP-ABSOLU-75ml-V2-B77988_.jpg',
-      hover:'https://i.ibb.co/m6CVykV/lily-absolute.png', 
+      hover:'https://i.ibb.co/Qj8CWBs/lily-absolute.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77988/LILY_EDP-ABSOLU-75ml-V2-B77988_.jpg'
     },
     {
@@ -217,7 +217,7 @@ const lily = ref([
       descricao:'Eau de Parfum 75ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77524/Lily-Eau-de-Parfum-75ml-B77524_.jpg',
-      hover:'https://i.ibb.co/X2fmg0v/p-3-lily.png', 
+      hover:'https://i.ibb.co/sbc3XPS/p-3-lily.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77524/Lily-Eau-de-Parfum-75ml-B77524_.jpg'
     },
     {
@@ -226,7 +226,7 @@ const lily = ref([
       descricao:'Eau de Parfum 75ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B48734/LILY-PARFUM-LE-30ml_B48734_.jpg',
-      hover:'https://i.ibb.co/1KHm8NQ/p-4-lily.png', 
+      hover:'https://i.ibb.co/8b1KtFW/p-4-lily.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B48734/LILY-PARFUM-LE-30ml_B48734_.jpg'
     },
     {
@@ -235,7 +235,7 @@ const lily = ref([
       descricao:'Eau de Parfum 75ml',
       preco:'R$ 279,90',
       img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B74721/316cf4a4-5f96-445d-b57c-c65ba713a93c-love-lily-eau-de-parfum-75ml.png',
-      hover:'https://i.ibb.co/sFmH30Y/lily2.jpg', 
+      hover:'https://i.ibb.co/fYht1Jg/love-lily.png', 
       original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B74721/316cf4a4-5f96-445d-b57c-c65ba713a93c-love-lily-eau-de-parfum-75ml.png'
     },
   ])
