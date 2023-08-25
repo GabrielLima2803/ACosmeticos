@@ -9,7 +9,7 @@
             <!-- Header Roxo -->
         </div>
         <!-- Header Logo -->
-        <div class="header-logo">
+        <div class="header-logo pt-3">
             <div class="logo">
                 <img src="@/img/icon-Header/LogoAcosmeticos.png" alt="" class="hd-logo-margin">
             </div>
@@ -21,7 +21,7 @@
         </div>
         <!-- Header Icons -->
 
-        <nav class="header-nav">
+        <nav class="header-nav p-3">
             <router-link to="/" class="header-links">Inicio</router-link>
             <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
             <router-link to="/duvidas" class="header-links">Ajuda</router-link>
@@ -37,6 +37,11 @@
 </template>
 
 <style scoped>
+/* 
+.p-4 {
+    padding: .5em 0 0 0;
+} */
+
 .header-roxa {
     width: 100%;
     background-color: #43055d;

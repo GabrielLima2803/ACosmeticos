@@ -1,26 +1,40 @@
-// import './assets/main.css'
 
 import { createApp } from 'vue'
+import '@/assets/main.css'
 // import { createPinia } from 'pinia';
 
 import App from './App.vue'
 import router from './router'
 import './plugins/axios';
 
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 
 // Vuetify
 import 'vuetify/styles'
 import { createVuetify } from 'vuetify'
+import { aliases, fa } from 'vuetify/iconsets/fa'
+import { mdi } from 'vuetify/iconsets/mdi'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import "@mdi/font/css/materialdesignicons.css";
 
 const vuetify = createVuetify({
   components,
   directives,
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi, fa
+    },
+  },
 })
+
+
 
 const app = createApp(App)
 

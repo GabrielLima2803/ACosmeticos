@@ -41,7 +41,41 @@ const toggleEnviarProdutoDescricao = () => {
 
 <template>
   <div class="button-container">
-    <div class="button-item">
+      <div class="button-item">
+        <button @click="toggleEnviarProdutoDescricao" class="button-color">Produto</button>
+        <div v-if="enviarProdutoDescricao" class="borderDiv" >
+          <h6>Produto</h6>
+          <div class="marginP">
+            <p class="titulo">Malbec Club Intenso Desodorante Colônia 100ml</p>
+            <p>
+              Malbec Club Intenso é uma fragrância amadeirada surpreendentemente mais sofisticada e
+              intensa que a original, mas com o mesmo DNA sofisticado e irresistível.
+            </p>
+            <p>
+              Malbec é uma fragrância única, desenvolvida através de um processo de fabricação
+              exclusivo no mundo. O álcool vínico, obtido através da fermentação da uva, é envelhecido
+              em barris de carvalho francês, iguais àqueles em que descansam os melhores vinhos do
+              mundo.
+            </p>
+      
+            <p>
+              Possui ingredientes nobres e puros como a madeira, o âmbar e o musk, ideal para agradar
+              a homens de vários estilos.
+            </p>
+      
+            <p>
+              Representando a masculinidade de uma forma única, essa fragrância é feita para homens
+              que sabem se impor. Que são notados por onde passam. Que têm a essência da conquista em
+              tudo o que fazem.
+            </p>
+            <p>
+              Esse Amadeirado Aromático possui frasco feito de vidro reciclado, evitando o desperdício
+              de centenas de toneladas de material.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="button-item">
       <button @click="toggleEnviarProduto">Pirâramide olfatica</button>
       <div v-if="enviarProduto" class="borderDiv">
         <h6>Pirâramide olfatica</h6>
@@ -99,40 +133,26 @@ const toggleEnviarProdutoDescricao = () => {
         </div>
       </div>
     </div>
-    <div class="button-item">
-      <button @click="toggleEnviarProdutoDescricao">Produto</button>
-      <div v-if="enviarProdutoDescricao" class="borderDiv">
-        <h6>Produto</h6>
-        <div class="marginP">
-          <p class="titulo">Malbec Club Intenso Desodorante Colônia 100ml</p>
-          <p>
-            Malbec Club Intenso é uma fragrância amadeirada surpreendentemente mais sofisticada e
-            intensa que a original, mas com o mesmo DNA sofisticado e irresistível.
-          </p>
-
-          <p>
-            Malbec é uma fragrância única, desenvolvida através de um processo de fabricação
-            exclusivo no mundo. O álcool vínico, obtido através da fermentação da uva, é envelhecido
-            em barris de carvalho francês, iguais àqueles em que descansam os melhores vinhos do
-            mundo.
-          </p>
-
-          <p>
-            Possui ingredientes nobres e puros como a madeira, o âmbar e o musk, ideal para agradar
-            a homens de vários estilos.
-          </p>
-
-          <p>
-            Representando a masculinidade de uma forma única, essa fragrância é feita para homens
-            que sabem se impor. Que são notados por onde passam. Que têm a essência da conquista em
-            tudo o que fazem.
-          </p>
-          <p>
-            Esse Amadeirado Aromático possui frasco feito de vidro reciclado, evitando o desperdício
-            de centenas de toneladas de material.
-          </p>
-        </div>
-      </div>
+  </div>
+  <div>
+    <h2>Avaliações</h2>
+<div class="pontuacao">
+<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+<v-icon aria-hidden="false" color="#43055d">mdi-star-outline</v-icon> 
+<div class="pPontuacao">
+  <p >4.8</p>
+</div>
+  </div>
+    <div>
+      <h6 class="h6-preto">Avaliações Boas</h6>
+      <v-progress-linear color="#43055d" model-value="50" :height="8" class="v-progress"></v-progress-linear>
+    </div>
+     <div>
+      <h6 class="h6-preto">Avaliações Ruins</h6>
+      <v-progress-linear color="#43055d" model-value="10" :height="8" class="v-progress"></v-progress-linear>
     </div>
   </div>
 </template>
@@ -140,10 +160,17 @@ const toggleEnviarProdutoDescricao = () => {
 <style scoped>
 .button-container {
   display: flex;
-  flex-direction: column; /* Alinhe os botões verticalmente */
-  justify-content: flex-start;
-  align-items: flex-start;
 }
+
+.content-container {
+  position: relative; /* Set the position to relative */
+}
+
+.borderDiv {
+  border: 2px solid #43055d;
+}
+
+/* Add this style to show the opened content div */
 .button-item {
   margin-right: 20px; /* Adapte o espaçamento conforme necessário */
   margin-bottom: 20px; /* Espaçamento entre os itens */
@@ -165,4 +192,23 @@ h6 {
 button {
   margin: 20px;
 }
+.v-progress{
+  width: 455px;
+  margin-left: -35%;
+}
+.h6-preto{
+  color: black;
+}
+.pontuacao{
+  display: flex;
+}
+.pPontuacao{
+  margin-left: 4px;
+}
+
+.button-item button:focus {
+  color: #45033d; /* Temporary color when clicked */
+  text-decoration: underline; /* Add the text decoration you want */
+}
+
 </style>
