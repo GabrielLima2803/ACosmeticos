@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed } from 'vue'
+import { perfumaria1 } from '@/_data/perfumaria.js'
 
 const enviarProduto = ref(false)
 const enviarComoUsar = ref(false)
@@ -37,120 +38,154 @@ const toggleEnviarProdutoDescricao = () => {
   enviarComoUsar.value = false
   enviarIngredientes.value = false
 }
-</script>
 
+const maxRating = 5
+const rating = ref(0)
+  
+const setRating = (value) => {
+  rating.value = value
+}
+</script>
 <template>
-  <div class="button-container">
-      <div class="button-item">
-        <button @click="toggleEnviarProdutoDescricao" class="button-color">Produto</button>
-        <div v-if="enviarProdutoDescricao" class="borderDiv" >
-          <h6>Produto</h6>
-          <div class="marginP">
-            <p class="titulo">Malbec Club Intenso Desodorante Colônia 100ml</p>
-            <p>
-              Malbec Club Intenso é uma fragrância amadeirada surpreendentemente mais sofisticada e
-              intensa que a original, mas com o mesmo DNA sofisticado e irresistível.
-            </p>
-            <p>
-              Malbec é uma fragrância única, desenvolvida através de um processo de fabricação
-              exclusivo no mundo. O álcool vínico, obtido através da fermentação da uva, é envelhecido
-              em barris de carvalho francês, iguais àqueles em que descansam os melhores vinhos do
-              mundo.
-            </p>
-      
-            <p>
-              Possui ingredientes nobres e puros como a madeira, o âmbar e o musk, ideal para agradar
-              a homens de vários estilos.
-            </p>
-      
-            <p>
-              Representando a masculinidade de uma forma única, essa fragrância é feita para homens
-              que sabem se impor. Que são notados por onde passam. Que têm a essência da conquista em
-              tudo o que fazem.
-            </p>
-            <p>
-              Esse Amadeirado Aromático possui frasco feito de vidro reciclado, evitando o desperdício
-              de centenas de toneladas de material.
-            </p>
+  <div class="container">
+    <div class="carrosel">
+    </div>
+    <div class="info-produto">
+      <div class="card-cosmeticos">
+        <div v-for="(categoria, index) in perfumaria1" :key="index" class="categoria-card">
+          <div v-if="categoria.tipo === 'Malbec'">
+            <div v-for="produto in categoria.produtos" :key="produto.id">
+              <div v-if="produto.id === 3" class="flexCard">
+                <p class="descricao-Cos">{{ produto.nome }} {{ produto.descricao }}</p>
+                <div class="text-center">
+                  <div class="rating-container">
+                    <div class="rating">
+                      <span v-for="n in maxRating" :key="n" class="star" :class="{ 'filled': n <= rating }"
+                        @click="setRating(n)">
+                        <span class="star-border">&#9733;</span>
+                      </span>
+                    </div>
+                    <div class="rating-status">
+                      {{ rating > 0 ? 'AVALIADO' : 'SEM AVALIAÇÃO' }}
+                    </div>
+                  </div>
+                </div>
+                <p class="preco-Cos">{{ produto.preco }}</p>
+                <p class="vezes">9x de R$ 22,21</p>
+                <button type="button" class="Button-CardPay">Comprar</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="button-item">
-      <button @click="toggleEnviarProduto">Pirâramide olfatica</button>
-      <div v-if="enviarProduto" class="borderDiv">
-        <h6>Pirâramide olfatica</h6>
-        <div class="marginP">
-          <p>Conselho de Aplicação</p>
-          <p>Aplique sob os lugares de maior circulação sanguínea.</p>
-          <p>
-            ORIENTAÇÕES AO CONSUMIDOR: Inflamável. Evite contato com os olhos. Não aplique em pele
-            irritada ou lesionada e evite aplicar nas axilas. Caso ocorra irritação e/ou prurido no
-            local, suspenda o uso imediatamente. Descontinue o uso em caso de sensibilização.
-            Conserve o produto bem fechado, longe da luz e do calor excessivo. Somente para uso
-            externo. Mantenha fora do alcance de crianças. Produto para perfumar e desodorizar a
-            pele.
-          </p>
-          <p>
-            Devido à presença de alguns ingredientes, a cor do produto pode variar, porém sem
-            comprometer sua qualidade ou segurança.
-          </p>
-        </div>
-      </div>
     </div>
-    <div class="button-item">
-      <button @click="toggleEnviarComoUsar">Como Usar</button>
-      <div v-if="enviarComoUsar" class="borderDiv">
-        <h6>Como Usar</h6>
-        <div class="marginP">
-          <p>Conselho de Aplicação</p>
-          <p>Aplique sob os lugares de maior circulação sanguínea.</p>
-          <p>
-            ORIENTAÇÕES AO CONSUMIDOR: Inflamável. Evite contato com os olhos. Não aplique em pele
-            irritada ou lesionada e evite aplicar nas axilas. Caso ocorra irritação e/ou prurido no
-            local, suspenda o uso imediatamente. Descontinue o uso em caso de sensibilização.
-            Conserve o produto bem fechado, longe da luz e do calor excessivo. Somente para uso
-            externo. Mantenha fora do alcance de crianças. Produto para perfumar e desodorizar a
-            pele.
-          </p>
-          <p>
-            Devido à presença de alguns ingredientes, a cor do produto pode variar, porém sem
-            comprometer sua qualidade ou segurança.
-          </p>
-        </div>
-      </div>
+  </div>
+  <div class="button-container">
+    <button @click="toggleEnviarProdutoDescricao" :class="{ 'active': enviarProdutoDescricao }">Produto</button>
+    <button @click="toggleEnviarProduto" :class="{ 'active': enviarProduto }">Pirâmide olfativa</button>
+    <button @click="toggleEnviarComoUsar" :class="{ 'active': enviarComoUsar }">Como Usar</button>
+    <button @click="toggleEnviarIngredientes" :class="{ 'active': enviarIngredientes }">Ingredientes</button>
+  </div>
+
+  <div class="borderDiv" v-if="enviarProduto">
+    <h6>Produto</h6>
+    <div class="marginP">
+      <p class="titulo">Malbec Club Intenso Desodorante Colônia 100ml</p>
+      <p>
+        Malbec Club Intenso é uma fragrância amadeirada surpreendentemente mais sofisticada e
+        intensa que a original, mas com o mesmo DNA sofisticado e irresistível.
+      </p>
+      <p>
+        Malbec é uma fragrância única, desenvolvida através de um processo de fabricação
+        exclusivo no mundo. O álcool vínico, obtido através da fermentação da uva, é envelhecido
+        em barris de carvalho francês, iguais àqueles em que descansam os melhores vinhos do
+        mundo.
+      </p>
+
+      <p>
+        Possui ingredientes nobres e puros como a madeira, o âmbar e o musk, ideal para agradar
+        a homens de vários estilos.
+      </p>
+
+      <p>
+        Representando a masculinidade de uma forma única, essa fragrância é feita para homens
+        que sabem se impor. Que são notados por onde passam. Que têm a essência da conquista em
+        tudo o que fazem.
+      </p>
+      <p>
+        Esse Amadeirado Aromático possui frasco feito de vidro reciclado, evitando o desperdício
+        de centenas de toneladas de material.
+      </p>
+    </div>
+  </div>
+  <div class="borderDiv" v-if="enviarProdutoDescricao">
+    <h6>Pirâramide olfatica</h6>
+    <div class="marginP">
+      <p>Conselho de Aplicação</p>
+      <p>Aplique sob os lugares de maior circulação sanguínea.</p>
+      <p>
+        ORIENTAÇÕES AO CONSUMIDOR: Inflamável. Evite contato com os olhos. Não aplique em pele
+        irritada ou lesionada e evite aplicar nas axilas. Caso ocorra irritação e/ou prurido no
+        local, suspenda o uso imediatamente. Descontinue o uso em caso de sensibilização.
+        Conserve o produto bem fechado, longe da luz e do calor excessivo. Somente para uso
+        externo. Mantenha fora do alcance de crianças. Produto para perfumar e desodorizar a
+        pele.
+      </p>
+      <p>
+        Devido à presença de alguns ingredientes, a cor do produto pode variar, porém sem
+        comprometer sua qualidade ou segurança.
+      </p>
+    </div>
+  </div>
+
+  <div class="borderDiv" v-if="enviarComoUsar">
+    <h6>Como Usar</h6>
+    <div class="marginP">
+      <p>Conselho de Aplicação</p>
+      <p>Aplique sob os lugares de maior circulação sanguínea.</p>
+      <p>
+        ORIENTAÇÕES AO CONSUMIDOR: Inflamável. Evite contato com os olhos. Não aplique em pele
+        irritada ou lesionada e evite aplicar nas axilas. Caso ocorra irritação e/ou prurido no
+        local, suspenda o uso imediatamente. Descontinue o uso em caso de sensibilização.
+        Conserve o produto bem fechado, longe da luz e do calor excessivo. Somente para uso
+        externo. Mantenha fora do alcance de crianças. Produto para perfumar e desodorizar a
+        pele.
+      </p>
+      <p>
+        Devido à presença de alguns ingredientes, a cor do produto pode variar, porém sem
+        comprometer sua qualidade ou segurança.
+      </p>
+    </div>
+  </div>
+
+  <div class="borderDiv" v-if="enviarIngredientes">
+    <h6>Ingredientes</h6>
+    <div class="marginP">
+      <p>
+        Álcool Desnaturado; Perfume; Água; Caprililglicol; Benzoato De Benzila; Cinamaldeído;
+        Citral; Cumarina; Eugenol; Extrato De Evernia Prunastri; Geraniol; Isoeugenol; Limoneno;
+        Linalol.
+      </p>
     </div>
 
-    <div class="button-item">
-      <button @click="toggleEnviarIngredientes">Ingredientes</button>
-      <div v-if="enviarIngredientes" class="borderDiv">
-        <h6>Ingredientes</h6>
-        <div class="marginP">
-          <p>
-            Álcool Desnaturado; Perfume; Água; Caprililglicol; Benzoato De Benzila; Cinamaldeído;
-            Citral; Cumarina; Eugenol; Extrato De Evernia Prunastri; Geraniol; Isoeugenol; Limoneno;
-            Linalol.
-          </p>
-        </div>
+  </div>
+  <div class="avaliacao">
+    <h2>Avaliações</h2>
+    <div class="pontuacao">
+      <v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+      <v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+      <v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+      <v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
+      <v-icon aria-hidden="false" color="#43055d">mdi-star-outline</v-icon>
+      <div class="pPontuacao">
+        <p>4.8</p>
       </div>
     </div>
-  </div>
-  <div>
-    <h2>Avaliações</h2>
-<div class="pontuacao">
-<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
-<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
-<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
-<v-icon aria-hidden="false" color="#43055d">mdi-star</v-icon>
-<v-icon aria-hidden="false" color="#43055d">mdi-star-outline</v-icon> 
-<div class="pPontuacao">
-  <p >4.8</p>
-</div>
-  </div>
     <div>
       <h6 class="h6-preto">Avaliações Boas</h6>
       <v-progress-linear color="#43055d" model-value="50" :height="8" class="v-progress"></v-progress-linear>
     </div>
-     <div>
+    <div>
       <h6 class="h6-preto">Avaliações Ruins</h6>
       <v-progress-linear color="#43055d" model-value="10" :height="8" class="v-progress"></v-progress-linear>
     </div>
@@ -160,55 +195,175 @@ const toggleEnviarProdutoDescricao = () => {
 <style scoped>
 .button-container {
   display: flex;
+  justify-content: flex-start;
+}
+
+.active {
+  color: #45033d;
+  /* Color for active button */
+  text-decoration: underline;
 }
 
 .content-container {
-  position: relative; /* Set the position to relative */
+  position: absolute;
+  top: 100%;
+  /* Position the content below the button */
+  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
 .borderDiv {
   border: 2px solid #43055d;
+  margin-top: 20px;
 }
 
-/* Add this style to show the opened content div */
-.button-item {
-  margin-right: 20px; /* Adapte o espaçamento conforme necessário */
-  margin-bottom: 20px; /* Espaçamento entre os itens */
-}
 h6 {
   color: #43055d;
   margin: 20px;
 }
+
 .borderDiv {
   border: 2px solid #43055d;
   width: 890px;
 }
+
 .marginP {
   margin: 20px;
 }
+
 .titulo {
   font-weight: bold;
 }
+
 button {
   margin: 20px;
 }
-.v-progress{
+
+.avaliacao {
+  margin-top: 40px;
+}
+
+.v-progress {
   width: 455px;
-  margin-left: -35%;
+  margin-left: -34%;
 }
-.h6-preto{
+
+.h6-preto {
   color: black;
+  margin-left: -2px;
 }
-.pontuacao{
+
+.pontuacao {
   display: flex;
 }
-.pPontuacao{
+
+.pPontuacao {
   margin-left: 4px;
 }
 
 .button-item button:focus {
-  color: #45033d; /* Temporary color when clicked */
-  text-decoration: underline; /* Add the text decoration you want */
+  color: #45033d;
+  /* Temporary color when clicked */
+  text-decoration: underline;
+  /* Add the text decoration you want */
 }
 
+.descricao-Cos {
+  font-size: x-large;
+  width: 400px;
+  margin-left: 20px;
+}
+
+.preco-Cos {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-left: 70px;
+}
+
+.vezes {
+  font-size: large;
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+  /* Stack the price and '9x de R$ 22,21' vertically */
+  align-items: flex-end;
+  /* Align items to the right */
+  margin-right: 140px;
+}
+
+.Button-CardPay {
+  width: 380px;
+  height: 50px;
+  background-color: #43055d;
+  color: white;
+  font-size: large;
+}
+
+.carrosel {
+  width: 400px;
+  height: 400px;
+  background-color: black;
+}
+
+.info-produto {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20px;
+  border-left: 1px solid #B9B9B9;
+  /* Add a thin black vertical line to separate sections */
+  padding-left: 20px;
+  /* Add some left padding to the info-produto section */
+}
+
+.container {
+  display: flex;
+  /* Display the carrosel and info-produto side by side */
+  margin-top: 100px;
+}
+
+.carrosel {
+  flex: 1;
+  /* Take up available space */
+  /* Other carrosel styles */
+}
+
+.info-produto {
+  flex: 1;
+  /* Take up available space */
+  margin-left: 20px;
+  /* Add some space between carrosel and info-produto */
+  /* Other info-produto styles */
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  margin-left: 80px;
+  margin-top: px;
+  margin-bottom: 20px;
+}
+
+.star {
+  font-size: 24px;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.star-border {
+  color: #d3d3d3; /* Cor da borda da estrela */
+}
+
+.filled .star-border {
+  color: #43055d; /* Cor da estrela preenchida */
+}
+
+.rating-status {
+  margin-left: 8px;
+  color: #43055d;
+  font-size: x-small;
+
+}
 </style>
