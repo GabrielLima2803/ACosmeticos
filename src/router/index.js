@@ -16,6 +16,7 @@ import CabelosView from '@/views/Marcas/Oboticario/Oboticario-Cards/CabelosView.
 import EudoraView from '@/views/EudoraView.vue'
 
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

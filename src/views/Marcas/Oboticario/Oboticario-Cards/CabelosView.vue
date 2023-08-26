@@ -1,11 +1,16 @@
 <script setup>
-import CardCabelos from '../../../../components/main/CardsFullOboticario/CardCabelos.vue';
+import FullCardCabelos from '../../../../components/main/CardsFullOboticario/FullCardCabelos.vue';
 </script>
 
 <template>
-<card-cabelos/>
+    <h1>Cabelos</h1>
+<full-card-cabelos/>
 </template>
 
 <style scoped>
-
+h1{
+    text-decoration: none;
+    text-align: center;
+    margin: 50px;
+}
 </style>

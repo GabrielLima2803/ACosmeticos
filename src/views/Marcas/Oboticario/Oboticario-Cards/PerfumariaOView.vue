@@ -1,13 +1,18 @@
 <script setup>
 
-import CardPerfumaria from '../../../../components/main/CardsFullOboticario/CardPerfumaria.vue';
+import FullCardPerfumaria from '@/components/main/CardsFullOboticario/FullCardPerfumaria.vue';
 
 </script>
 
 <template>
-<card-perfumaria/>
+    <h1>Perfumaria</h1>
+<full-card-perfumaria/>
 </template>
 
 <style scoped>
-
+h1{
+    text-decoration: none;
+    text-align: center;
+    margin: 50px;
+}
 </style>
