@@ -1,16 +1,16 @@
 <script setup>
 import { perfumaria1 } from '@/_data/perfumaria.js'
-import { ref } from 'vue'
+// import { ref } from 'vue'
 
-const tipoSelecionado = ref('') // State to store selected type
+// const tipoSelecionado = ref('') // State to store selected type
 
 // Function to set selected type
-const setSelectedType = (tipo) => {
-  tipoSelecionado.value = tipo
-}
+// const setSelectedType = (tipo) => {
+//   tipoSelecionado.value = tipo
+// }
 
 // Call the function to set the initial type
-setSelectedType(perfumaria1[0].tipo)
+// setSelectedType(perfumaria1[0].tipo)
 
 </script>
 

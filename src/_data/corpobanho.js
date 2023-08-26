@@ -108,7 +108,7 @@ const corpoBanho = [
         id: 14,
         nome: 'Desodorante Liz',
         descricao: 'Hidratante Desodorante Corporal 200ml',
-        preco: 'R$ 33,90',
+        preco: 'R$ 33,80',
         img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B83065/DES-ANTIT-AER-LIZ-SUBLIME_B83065_fechado.jpg'
       },
       {
