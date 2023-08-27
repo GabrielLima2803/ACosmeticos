@@ -10,7 +10,7 @@
       </div>
       <v-expansion-panels class="marginPanel">
         <v-expansion-panel class="TamanhoPanel">
-          <v-expansion-panel-title expand-icon="mdi-plus" collapse-icon="mdi-minus">
+          <v-expansion-panel-title expand-icon="mdi-plus">
             <img src="@/img/Main-img/Main-Panel/bolsa.png" alt="" width="15">
             <p class="pTitle">Prazo e Entrega</p>
           </v-expansion-panel-title>
@@ -21,6 +21,7 @@
             informações
             a respeito dos tipos de frete, bem como o procedimento de entrega podem ser obtidas na Central de Atendimento.
             <br />
+            <br />
             A entrega normal é realizada (em avaliação) de segunda à sexta-feira das 8h às 20h. O USUÁRIO saberá o prazo
             de entrega ao digitar seu CEP no momento de finalização da sua compra. Após aprovação, o USUÁRIO também
             receberá um e-mail informando o status do seu pedido, o prazo de entrega e link com tracking para
@@ -28,7 +29,10 @@
             Para a cidade de São Paulo é oferecida a possibilidade de agendar a entrega. Para isso, no momento da
             finalização da sua compra selecione “entrega agendada” e escolha a data e período dentro do calendário
             disponível. Em alguns estados (SP, MG, RJ, PR) alguns clientes poderão ter a opção de contratar o Frete
+            <br />
+            <br />
             Expresso. <br />
+
             O frete será isento nas seguintes condições:
             <ul>
               <li>
@@ -48,11 +52,12 @@
             O Calculo frete baseado na relação peso/região/cidade e quantidade de itens e o valor a ser pago será
             apresentado no carrinho de compras.
             <br />
+            <br />
             A Loja Virtual ACosmeticos não tem controle ou responsabilidade em casos de atrasos na entrega ou extravio.
             Caso
             nosso entregador não encontre ninguém no local indicado, fará até três tentativas.
             O endereço do USUÁRIO deve ser informado da forma correta, com todos os detalhes, pois caso não seja
-            localizado por motivos de irregularidade, os custos de envio ficarão a cargo do comprador. <br />
+            localizado por motivos de irregularidade, os custos de envio ficarão a cargo do comprador. <br /> <br />
             Os prazos de entrega poderão ser alterados nas seguintes situações: inconsistência nos dados informados no
             cadastro; dificuldades na confirmação do cadastro para liberação do pedido; ausência de responsável para
             receber o produto no local de entrega. Recusa no recebimento da mercadoria por terceiros. Fatores naturais
@@ -71,11 +76,14 @@
             produto(s) adquirido(s) em até 07 (sete) dias úteis contados do seu recebimento. Pedimos ao USUÁRIO que acesse
             a Política de Troca e Devoluções para maiores informações sobre como proceder e os procedimentos envolvidos.
             <br />
+            <br />
             A mercadoria deverá ser devolvida através do serviço de postagem em qualquer agência dos Correios. A
             autorização de postagem é totalmente sem custos para o cliente.
             <br />
+            <br />
             O produto deve ser devolvido em sua embalagem original, sem qualquer indício de uso, e acompanhado de todos os
             acessórios e manuais.
+            <br />
             <br />
             O produto que não atender às condições exigidas acima, não será aceito como devolução e automaticamente será
             remetido de volta ao endereço de origem.
@@ -97,6 +105,7 @@
             <br />
             <br />
             <strong>1. INFORMAÇÕES GERAIS SOBRE A LOJA VIRTUAL Acosméticos</strong>
+            <br />
             1.1. A Acosméticos passa a disponibilizar a possibilidade de compras de produtos para clientes finais através
             da
             plataforma de e-commerce hospedada no endereço eletrônico loja.Acosméticos.com.br. As condições comerciais
@@ -107,6 +116,7 @@
             <br />
             <br />
             <strong>1.2. CONDIÇÕES PARA O CONSULTOR (A) Acosméticos</strong>
+            <br />
             1.2.1. O (a) Consultor (a) Acosméticos poderá efetuar suas compras na Loja Virtual Acosméticos realizando um
             novo
             cadastro e se identificando como consultora Acosméticos.
@@ -124,6 +134,7 @@
             <br />
             <br />
             <strong>1.3. CONDIÇÕES PARA O NÃO CONSULTOR (A) Acosméticos</strong>
+            <br />
             1.3.1. O consumidor final poderá efetuar suas compras diretamente do site sem a utilização de um código de
             Consultor (a).
             <br />
@@ -152,7 +163,7 @@
 
       <v-expansion-panels class="marginPanel">
         <v-expansion-panel>
-          <v-expansion-panel-title expand-icon="mdi-plus" collapse-icon="mdi-minus">
+          <v-expansion-panel-title expand-icon="mdi-plus">
             <img src="@/img/Main-img/Main-Panel/medalha.png" alt="" width="11">
             <p class="pTitle">Política e Privacidade </p>
           </v-expansion-panel-title>
@@ -203,12 +214,13 @@
                 Durante a navegação do site, por meio de cookies.
               </li>
               <li>
-                Após você manifestar interesse em se tornar um(a) consultor(a) da Acosméticos e se cadastrar, seja por meio de
-            formulário ou pelo nosso site.
+                Após você manifestar interesse em se tornar um(a) consultor(a) da Acosméticos e se cadastrar, seja por
+                meio de
+                formulário ou pelo nosso site.
               </li>
               <li>
                 Eventualmente, também podemos receber informações indiretamente, provenientes de empresas pertencentes ao
-            Grupo Silvio Santos e de nossos parceiros comerciais.
+                Grupo Silvio Santos e de nossos parceiros comerciais.
               </li>
             </ul>
             <br />
@@ -229,50 +241,28 @@
             <br />
 
             <strong>4.FINALIDADES DA COLETA DE INFORMAÇÕES</strong>
+            <br />
+            <br />
             Utilizamos as informações que você nos fornece para os seguintes fins:
-
-            Envio de promoções e atualizações de produtos e pedidos.
-            Proteção ao crédito.
-            Melhoria da experiência do usuário.
-            5. COMPARTILHAMENTO DE DADOS
+            <ul>
+              <li>
+                Envio de promoções e atualizações de produtos e pedidos.
+              </li>
+              <li>
+                Proteção ao crédito.
+              </li>
+              <li>
+                Melhoria da experiência do usuário.
+              </li>
+            </ul>
+            <br />
+            <br />
+            <strong>5. COMPARTILHAMENTO DE DADOS</strong>
+            <br />
+            <br />
             Podemos compartilhar suas informações com nossos parceiros comerciais e empresas pertencentes ao Grupo Silvio
             Santos exclusivamente para a divulgação de nossos produtos e promoções.
 
-            6. MEDIDAS DE SEGURANÇA
-            A Acosméticos adota medidas técnicas e organizacionais para garantir a segurança das informações pessoais,
-            evitando sua manipulação, perda, tratamento ou acesso não autorizado.
-
-            7. RETENÇÃO DOS DADOS PESSOAIS
-            Armazenamos seus dados pessoais pelo tempo necessário para cumprir obrigações legais, contratuais, fiscais,
-            administrativas e assemelhadas decorrentes de nosso vínculo. Além disso, os dados serão retidos pelo prazo
-            necessário para suporte empresarial e/ou auxílio em processos administrativos, fiscais ou judiciais, bem como
-            para resguardar interesses legítimos da companhia. Após o prazo estipulado ou consentimento revogado, as
-            informações serão descartadas.
-
-            8. SEUS DIREITOS DE PROTEÇÃO DE DADOS
-            Você tem os seguintes direitos em relação aos seus dados pessoais:
-
-            Confirmação da existência de tratamento;
-            Acesso aos dados;
-            Correção de dados incompletos, inexatos ou desatualizados;
-            Anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com a
-            LGPD, desde que estes dados não estejam mantidos para cumprimento de obrigação legal;
-            Portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com
-            a regulamentação da Autoridade Nacional, observados os segredos comercial e industrial, se aplicável;
-            Eliminação dos dados pessoais tratados com o consentimento do titular, exceto nas hipóteses previstas no art.
-            16 da Lei;
-            Informação das entidades públicas e privadas com as quais o Controlador realizou uso compartilhado de dados;
-            Informação sobre a possibilidade de não fornecer consentimento e sobre as consequências da negativa;
-            Revogação do consentimento.
-            9. COMO APRESENTAR UMA RECLAMAÇÃO
-            Você pode revogar o seu consentimento a qualquer momento. Se tiver alguma preocupação sobre o uso de suas
-            informações pessoais, você pode fazer uma reclamação enviando um e-mail para dpo@Acosméticos.com.br
-            Além disso, caso suas solicitações ou dúvidas não sejam sanadas, você tem o direito de apresentar uma
-            reclamação junto à Autoridade Nacional de Proteção de Dados (ANPD).
-
-            10. ALTERAÇÕES NA POLÍTICA DE PRIVACIDADE
-            A Acosméticos reserva-se o direito de modificar esta Política de Privacidade quando considerar necessário.
-            Recomendamos que você revise periodicamente este documento para estar ciente de possíveis alterações.
           </v-expansion-panel-text>
         </v-expansion-panel>
 
@@ -282,9 +272,38 @@
             <p class="pTitle">Perguntas Frequentes</p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
+            <strong>1. ONDE E COMO COMPRAR? </strong>
+            <br />
+            <br />
+            Os produtos da ACosmeticos podem ser adquiridos pela Loja Online (loja.ACosmeticos.com.br) ou através de uma
+            consultora ACosmeticos.
+            <br /><br />
+
+            <strong>2. ESQUECI A MINHA SENHA CADASTRADA, AINDA ASSIM POSSO COMPRAR? </strong>
+            <br /><br />
+            Sim, a compra na Loja ACosmeticos é rápida e segura, sem necessidade de senha. Apenas com seu e-mail você
+            consegue
+            efetuar uma compra com toda segurança. Caso você tenha esquecido sua senha e precise alterar algum dado de
+            cadastro, você pode solicitar acesso rápido através de um código que será enviado para o seu email.
+            <br /><br />
+            <strong>3. COMO ALTERAR MEUS DADOS CADASTRAIS? </strong>
+            <br /><br />
+            Você pode alterar seus dados cadastrais no site loja.ACosmeticos.com.br na área "Meu Perfil"
+            <br /><br />
+            <strong>4. O E-COMMERCE MANTÉM O CATÁLOGO NOS EPISÓDIOS (CICLOS) VIGENTES PARA A MINHA REGIÃO? </strong>
+            <br /><br />
+            Sim, a Loja Online ACosmeticos respeita as datas de abertura e fechamento de Episódios (Ciclos) da Venda
+            Direta
+            conforme a sua região. Sendo assim, os produtos e preços disponíveis no site são os mesmos dos oferecidos
+            pelas Consultoras ACosmeticos na Venda Direta através do nosso catálogo "Ao Vivo" (antigo Colheita). Algumas
+            promoções de produtos e preços podem estar disponíveis exclusivamente na Loja Online. Nesses casos, a condição
+            será válida somente pelo período comunicado da promoção, ou enquanto durarem os estoques.
+            <br /><br />
+            <strong>5. EXISTE DIFERENÇA ENTRE PRODUTOS E PREÇOS DISPONÍVEIS NO SITE E NA VENDA DIRETA?</strong>
+            <br /><br />
+            Na maior parte dos casos não. Os preços e produtos serão os mesmos. Podem ocorrer exceções com descontos
+            exclusivos para a Loja Online.
+            <br /><br />
           </v-expansion-panel-text>
         </v-expansion-panel>
 
@@ -294,9 +313,18 @@
             <p class="pTitle">Alerta</p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
+            Aproveitando-se das dificuldades que estamos vivendo, golpistas estão usando o nome da ACosmeticos e de alguns
+            artistas para enganar as pessoas com ações fraudulentas.
+            <br /><br />
+            Reforçamos que a ACosmeticos não está fazendo nenhuma campanha com sorteios de casas e, em hipótese alguma,
+            solicita depósito de qualquer valor para uma pessoa sorteada em seus programas.
+            <br /><br />
+            Todas as ações da ACosmeticos são divulgadas nos canais oficiais da própria empresa. Portanto, caso receba
+            algum contato ou acesso a campanhas fora desses canais, desconfie, pois é provável que seja um golpe.
+            <br /><br />
+            As pessoas que são sorteadas para participarem dos programas <strong>ACosmeticos </strong>, são contatadas
+            somente por ligação telefônica e nunca por links em redes sociais, SMS ou Whatsapp. Caso você receba esse tipo
+            de contato, desconsidere imediatamente e informe as autoridades competentes.
           </v-expansion-panel-text>
         </v-expansion-panel>
       </v-expansion-panels>

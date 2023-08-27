@@ -146,4 +146,10 @@
     margin-top: 0;
   }
 }
+.header-icon-left{
+  flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 30px;
+}
 </style>

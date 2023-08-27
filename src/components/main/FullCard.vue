@@ -4,22 +4,17 @@ import PrimeiroCardTPrincipal from './main-cards-principal/PrimeiroCardTPrincipa
 </script>
 
 <template>
-    <h1 class="h1-card-main">Laçamentos</h1>
     <div class="container">
       <primeiro-card-t-principal />
     </div>
-    <h1 class="h1-card-main mt">Mais Vendidos</h1>
-    <div class="container">
-      <primeiro-card-t-principal />
-    </div>
+
 </template>
 
 <style scoped>
 .container {
   padding: 0;
   max-width: 100%;
-  margin: 0 75px;
-  /* padding: 0px 100px 0px 100px; */
+  /* padding: 0px 100px 0px 100pdasx; */
 }
 .h1-card-main {
   text-align: center;
@@ -27,7 +22,8 @@ import PrimeiroCardTPrincipal from './main-cards-principal/PrimeiroCardTPrincipa
   margin-bottom: 30px;
 }
 h1{
-  font-size: 30px;
+
+  text-decoration: none;
 }
 .mt{
   margin-top: 4rem;

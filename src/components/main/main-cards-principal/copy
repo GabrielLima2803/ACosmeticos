@@ -2,9 +2,7 @@
 import { ref } from 'vue';
 
 
-const cosmeticos = 
-  [
-    {
+const cosmeticos = [
   tipo: 'Laçamento!',
   produtos: [
     {
@@ -35,9 +33,7 @@ const cosmeticos =
     preco: 'R$ 84,90',
     img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B70669/sophie_like_B70669_segredinhos.jpg',
   },
-  ]
-  },
-  {
+  ],
   tipo: 'Mais Vendidos!',
   produtos: [
     {
@@ -71,9 +67,7 @@ const cosmeticos =
   ]
   
 
-} 
 ]
-
 
 const screenWidth = ref(window.innerWidth);
 window.addEventListener('resize', () => {
@@ -82,153 +76,89 @@ window.addEventListener('resize', () => {
 </script>
 
 <template>
-  <div class="card-cosmeticos">
-    <div v-for="(categoria, index) in cosmeticos" :key="index" class="categoria-card">
-      <div class="m">
-
-      <h1 style="text-align: center;">{{ categoria.tipo }}</h1>
-      </div>
-      <div class="produtos-card">
-        <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
-          <!-- ... rest of your card content ... -->
-          <div class="img-coracao">
-            <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img" />
-          </div>
-          <div class="tamanho-card">
-            <img :src="produto.img" class="capa-img" />
-          </div>
-          <div class="img-oboticario">
-            <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
-          </div>
-          <h5 class="titulo-Cos">{{ produto.nome }}</h5>
-          <p class="descricao-Cos">{{ produto.descricao }}</p>
-          <p class="preco-Cos">{{ produto.preco }}</p>
-          <button type="button" class="Button-CardPay">
-            <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
-          </button>
+    <div class="card-cosmeticos">
+        <div v-for="(cosmetico) in cosmeticos" :key="cosmetico.id" class="card-margin flexCard">
+            <div class="tamanho-card">
+                <img :src="cosmetico.img" alt="Capa do livro" class="capa-img" />
+            </div>
+            <div class="img-oboticario">
+                <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
+            </div>
+            <h5 class="titulo-Cos">
+                {{ cosmetico.nome }}
+            </h5>
+            <p class="descricao-Cos">
+                {{ cosmetico.descicao }}
+            </p>
+            <p class="preco-Cos">
+                {{ cosmetico.preco }}
+            </p>
+            <button type="button" class="Button-CardPay"> 
+                <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt=""  class="Btn-Pay"/>
+                </button>
         </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
 .card-cosmeticos {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
 
 }
 
 .flexCard {
-  flex: 0 0 calc(25% - 20px);
-  /*Vai Colocar cada card em 25%*/
-  /* margin: 10px; */
-  /* align-items: center;  Debater com a equipe*/
-  display: flex;
-  flex-direction: column;
-
-  justify-content: space-around;
+    flex: 0 0 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .Button-CardPay {
-  margin-left: -1px;
-  width: 68%;
-  border: 2px solid #4d066b;
-  background-color: #F4F4F4;
+    margin-left: -1px;
+    width: 68%;
+    border: 2px solid #4d066b;
+    background-color: #F4F4F4;
 }
-
-
-
+.Button-CardPay:hover{
+    border: 2px solid #2d0241;
+    transition: 0.6s ease;
+}
 .Btn-Pay {
-  width: 20px;
-  padding-bottom: 2px;
+    width: 20px;
+    padding-bottom: 2px;
 }
 
 .capa-img {
-  max-width: 71%;
-  height: auto;
-  margin-bottom: 10px;
-  padding: 5px;
-  cursor: pointer;
-
-  transition: transform 0.3s ease;
+    max-width: 71%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer;
 }
-
 
 .h1-card-main {
-  text-align: center;
-  margin-top: 20px;
-  margin-bottom: 30px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
-
-.img-coracao {
-  display: flex;
-  justify-content: flex-end;
-  max-width: 227px;
-}
-
-.img-oboticario {
-  display: flex;
-  justify-content: flex-end;
-  max-width: 227px;
-}
-
-.categoria-card {
-width: 100%;
-margin-bottom: 30px;
-}
-
-.wrapH2 {
-text-align: center;
-color: white;
-font-size: 24px;
-margin-bottom: 20px;
-background-color: #194B3B;
-padding: 10px;
-
-@media (max-width: 768px) {
-  font-size: 20px;
-  padding: 8px;
-}
-}
-
-.produtos-card {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-}
-
-.produto-card {
-flex: 0 0 calc(20% - 5px);
-/* rest of your product card styles */
-}
-.texto-principal {
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 26px;
-width: 100%;
-margin-left: -24px;
+.img-oboticario{
+    display: flex;
+    justify-content: flex-end;
+    max-width: 227px;
 }
 
 @media screen and (max-width: 768px) {
-.flexCard {
-  flex: 0 0 calc(50% - 20px);
-}
+  .flexCard {
+    flex: 0 0 calc(50% - 20px);
+  }
 }
 
 @media screen and (max-width: 576px) {
-.flexCard {
-  flex: 0 0 100%;
+  .flexCard {
+    flex: 0 0 100%;
+  }
 }
-}
-h1{
-  text-decoration: none;
-  margin-left: -45px;
-}
-.m{
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
+
 </style>
