@@ -3,38 +3,39 @@
 </script>
 
 <template>
-    <div class="grudendo">
-    <header class="PBarra">
-        <div class="header-roxa">
-            <!-- Header Roxo -->
-        </div>
-        <!-- Header Logo -->
+    <div class="grudando">
+      <header class="PBarra">
+        <div class="header-roxa"></div>
         <div class="header-logo pt-3">
-            <div class="logo">
-                <img src="@/img/icon-Header/LogoAcosmeticos.png" alt="" class="hd-logo-margin">
-            </div>
-            <div class="header-icons">
-                <router-link to="/carrinho" class="header-links"><img src="@/img/icon-Header/icon_Bolsa.png" alt="" class=""></router-link>
-                <router-link to="/favorito" class="header-links"><img src="@/img/icon-Header/icon_Coração.png" alt="" class=""></router-link>
-                <router-link to="/perfil" class="header-links"><img src="@/img/icon-Header/icon_Pessoa.png" alt="" class=""></router-link>
-            </div>
+          <div class="logo">
+            <img src="@/img/icon-Header/LogoAcosmeticos.png" alt="" class="hd-logo-margin">
+          </div>
+          <div class="header-icons">
+            <router-link to="/carrinho" class="header-links icons-margin"
+              ><img src="@/img/icon-Header/icon_Bolsa.png" alt=""
+            /></router-link>
+            <router-link to="/favorito" class="header-links icons-margin"
+              ><img src="@/img/icon-Header/icon_Coração.png" alt=""
+            /></router-link>
+            <router-link to="/perfil" class="header-links"
+              ><img src="@/img/icon-Header/icon_Pessoa.png" alt=""
+            /></router-link>
+          </div>
         </div>
-        <!-- Header Icons -->
-
         <nav class="header-nav p-3">
-            <router-link to="/" class="header-links">Inicio</router-link>
-            <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
-            <router-link to="/duvidas" class="header-links">Ajuda</router-link>
-            <router-link to="/favorito" class="header-links">Favoritos</router-link>
-            <router-link to="/oboticario" class="header-links logo-oboticario"><img src="@/img/icon-Header/logoOboticario.png" alt=""></router-link>
-            <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
-            <router-link to="/eudora" class="header-links">Eudora</router-link>
+          <router-link to="/" class="header-links">Inicio</router-link>
+          <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
+          <router-link to="/duvidas" class="header-links">Ajuda</router-link>
+          <router-link to="/favorito" class="header-links">Favoritos</router-link>
+          <router-link to="/oboticario" class="header-links logo-oboticario"
+            ><img src="@/img/icon-Header/logoOboticario.png" alt=""
+          /></router-link>
+          <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
+          <router-link to="/eudora" class="header-links">Eudora</router-link>
         </nav>
-        <!-- NavBar -->
-    </header>
-
+      </header>
     </div>
-</template>
+  </template>
 
 <style scoped>
 /* 
@@ -58,6 +59,7 @@
     max-width: 100%;
     position: sticky;
     top: 0;
+    
 }
 
 .navBarPrincipal {
@@ -129,13 +131,19 @@
     margin-right: 30px;
 }
 .icons-margin{
-    margin-right: 5px;
+    margin-right: 7px;
 }
 .hd-logo-margin{
     margin-right: 40px ;
 }
-/* .grudendo{
-    position: sticky;
-    top: 0px;
-} */
+@media screen and (min-width: 768px) {
+  .header-logo {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .header-icons {
+    margin-top: 0;
+  }
+}
 </style>

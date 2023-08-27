@@ -12,6 +12,10 @@ const setSelectedType = (tipo) => {
 // Call the function to set the initial type
 setSelectedType(corpoBanho[0].tipo)
 
+const screenWidth = ref(window.innerWidth);
+window.addEventListener('resize', () => {
+  screenWidth.value = window.innerWidth;
+});
 </script>
 
 
@@ -116,10 +120,15 @@ setSelectedType(corpoBanho[0].tipo)
 .wrapH2 {
   text-align: center;
   color: white;
-  font-size: 120%;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  font-size: 24px;
+  margin-bottom: 20px;
   background-color: #194B3B;
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding: 8px;
+  }
 }
 
 .produtos-card {
@@ -139,6 +148,18 @@ setSelectedType(corpoBanho[0].tipo)
 font-size: 26px;
   width: 100%;
   margin-left: -24px;
+}
+
+@media screen and (max-width: 768px) {
+  .flexCard {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .flexCard {
+    flex: 0 0 100%;
+  }
 }
 
 </style>

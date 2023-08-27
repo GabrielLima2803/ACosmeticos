@@ -1,4 +1,7 @@
 <script setup>
+import { ref } from 'vue';
+
+
 const cosmeticos = [
   {
     id: 1,
@@ -31,6 +34,11 @@ const cosmeticos = [
   
 
 ]
+
+const screenWidth = ref(window.innerWidth);
+window.addEventListener('resize', () => {
+  screenWidth.value = window.innerWidth;
+});
 </script>
 
 <template>
@@ -68,12 +76,8 @@ const cosmeticos = [
 
 .flexCard {
     flex: 0 0 calc(25% - 20px);
-    /*Vai Colocar cada card em 25%*/
-    /* margin: 10px; */
-    /* align-items: center;  Debater com a equipe*/
     display: flex;
     flex-direction: column;
-    
     justify-content: space-around;
 }
 
@@ -111,6 +115,16 @@ const cosmeticos = [
     max-width: 227px;
 }
 
+@media screen and (max-width: 768px) {
+  .flexCard {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
 
+@media screen and (max-width: 576px) {
+  .flexCard {
+    flex: 0 0 100%;
+  }
+}
 
 </style>

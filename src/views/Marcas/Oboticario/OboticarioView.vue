@@ -76,4 +76,15 @@ h1{
   align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 10px; /* Espaçamento lateral menor em telas pequenas */
+  }
+
+  .card-container {
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os cartões */
+  }
+}
+
 </style>

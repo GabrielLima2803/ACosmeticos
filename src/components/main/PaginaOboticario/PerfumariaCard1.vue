@@ -185,6 +185,27 @@ a {
 }
 
 
+@media screen and (max-width: 768px) {
+  .card-content {
+    padding: 1.5em;
+  }
+
+  .card-body {
+    display: none;
+    opacity: 0;
+    font-size: small;
+    text-align: center;
+    transform: translateY(50%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, filter 0.5s ease-in-out, font-size 0.5s ease-in-out;
+  }
+
+  .card.hover .card-body {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 </style>
 
 

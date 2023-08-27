@@ -42,16 +42,26 @@ const propaganda = [
 
 .card-cosmeticos {
   display: flex;
-  width: 1120px;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: #464646;
 }
+
 .card-margin {
-  margin-right: 0; /* Removendo a margem direita */
+  margin-right: 0px; /* Espaçamento inferior entre as propagandas */
 }
 
 .imgPropaganda {
-  margin: 0; /* Removendo margens */
-  margin-right: 12px;
+  max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+  /* width: 100%; */
+  height: auto;
+ margin: 0px 12px 0px 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .card-cosmeticos {
+    width: auto; /* Remove a largura fixa em telas pequenas */
+  }
 }
 
 </style>
