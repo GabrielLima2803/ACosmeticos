@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5 d-flex justify-content-center">
-    <div id="gifCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 900px;">
+    <div id="gifCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 2000px;">
       <div class="carousel-inner">
         <div v-for="(gif, gifIndex) in gifs" :key="gifIndex" :class="['carousel-item', { active: gifIndex === 0 }]">
           <div class="gif-container">
@@ -45,7 +45,7 @@ const gifs = [
 
 .gif-image {
   max-width: 100%;
-  height: 500px;
+  height: 600px;
 }
 
 .carousel-control-prev,
