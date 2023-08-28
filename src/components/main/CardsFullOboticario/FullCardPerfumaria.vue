@@ -36,8 +36,19 @@ import { perfumaria1 } from '@/_data/perfumaria.js'
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
+<<<<<<< HEAD
           <button type="button" class="Button-CardPay">
+=======
+<<<<<<< HEAD
+          <button type="button" class="Button-CardPay" @click="add">
+              <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+              <span class="buy-text">Comprar</span>
+=======
+        </router-link>
+          <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
+>>>>>>> f658938398a3b60bd7deb0ce6b40aab64d7a94c3
             <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+>>>>>>> fd8f7af4d3ed519e6ad770a4547c6dde8d0126de
           </button>
         </div>
       </div>
@@ -76,10 +87,28 @@ import { perfumaria1 } from '@/_data/perfumaria.js'
     width: 68%;
     border: 2px solid #4d066b;
     background-color: #F4F4F4;
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
 }
 
+<<<<<<< HEAD
 
 
+=======
+.Button-CardPay:hover {
+  background-color: #4d066b; /* Change to your desired purple color */
+}
+
+.buy-text {
+  display: none; /* Initially hide the text */
+  color: white;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.Button-CardPay:hover .buy-text {
+  display: inline-block; /* Show the text on hover */
+}
+>>>>>>> f658938398a3b60bd7deb0ce6b40aab64d7a94c3
 .Btn-Pay {
     width: 20px;
     padding-bottom: 2px;
