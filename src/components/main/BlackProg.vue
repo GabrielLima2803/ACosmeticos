@@ -4,7 +4,7 @@
 
 <template>
 
-        <h1>Confira!</h1>
+        <h1>Confira!!</h1>
     <div class="container">
         <router-link to="/oboticario">
         <img src="@/img/Main-img/Main-Cards/propagandaO.png" alt="" class="img">
