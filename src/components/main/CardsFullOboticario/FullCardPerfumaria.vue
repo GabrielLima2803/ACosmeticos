@@ -1,30 +1,12 @@
 <script setup>
-import {ref} from 'vue'
+
 import { perfumaria1 } from '@/_data/perfumaria.js'
-// import { ref } from 'vue'
 
-// const tipoSelecionado = ref('') // State to store selected type
-
-// Function to set selected type
-// const setSelectedType = (tipo) => {
-//   tipoSelecionado.value = tipo
-// }
-
-// Call the function to set the initial type
-// setSelectedType(perfumaria1[0].tipo)
+import { addAosCarrinho } from '@/_data/carrinho.js'
 
 import { addAosFavoritos } from '../../../_data/favorito';
 
-// const favoritos = ref([])
 
-// function addAosFavoritos(perfumaria1) {
-//   favoritos.value.push({
-//     id: perfumaria1.id,
-//     nome: perfumaria1.nome,
-//     preco: perfumaria1.preco,
-
-//   })
-// }
 </script>
 
 <template>
@@ -53,11 +35,16 @@ import { addAosFavoritos } from '../../../_data/favorito';
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
+<<<<<<< HEAD
           <button type="button" class="Button-CardPay" @click="add">
               <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
               <span class="buy-text">Comprar</span>
-          </button>
+=======
         </router-link>
+          <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
+            <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+>>>>>>> fd8f7af4d3ed519e6ad770a4547c6dde8d0126de
+          </button>
         </div>
       </div>
     </div>

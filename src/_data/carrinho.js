@@ -2,26 +2,31 @@ import { ref, computed } from 'vue'
 
 const carrinho = ref({
     total: 0,
-    itens: [1]
+    itens: []
 })
-const valorTotal = ref(0)
 
-function add(index) {
-  produtos.value[index].quantidade++
-  totalL()
+
+function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
+  carrinho.value.itens.push({  nome, descricao, preco, img, quantidade })
+  carrinho.value.total += carrinho.value.itens.preco * carrinho.value.itens.quantidade
 }
 
 
+function remove(index) {
+  carrinho.value.itens.splice(index, 1)
+}
 
+// const valorTotal = ref(0)
 
+// function atualizarTotal() {
+//   carrinho.value.total = carrinho.value.itens.reduce((total, item) => total + item.preco, 0)
+// }
 
-
-
-// function subtrair(index) {
-//   if (produtos.value[index].quantidade > 0) {
-//     produtos.value[index].quantidade--
+// function removerItem(index) {
+//   if (index >= 0 && index < carrinho.value.itens.length) {
+//     carrinho.value.itens.splice(index, 1)
+//     atualizarTotal()
 //   }
-//   totalL()
 // }
 
 // function addCarrinho(produto) {
@@ -36,6 +41,22 @@ function add(index) {
 //   totalL()
 //   produto.quantidade = 1
 // }
+
+
+
+
+
+// function add(index) {
+//   carrinho.value[index].quantidade++
+//   // totalL()
+// }
+// function subtrair(index) {
+//   if (produtos.value[index].quantidade > 0) {
+//     produtos.value[index].quantidade--
+//   }
+//   totalL()
+// }
+
 // function totalL() {
 //   valorTotal.value = 0
 //   for (const item of carrinho.value) {
@@ -48,24 +69,8 @@ function add(index) {
 //   carrinho.value = []
 // }
 
-// function removeItem(index) {
-//   if (index >= 0 && index < carrinho.value.length) {
-//     const produtoIndex = produtos.value.findIndex((p) => p.id === carrinho.value[index].id);
-//     if (carrinho.value[index].quantidade == 1) {
-//       valorTotal.value -= produtos.value[produtoIndex].preco * carrinho.value[index].quantidade;
-//       carrinho.value.splice(index, 1);
-//     } else {
-//       carrinho.value[index].quantidade--;
-//       carrinho.value[index].total = produtos.value[produtoIndex].preco * carrinho.value[index].quantidade;
-//       valorTotal.value -= produtos.value[produtoIndex].preco;
-//     }
-//   }
-// }
-// function remove(index) {
-//   carrinho.value.splice(index, 1)
-// }
 
 
 const estaCarrinhoVazio = computed(() => carrinho.value.itens.length === 0)
 
-export { carrinho, estaCarrinhoVazio, add }
+export { carrinho, estaCarrinhoVazio, addAosCarrinho, remove }
