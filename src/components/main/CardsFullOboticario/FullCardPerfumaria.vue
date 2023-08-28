@@ -1,15 +1,21 @@
 <script setup>
-
 import { perfumaria1 } from '@/_data/perfumaria.js'
+// import { ref } from 'vue'
 
-import { addAosCarrinho } from '@/_data/carrinho.js'
+// const tipoSelecionado = ref('') // State to store selected type
 
-import { addAosFavoritos } from '../../../_data/favorito';
+// Function to set selected type
+// const setSelectedType = (tipo) => {
+//   tipoSelecionado.value = tipo
+// }
 
+// Call the function to set the initial type
+// setSelectedType(perfumaria1[0].tipo)
 
 </script>
 
 <template>
+  <router-link to="/produto" class="header-links">
   <div class="card-cosmeticos">
     <div v-for="(categoria, index) in perfumaria1" :key="index" class="categoria-card">
       <div class="wrapH2">
@@ -18,31 +24,26 @@ import { addAosFavoritos } from '../../../_data/favorito';
       <div class="produtos-card">
         <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
           <div class="img-coracao">
-            <button type="button" @click="addAosFavoritos(produto)">
-              <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img heart-icon" />
-            </button>
+            <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img" />
           </div>
-          <router-link to="/produto" class="header-links">
           <div class="tamanho-card">
             <img :src="produto.img" @mouseover="produto.img = produto.hover" 
             @mouseleave="produto.img = produto.original" class="capa-img" />
           </div>
-          <router-link to="/oboticario" class="header-links">
           <div class="img-oboticario">
             <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
           </div>
-          </router-link>
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
-        </router-link>
-          <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
+          <button type="button" class="Button-CardPay">
             <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
           </button>
         </div>
       </div>
     </div>
   </div>
+</router-link>
 </template>
 
 <style scoped>
@@ -77,6 +78,8 @@ import { addAosFavoritos } from '../../../_data/favorito';
     background-color: #F4F4F4;
 }
 
+
+
 .Btn-Pay {
     width: 20px;
     padding-bottom: 2px;
@@ -88,6 +91,8 @@ import { addAosFavoritos } from '../../../_data/favorito';
     margin-bottom: 10px;
     padding: 5px;
     cursor: pointer;
+
+    transition: transform 0.3s ease;
 }
 
 
@@ -103,10 +108,6 @@ import { addAosFavoritos } from '../../../_data/favorito';
     max-width: 227px;
 }
 
-.heart-icon:hover {
-  color: #4d066b; /* Mude a cor para a cor desejada */
-  transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
-}
 .img-oboticario {
     display: flex;
     justify-content: flex-end;

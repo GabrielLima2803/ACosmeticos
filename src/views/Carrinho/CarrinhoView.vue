@@ -1,11 +1,13 @@
 <script setup>
-import { estaCarrinhoVazio } from '@/_data/carrinho.js'
+import { useCartStore } from '@/store/cart';
 import CarrinhoResumo from '@/components/Carrinho/CarrinhoResumo.vue';
 import CarrinhoVazio from '@/components/Carrinho/CarrinhoVazio.vue';
+
+const cartStore = useCartStore().getCart
 </script>
 
 <template>
-    <carrinho-vazio v-if="estaCarrinhoVazio" />
+    <carrinho-vazio v-if="cartStore.length === 0" />
     <carrinho-resumo v-else />
 </template>
 

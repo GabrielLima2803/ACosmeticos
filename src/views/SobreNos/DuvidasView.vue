@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="flex">
+  <div class="flex mt-5">
     <div class="wrapPanel">
       <div class="marginTop">
         <h2>Dúvidas Frequentes</h2>
@@ -158,10 +158,8 @@
             de terceiro que fogem de sua esfera de vigilância e responsabilidade.
           </v-expansion-panel-text>
         </v-expansion-panel>
-      </v-expansion-panels>
 
 
-      <v-expansion-panels class="marginPanel">
         <v-expansion-panel>
           <v-expansion-panel-title >
             <img src="@/img/Main-img/Main-Panel/medalha.png" alt="" width="11">

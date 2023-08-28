@@ -26,12 +26,12 @@
 
     <div class="ft-main">
       <h5>
-        Nossas Redes
+        Nossa Redes
       </h5>
         <div class="ft-redes">
-          <i class="bi bi-instagram ft-img-Margin"></i>
-          <i class="bi bi-facebook ft-img-Margin"></i>
-          <i class="bi bi-twitter ft-img-Margin"></i>
+          <img src="@/img/Footer-img/Footer-Redes/instaRedes.png" alt="" class="ft-img-Margin">
+          <img src="@/img/Footer-img/Footer-Redes/twitterRedes.png" alt="" class="ft-img-Margin">
+          <img src="@/img/Footer-img/Footer-Redes/faceRedes.png" alt="" class="ft-img-Margin">
         </div>
     </div>
 
@@ -64,7 +64,7 @@ p{
   margin-right: 5px;
 }
 .ft-redes{
-  /* background-color: #43055D; */
+  background-color: #43055D;
 
   width: 82px;
 }

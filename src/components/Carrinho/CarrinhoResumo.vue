@@ -18,28 +18,66 @@
                     </div>
                     <div class="col">
                         <div class="w-100 h-100 d-flex justify-center align-items-center">
-                          excluir
+                          
                         </div>
                     </div>
                 </div>
-                <!-- <ProdutoCarrinho v-for="(produtos, index) in carrinho" :key="index" :produtos="produtos" /> -->
-                <ProdutoCarrinho />
+                <ProdutosCarrinho :cart="cartItemsView()" @remove="removeCart" @addProductToCart="test" @removeProductToCart="test2" />
             </div>
-            <div v-for="(item, index) in carrinho" :key="index"> 
-                <div class="w-100 d-flex justify-end pr-5 mt-5 bold text-xl bg-gray2">
-                    <p><span class="pr-5">Valor Total:</span> R$ 0,00</p>
-                </div>
+            <div class="w-100 d-flex justify-end pr-5 mt-5 bold text-xl bg-gray2">
+                <p><span class="pr-5">Valor Total:</span> R$ {{ value }}</p>
             </div>
             <ValorFinal />
         </section>
     </main>
 </template>
+<script>
+  import ProdutosCarrinho from '@/components/Carrinho/ProdutosCarrinho.vue';
+  import TopoCarrinho from '@/components/Carrinho/TopoCarrinho.vue';
+  import ValorFinal from '@/components/Carrinho/ValorFinal.vue';
+  import { useCartStore } from '@/store/cart';
+  
+  export default {
+    name: 'CarrinhoResumo',
+    components: {
+      ProdutosCarrinho,
+      TopoCarrinho,
+      ValorFinal
+    },
+    methods: {
+        removeCart(produto) {
+            // remover do client-server
+            // recarregar o carrinho
+            useCartStore().removeCart(produto);
+            
+        },
 
-<script setup> 
-import ProdutoCarrinho from '@/components/Carrinho/ProdutoCarrinho.vue';
-import TopoCarrinho from '@/components/Carrinho/TopoCarrinho.vue';
-import ValorFinal from '@/components/Carrinho/ValorFinal.vue';
-
+        cartItemsView() {
+            return this.cartItems;
+        },
+        test(preco) {
+            console.log('alug')
+            this.value += preco;
+        },
+        test2(preco) {
+            console.log('alug')
+            if (this.value >= preco) {
+            this.value -= preco;
+            }
+        }
+    },
+    computed: {
+      value() {
+        return Math.round(this.cartItems.reduce((acc, item) => acc + item.preco, 0));
+      }
+    },
+    setup() {
+        const cartStore = useCartStore().getCart;
+        return {
+            cartItems: cartStore
+        };
+    }
+  };
 </script>
 
 <style>

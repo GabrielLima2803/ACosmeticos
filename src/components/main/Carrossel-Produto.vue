@@ -1,6 +1,15 @@
 <script setup>
+// import { getCosmeticosById } from '@/_data/cardPrincipais.js'
 import {  ref } from 'vue'
+// import { useRoute } from 'vue-router'
 
+// const route = useRoute()
+
+// const cosmeticos = ref({})
+
+// onMounted(() => {
+//   cosmeticos.value = getCosmeticosById(route.params.id)
+// })
 
 const carouselItems = [
   {

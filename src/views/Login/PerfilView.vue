@@ -39,7 +39,7 @@ const v$ = useVuelidate(rules, state)
     <div class="wrapContainer">
         <div class="containerPrincipal ">
             <div class="FormTop">
-                <img src="@/img/icon-Header/LogoAcosmeticos.png" alt="" width="220">
+                <img src="@/img/icon-Header/logoAC.png" alt="">
             </div>
             <div class="FormBot">
                 <h4>Olá!</h4>
@@ -56,7 +56,10 @@ const v$ = useVuelidate(rules, state)
                         <i class="iconMostrar bi" :class="state.showPassword ? 'bi-eye' : 'bi-eye-slash'"
                             @click="state.showPassword = !state.showPassword"></i>
                     </v-text-field>
-                    <button type="button" style="margin-top: 10px;"><router-link class="btnSenha" to="/esqueciSenha">Esqueci minha senha</router-link></button>
+
+
+
+                    <button type="button" class="btnSenha">Esqueci minha senha</button>
                     <button type="submit" class="btnLogin mt-3">Entrar</button>
                     <router-link to="/criarLogin"> <button type="button" class="btnCriar mt-3">Criar conta</button>
                     </router-link>
@@ -78,7 +81,6 @@ const v$ = useVuelidate(rules, state)
     justify-content: center;
     align-items: center;
     margin-top: 150px;
-    margin-bottom: 10px;
 }
 
 .FormTop {
@@ -120,7 +122,6 @@ const v$ = useVuelidate(rules, state)
     background-color: white;
     color: gray;
     font-size: 15px;
-    text-decoration: none;
 }
 
 .btnSenha:hover {
