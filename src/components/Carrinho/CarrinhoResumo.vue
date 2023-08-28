@@ -25,8 +25,10 @@
                 <!-- <ProdutoCarrinho v-for="(produtos, index) in carrinho" :key="index" :produtos="produtos" /> -->
                 <ProdutoCarrinho />
             </div>
-            <div class="w-100 d-flex justify-end pr-5 mt-5 bold text-xl bg-gray2">
-                <p><span class="pr-5">Valor Total:</span> R$ 0,00</p>
+            <div v-for="(item, index) in carrinho" :key="index"> 
+                <div class="w-100 d-flex justify-end pr-5 mt-5 bold text-xl bg-gray2">
+                    <p><span class="pr-5">Valor Total:</span> R$ 0,00</p>
+                </div>
             </div>
             <ValorFinal />
         </section>

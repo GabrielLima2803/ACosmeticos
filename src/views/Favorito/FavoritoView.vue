@@ -1,7 +1,5 @@
 <script setup>
 // import { ref } from 'vue'
-import FullCardPerfumaria from '@/components/main/CardsFullOboticario/FullCardPerfumaria.vue';
-
 import { favoritos, remove } from '../../_data/favorito';
 
 // function remove(index) {
