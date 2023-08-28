@@ -1,20 +1,39 @@
-<script setup>
+<script>
 import { ref } from 'vue';
 import { cosmeticos } from '@/_data/cardPrincipais.js'
+import { useCartStore } from '@/store/cart.js';
 
-
-
-
-const screenWidth = ref(window.innerWidth);
-window.addEventListener('resize', () => {
-  screenWidth.value = window.innerWidth;
-});
+export default {
+  data() {
+    return {
+      cosmeticos: cosmeticos,
+    }
+  },
+  methods: {
+    addProductToCart(produto) {
+      useCartStore().addToCart(produto);
+    },
+    cartTotal() {
+      return useCartStore().getCartItems;
+    }
+  },
+  setup() {
+    const screenWidth = ref(window.innerWidth);
+    window.addEventListener('resize', () => {
+      screenWidth.value = window.innerWidth;
+    });
+    return {
+      screenWidth
+    }
+  }
+}
 </script>
 
 <template>
   <div class="card-cosmeticos">
     <div v-for="(categoria, index) in cosmeticos" :key="index" class="categoria-card">
       <div class="m">
+
       <h1 style="text-align: center;">{{ categoria.tipo }}</h1>
       </div>
       <div class="produtos-card">
@@ -23,7 +42,6 @@ window.addEventListener('resize', () => {
           <div class="img-coracao">
             <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img" />
           </div>
-          <router-link to="/produto" class="header-links">
           <div class="tamanho-card">
             <img :src="produto.img" class="capa-img" />
           </div>
@@ -33,11 +51,8 @@ window.addEventListener('resize', () => {
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
-          </router-link>
-          <button type="button" class="Button-CardPay">
-            <router-link to="/produto">
+          <button @click="addProductToCart(produto)" type="button" class="Button-CardPay">
             <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
-            </router-link>
           </button>
         </div>
       </div>
@@ -53,12 +68,6 @@ window.addEventListener('resize', () => {
 
 }
 
-.header-links {
-    font-family: 'Jost', sans-serif;
-    text-decoration: none;
-    color: #000000;
-    cursor: pointer;
-}
 .flexCard {
   flex: 0 0 calc(25% - 20px);
   /*Vai Colocar cada card em 25%*/

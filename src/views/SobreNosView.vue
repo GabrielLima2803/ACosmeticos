@@ -205,7 +205,7 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 50px;
   align-items: center;
-  margin-top: 200px;
+  margin-top: 1em;
   border: 1px solid black; /* Add border to the last div */
 }
 .h4Roxo{

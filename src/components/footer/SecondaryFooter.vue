@@ -26,7 +26,7 @@
 
     <div class="ft-main">
       <h5>
-        Nossas Redes
+        Nossa Redes
       </h5>
         <div class="ft-redes">
           <img src="@/img/Footer-img/Footer-Redes/instaRedes.png" alt="" class="ft-img-Margin">

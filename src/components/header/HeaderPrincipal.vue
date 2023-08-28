@@ -50,7 +50,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 2px 2px 15px 1px rgb(94, 94, 94);
+    box-shadow: 0 0 16px 1px #54545453;
     border: none;
     max-width: 100%;
     position: sticky;

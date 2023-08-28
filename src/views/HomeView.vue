@@ -4,7 +4,9 @@ import Carrosel from '@/components/main/Carrosel.vue';
 import BlackProg from '@/components/main/BlackProg.vue';
 </script>
 <template>
-    <carrosel />
+    <div class="z-1">
+        <carrosel />
+    </div>
     <full-card />
     <black-prog/>
 </template>

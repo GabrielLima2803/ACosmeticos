@@ -7,12 +7,12 @@ const carrinho = ref({
 const valorTotal = ref(0)
 
 function add(index) {
-  produtos.value[index].quantidade++
+  carrinho.value[index].quantidade++
   totalL()
 }
 function subtrair(index) {
-  if (produtos.value[index].quantidade > 0) {
-    produtos.value[index].quantidade--
+  if (carrinho.value[index].quantidade > 0) {
+    carrinho.value[index].quantidade--
   }
   totalL()
 }
@@ -43,14 +43,14 @@ function limpaCarrinho() {
 
 function removeItem(index) {
   if (index >= 0 && index < carrinho.value.length) {
-    const produtoIndex = produtos.value.findIndex((p) => p.id === carrinho.value[index].id);
+    const produtoIndex = carrinho.value.findIndex((p) => p.id === carrinho.value[index].id);
     if (carrinho.value[index].quantidade == 1) {
-      valorTotal.value -= produtos.value[produtoIndex].preco * carrinho.value[index].quantidade;
+      valorTotal.value -= carrinho.value[produtoIndex].preco * carrinho.value[index].quantidade;
       carrinho.value.splice(index, 1);
     } else {
       carrinho.value[index].quantidade--;
-      carrinho.value[index].total = produtos.value[produtoIndex].preco * carrinho.value[index].quantidade;
-      valorTotal.value -= produtos.value[produtoIndex].preco;
+      carrinho.value[index].total = carrinho.value[produtoIndex].preco * carrinho.value[index].quantidade;
+      valorTotal.value -= carrinho.value[produtoIndex].preco;
     }
   }
 }
