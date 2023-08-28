@@ -1,6 +1,8 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { perfumaria1 } from '@/_data/perfumaria.js'
+import CarrosselProduto from '@/components/main/Carrossel-Produto.vue'
+
 
 const enviarProduto = ref(false)
 const enviarComoUsar = ref(false)
@@ -49,6 +51,7 @@ const setRating = (value) => {
 <template>
   <div class="container">
     <div class="carrosel">
+      <carrossel-produto/>
     </div>
     <div class="info-produto">
       <div class="card-cosmeticos">
@@ -193,6 +196,9 @@ const setRating = (value) => {
 </template>
 
 <style scoped>
+*{
+  font-family: 'Jost', sans-serif;
+}
 .button-container {
   display: flex;
   justify-content: flex-start;
@@ -242,6 +248,7 @@ button {
 
 .avaliacao {
   margin-top: 40px;
+  margin-left: 15px;
 }
 
 .v-progress {
@@ -300,13 +307,6 @@ button {
   color: white;
   font-size: large;
 }
-
-.carrosel {
-  width: 400px;
-  height: 400px;
-  background-color: black;
-}
-
 .info-produto {
   display: flex;
   align-items: flex-start;
@@ -321,6 +321,7 @@ button {
   display: flex;
   /* Display the carrosel and info-produto side by side */
   margin-top: 100px;
+  margin-left: 0px;
 }
 
 .carrosel {

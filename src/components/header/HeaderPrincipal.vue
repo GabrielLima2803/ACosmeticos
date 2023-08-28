@@ -31,7 +31,6 @@
             ><img src="@/img/icon-Header/logoOboticario.png" alt=""
           /></router-link>
           <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
-          <router-link to="/eudora" class="header-links">Eudora</router-link>
         </nav>
       </header>
     </div>

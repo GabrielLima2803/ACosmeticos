@@ -15,6 +15,7 @@ import { perfumaria1 } from '@/_data/perfumaria.js'
 </script>
 
 <template>
+  <router-link to="/produto" class="header-links">
   <div class="card-cosmeticos">
     <div v-for="(categoria, index) in perfumaria1" :key="index" class="categoria-card">
       <div class="wrapH2">
@@ -42,9 +43,16 @@ import { perfumaria1 } from '@/_data/perfumaria.js'
       </div>
     </div>
   </div>
+</router-link>
 </template>
 
 <style scoped>
+.header-links {
+    font-family: 'Jost', sans-serif;
+    text-decoration: none;
+    color: #000000;
+    cursor: pointer;
+}
 .card-cosmeticos {
     display: flex;
     flex-wrap: wrap;

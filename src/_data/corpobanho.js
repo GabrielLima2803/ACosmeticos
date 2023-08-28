@@ -116,7 +116,7 @@ const corpoBanho = [
         nome: 'Liz Sublime',
         descricao: 'Desodorante Colônia 10ml',
         preco: 'R$ 39,90',
-        img: 'https://i.ibb.co/KjvCnPS/p-5-liz.png'
+        img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B47342/LIZ-SUBLIME-FLANKER_B47342_.jpg'
         // img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B47342/LIZ-SUBLIME-FLANKER_B47342_.jpg',
       }
     ]
@@ -136,7 +136,7 @@ const corpoBanho = [
         nome: 'Body Spray Malbec Vert',
         descricao: 'Desodorante Colônia 100ml',
         preco: 'R$ 39,90',
-        img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B84055/MALBEC-VERT-BODY-SPRAY_B84055_FECHADO_.jpg'
+        img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B48785/MALBEC-DES-SPR-100ml-V5-PCK_B48785.jpg'
       },
       {
         id: 18,
@@ -150,7 +150,7 @@ const corpoBanho = [
         nome: 'Body Spray Malbec',
         descricao: 'Desodorante Colônia 100ml',
         preco: 'R$ 39,90',
-        img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:eco,w_800/v1/imagens/products/B48785/MALBEC-DES-SPR-100ml-V5-PCK_B48785.jp'
+        img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B48785/MALBEC-DES-SPR-100ml-V5-PCK_B48785.jpg'
       },
       {
         id: 20,
