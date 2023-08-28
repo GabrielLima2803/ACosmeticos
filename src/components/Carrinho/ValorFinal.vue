@@ -13,7 +13,7 @@
             <p>Para mais informações, acesse o link abaixo:</p>
             <router-link to="/duvidas">
                 <p class="text-rox">
-                    Prazo e Entrega
+                    Prazo de Entrega
                 </p>
             </router-link>
         </div>
@@ -35,9 +35,7 @@
     </section>
 </template>
 <script>
-export default {
-    
-}
+
 </script>
 <style lang="">
     

@@ -1,7 +1,7 @@
 const cosmeticos = 
   [
     {
-  tipo: 'Laçamento!',
+  tipo: 'Lançamentos!',
   produtos: [
     {
     id: 1,
