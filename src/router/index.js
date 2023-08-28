@@ -91,9 +91,10 @@ const router = createRouter({
       component: CabelosView
     },
     {
-      path: '/produto',
+      path: '/produto/',
       name: 'produto',
-      component: ProdutoView
+      component: ProdutoView,
+      // props: true
     },
   ]
 })

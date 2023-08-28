@@ -10,7 +10,7 @@
       </div>
       <v-expansion-panels class="marginPanel">
         <v-expansion-panel class="TamanhoPanel">
-          <v-expansion-panel-title expand-icon="mdi-plus">
+          <v-expansion-panel-title >
             <img src="@/img/Main-img/Main-Panel/bolsa.png" alt="" width="15">
             <p class="pTitle">Prazo e Entrega</p>
           </v-expansion-panel-title>
@@ -163,7 +163,7 @@
 
       <v-expansion-panels class="marginPanel">
         <v-expansion-panel>
-          <v-expansion-panel-title expand-icon="mdi-plus">
+          <v-expansion-panel-title >
             <img src="@/img/Main-img/Main-Panel/medalha.png" alt="" width="11">
             <p class="pTitle">Política e Privacidade </p>
           </v-expansion-panel-title>

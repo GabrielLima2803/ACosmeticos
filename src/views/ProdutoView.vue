@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { perfumaria1 } from '@/_data/perfumaria.js'
 import CarrosselProduto from '@/components/main/Carrossel-Produto.vue'
 
