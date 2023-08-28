@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 import { cosmeticos } from '@/_data/cardPrincipais.js'
+import { add } from '@/_data/carrinho.js'
+
 
 
 
@@ -33,7 +35,7 @@ window.addEventListener('resize', () => {
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
-          <button type="button" class="Button-CardPay">
+          <button type="button" class="Button-CardPay" @click="add">
             <router-link to="/produto">
             <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
             </router-link>
