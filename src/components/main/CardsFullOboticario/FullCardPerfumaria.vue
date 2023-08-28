@@ -53,8 +53,9 @@ import { addAosFavoritos } from '../../../_data/favorito';
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
-          <button type="button" class="Button-CardPay">
-            <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+          <button type="button" class="Button-CardPay" @click="add">
+              <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+              <span class="buy-text">Comprar</span>
           </button>
         </router-link>
         </div>
@@ -93,8 +94,23 @@ import { addAosFavoritos } from '../../../_data/favorito';
     width: 68%;
     border: 2px solid #4d066b;
     background-color: #F4F4F4;
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
 }
 
+.Button-CardPay:hover {
+  background-color: #4d066b; /* Change to your desired purple color */
+}
+
+.buy-text {
+  display: none; /* Initially hide the text */
+  color: white;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.Button-CardPay:hover .buy-text {
+  display: inline-block; /* Show the text on hover */
+}
 .Btn-Pay {
     width: 20px;
     padding-bottom: 2px;

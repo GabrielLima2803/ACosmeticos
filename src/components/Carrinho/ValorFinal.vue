@@ -3,22 +3,19 @@
         <div class="col-8">
             <h4>Prazo e Entrega</h4>
             <hr>
-            <div class="input-group mb-3 w-50">
-                <input type="text" class="form-control" placeholder="000.000-00" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-outline-secondary border-none" type="button" @click="mostrar">Calcular</button>
-                </div>
-                <div v-if="mostrar === !mostrar">
-                    <p>
-                        Frete Grátis
-                    </p>
-                </div>
+            <div class="input-group mb-3 w-50 h-40" style="position: relative;">
+                <input type="text" class="form-control h-40" placeholder="000.000-00" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <button class="btn border" style="position: absolute; right: 0; top: 0; bottom: 0;" type="button" @click="mostrar = !mostrar">Calcular</button>
             </div>
-            <p>De 3 a 5 dias úteis após a confirmação do pagamento.</p>
-            <p>Para mais informações, acesse o link abaixo:</p>
+            <a href="https://buscacepinter.correios.com.br/app/endereco/index.php" class="text-rox">Não sei meu CEP</a>
+            <div class ="mostrar" v-if="mostrar">
+                <p>
+                    Normal:  7 dias úteis (Frete Grátis)
+                </p>
+            </div>
             <router-link to="/duvidas">
-                <p class="text-rox">
-                    Prazo e Entrega
+                <p class="text-rox w-50 duvidas">
+                    Dúvidas? Confira a nossa Política de Frete e Entregas.
                 </p>
             </router-link>
         </div>
@@ -40,10 +37,15 @@
     </section>
 </template>
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 const mostrar = ref(false)
+</script>
+<style scoped>
+.duvidas {
+    margin-top: 20px;
+}
 
-</script >
-<style >
-    
+.mostrar{
+    margin-top: 20px;
+}
 </style>
