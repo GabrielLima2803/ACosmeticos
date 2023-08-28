@@ -26,11 +26,8 @@
           <router-link to="/" class="header-links">Inicio</router-link>
           <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
           <router-link to="/duvidas" class="header-links">Ajuda</router-link>
-          <router-link to="/favorito" class="header-links">Favoritos</router-link>
           <router-link to="/oboticario" class="header-links logo-oboticario"
-            ><img src="@/img/icon-Header/logoOboticario.png" alt=""
-          /></router-link>
-          <router-link to="/indentificacao" class="header-links">Indentificação</router-link>
+            > Boticário </router-link>
         </nav>
       </header>
     </div>
@@ -103,6 +100,10 @@
     margin-right: 0;
 }
 
+.grudando {
+  z-index: 100000;
+}
+
 .logo {
     flex-grow: 9;
     display: flex;
@@ -110,7 +111,8 @@
 }
 
 .logo img {
-    margin-left: 260px
+    margin-left: 260px;
+    width: 200px;
 }
 
 .header-logo {

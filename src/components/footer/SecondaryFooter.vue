@@ -1,5 +1,5 @@
 <template>
-  <div class="footer-flex ft-main-marginTop">
+  <div class="p-5 footer-flex ft-main-marginTop">
     <div class="ft-main ">
       <h5>
         Pagamentos
@@ -79,5 +79,8 @@ h5{
   font-size: 15px;
   margin-top: 15px;
   margin-right: 60px;
+}
+h5 {
+  padding-bottom: 1em;
 }
 </style>

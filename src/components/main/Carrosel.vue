@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5 d-flex justify-content-center">
+  <div class="mt-5 carousel container d-flex justify-content-center">
     <div id="gifCarousel" class="carousel slide" data-bs-ride="carousel" style="max-width: 2000px;">
       <div class="carousel-inner">
         <div v-for="(gif, gifIndex) in gifs" :key="gifIndex" :class="['carousel-item', { active: gifIndex === 0 }]">
