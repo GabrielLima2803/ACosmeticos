@@ -45,7 +45,6 @@ export default {
           <div class="tamanho-card">
             <img :src="produto.img" class="capa-img" />
           </div>
-          </router-link>
           <div class="img-oboticario">
             <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
           </div>

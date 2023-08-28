@@ -27,7 +27,7 @@
           <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
           <router-link to="/duvidas" class="header-links">Ajuda</router-link>
           <router-link to="/oboticario" class="header-links logo-oboticario"
-            > O'Boticário </router-link>
+            > Boticário </router-link>
         </nav>
       </header>
     </div>
