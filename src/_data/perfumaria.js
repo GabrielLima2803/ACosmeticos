@@ -11,7 +11,7 @@ const perfumaria1 = ref([
         preco:'R$ 209,90',
         img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B74723/1af375cb-0fb1-462e-916a-da119ae9e243-malbec-black-desodorante-colonia-100ml.png',
         hover:'https://i.ibb.co/0rZTN4s/p-1-malbec.png',
-        origin: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B74723/1af375cb-0fb1-462e-916a-da119ae9e243-malbec-black-desodorante-colonia-100ml.png'
+        original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B74723/1af375cb-0fb1-462e-916a-da119ae9e243-malbec-black-desodorante-colonia-100ml.png'
       },
       {
         id: 2,
@@ -62,7 +62,7 @@ const perfumaria1 = ref([
         preco:'R$ 179,90',
         img: 'https://i.ibb.co/r2tZ7X0/p-1-coffee.png',
         hover:'https://i.ibb.co/R45MLGm/p-1-coffee-1.png',
-        origin: 'https://i.ibb.co/r2tZ7X0/p-1-coffee.png'
+        original: 'https://i.ibb.co/r2tZ7X0/p-1-coffee.png'
       },
       {
         id: 2,
@@ -114,7 +114,7 @@ const perfumaria1 = ref([
         preco:'R$ 84,90',
         img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B83684/83684-01.jpg',
         hover:'https://i.ibb.co/rMrpSvZ/p-1-dr-botica.png',
-        origin: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B83684/83684-01.jpg'
+        original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B83684/83684-01.jpg'
       },
       {
         id: 2,
@@ -165,7 +165,7 @@ const perfumaria1 = ref([
         preco:'R$ 279,90',
         img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82689/Egeo-Des-Col-Choc-C-Car-90Ml-B82689_.jpg',
         hover:'https://i.ibb.co/cczkbHw/p-1-egeo.png',
-        origin: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82689/Egeo-Des-Col-Choc-C-Car-90Ml-B82689_.jpg'
+        original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B82689/Egeo-Des-Col-Choc-C-Car-90Ml-B82689_.jpg'
       },
       {
         id: 2,
@@ -216,7 +216,7 @@ const perfumaria1 = ref([
         preco:'R$ 279,90',
         img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77989/LILY_EDP_LUMIERE_75ml_B77989.jpg',
         hover:'https://i.ibb.co/54Z837y/p-1-lily.png',
-        origin: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77989/LILY_EDP_LUMIERE_75ml_B77989.jpg'
+        original: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B77989/LILY_EDP_LUMIERE_75ml_B77989.jpg'
       },
       {
         id: 2,
