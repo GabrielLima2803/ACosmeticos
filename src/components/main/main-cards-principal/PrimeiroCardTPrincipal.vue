@@ -38,13 +38,14 @@ export default {
       </div>
       <div class="produtos-card">
         <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
-          <!-- ... rest of your card content ... -->
+          <router-link to="/produto">
           <div class="img-coracao">
             <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img" />
           </div>
           <div class="tamanho-card">
             <img :src="produto.img" class="capa-img" />
           </div>
+        </router-link>
           <div class="img-oboticario">
             <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
           </div>
