@@ -1,5 +1,4 @@
 <script setup>
-import FullCardPerfumaria from '@/components/main/CardsFullOboticario/FullCardPerfumaria.vue';
 import { favoritos, remove } from '../../_data/favorito';
 
 </script>

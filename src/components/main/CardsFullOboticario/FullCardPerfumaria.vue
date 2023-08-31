@@ -17,7 +17,6 @@ import { addAosFavoritos } from '../../../_data/favorito';
 </script>
 
 <template>
-  <router-link to="/produto" class="header-links">
   <div class="card-cosmeticos">
     <div v-for="(categoria, index) in perfumaria1" :key="index" class="categoria-card">
       <div class="wrapH2">
@@ -42,7 +41,7 @@ import { addAosFavoritos } from '../../../_data/favorito';
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
           </router-link>
-          <button type="button" class="Button-CardPay" @click="add">
+          <button type="button" class="Button-CardPay" >
               <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
               <span class="buy-text">Comprar</span>
             </button>
@@ -50,7 +49,7 @@ import { addAosFavoritos } from '../../../_data/favorito';
       </div>
     </div>
   </div>
-</router-link>
+
 </template>
 
 <style scoped>

@@ -1,32 +1,13 @@
-<script>
+<script setup>
 import { ref } from 'vue';
 import { cosmeticos } from '@/_data/cardPrincipais.js'
-import { useCartStore } from '@/store/cart.js';
+// import { add } from '@/_data/carrinho.js'
 
-export default {
-  data() {
-    return {
-      cosmeticos: cosmeticos,
-    }
-  },
-  methods: {
-    addProductToCart(produto) {
-      useCartStore().addToCart(produto);
-    },
-    cartTotal() {
-      return useCartStore().getCartItems;
-    }
-  },
-  setup() {
-    const screenWidth = ref(window.innerWidth);
-    window.addEventListener('resize', () => {
-      screenWidth.value = window.innerWidth;
-    });
-    return {
-      screenWidth
-    }
-  }
-}
+
+const screenWidth = ref(window.innerWidth);
+window.addEventListener('resize', () => {
+  screenWidth.value = window.innerWidth;
+});
 </script>
 
 <template>
@@ -38,22 +19,23 @@ export default {
       </div>
       <div class="produtos-card">
         <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
-          <router-link to="/produto">
+          <!-- ... rest of your card content ... -->
           <div class="img-coracao">
             <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img" />
           </div>
           <div class="tamanho-card">
             <img :src="produto.img" class="capa-img" />
           </div>
-        </router-link>
           <div class="img-oboticario">
             <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
           </div>
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
-          <button @click="addProductToCart(produto)" type="button" class="Button-CardPay">
+          <button type="button" class="Button-CardPay" >
+            <router-link to="/produto">
             <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+            </router-link>
           </button>
         </div>
       </div>

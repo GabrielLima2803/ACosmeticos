@@ -6,10 +6,10 @@ const carrinho = ref({
 })
 const valorTotal = ref(0)
 
-function add(index) {
-  carrinho.value[index].quantidade++
-  totalL()
+function addAosCarrinho({ nome, descricao, preco, img }) {
+  carrinho.value.itens.push({  nome, descricao, preco, img })
 }
+
 function subtrair(index) {
   if (carrinho.value[index].quantidade > 0) {
     carrinho.value[index].quantidade--
