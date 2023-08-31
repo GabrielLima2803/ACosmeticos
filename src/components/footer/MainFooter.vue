@@ -21,9 +21,6 @@
       <p>
         <router-link to="/sobreNos" class="header-links">Sobre Nós</router-link>
       </p>
-      <p>
-        Kit & Presentes
-      </p>
     </div>
 
     <div class="ft-main">
