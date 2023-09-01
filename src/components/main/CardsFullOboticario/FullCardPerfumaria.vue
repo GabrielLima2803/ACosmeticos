@@ -1,6 +1,6 @@
 <script setup>
 import { perfumaria1 } from '@/_data/perfumaria.js'
-
+import { addAosCarrinho } from '../../../_data/carrinho';
 import { addAosFavoritos } from '../../../_data/favorito';
 // import { ref } from 'vue'
 
@@ -41,7 +41,7 @@ import { addAosFavoritos } from '../../../_data/favorito';
           <p class="descricao-Cos">{{ produto.descricao }}</p>
           <p class="preco-Cos">{{ produto.preco }}</p>
           </router-link>
-          <button type="button" class="Button-CardPay" >
+          <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
               <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
               <span class="buy-text">Comprar</span>
             </button>

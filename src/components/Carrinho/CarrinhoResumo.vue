@@ -18,7 +18,7 @@
                     </div>
                     <div class="col">
                         <div class="w-100 h-100 d-flex justify-center align-items-center">
-                          excluir
+                          Excluir
                         </div>
                     </div>
                 </div>
