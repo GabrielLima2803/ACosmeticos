@@ -160,7 +160,7 @@
         </v-expansion-panel>
 
 
-        <v-expansion-panel>
+        <v-expansion-panel class="mt-4">
           <v-expansion-panel-title >
             <img src="@/img/Main-img/Main-Panel/medalha.png" alt="" width="11">
             <p class="pTitle">Política e Privacidade </p>

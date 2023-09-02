@@ -26,13 +26,13 @@
             <div class="text-left">
                 <h4>Resumo</h4>
                 <hr>
-                <p>Subtotal: R$ 0,00</p>
+                <p>Subtotal: R$ {{totalDosPrecos.toFixed(2)}}</p>
                 <hr>
-                <p>Frete: R$ 0,00</p>
+                <p>Frete: Grátis</p>
                 <hr>
-                <p>Desconto: R$ 0,00</p>
+                <p class="text-success">Desconto: R$ 0,00</p>
                 <hr>
-                <p>Total: R$ 0,00</p>
+                <p>Total: R$ {{totalDosPrecos.toFixed(2)}}</p>
                 <hr>
                 <button class="btn btn-primary w-100">Finalizar Compra</button>
             </div>
@@ -41,6 +41,7 @@
 </template>
 <script setup>
 import {ref} from 'vue'
+import { totalDosPrecos } from '../../_data/carrinho'
 const mostrar = ref(false)
 </script >
 <style >

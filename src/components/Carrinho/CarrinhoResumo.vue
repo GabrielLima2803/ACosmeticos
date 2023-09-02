@@ -26,7 +26,7 @@
                 <ProdutoCarrinho />
             </div>
             <div class="w-100 d-flex justify-end pr-5 mt-5 bold text-xl bg-gray2">
-                <p><span class="pr-5">Valor Total:</span> R$ 0,00</p>
+                <p><span class="pr-5">Valor Total:</span> R$ {{ totalDosPrecos.toFixed(2) }}</p>
             </div>
             <ValorFinal />
         </section>
@@ -37,6 +37,8 @@
 import ProdutoCarrinho from '@/components/Carrinho/ProdutoCarrinho.vue';
 import TopoCarrinho from '@/components/Carrinho/TopoCarrinho.vue';
 import ValorFinal from '@/components/Carrinho/ValorFinal.vue';
+import { totalDosPrecos } from '../../_data/carrinho'
+
 </script>
 
 <style>

@@ -7,19 +7,7 @@ const carrinho = ref({
   itens: []
 })
 
-function add(item) {
-  // Verifica se o item já está no carrinho
-  const itemNoCarrinho = carrinho.value.itens.find(i => i.id === item.id);
 
-  if (itemNoCarrinho) {
-    // Se o item já estiver no carrinho, aumenta a quantidade
-    itemNoCarrinho.quantidade++;
-  } else {
-    // Se o item não estiver no carrinho, adiciona-o
-  
-  // Atualiza o total do carrinho
-  carrinho.value.total += item.preco;
-}
 
 function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
   const total = preco * quantidade
@@ -33,13 +21,28 @@ function remove({ nome, descricao, preco, img, quantidade }) {
   carrinho.value.itens.splice({ nome, descricao, preco, img, quantidade }, 1)
 }
 
-function subtrair(index) {
-  if (carrinho.value[index].quantidade > 0) {
-    carrinho.value[index].quantidade--
+
+const aumentarQuantidade = (item) => {
+  item.quantidade++
+  item.total = item.preco * item.quantidade
+  calcularTotal()
+}
+
+const diminuirQuantidade = (item) => {
+  if (item.quantidade > 1) {
+    item.quantidade--
+    item.total = item.preco * item.quantidade
+    calcularTotal()
   }
 }
 
+const calcularTotal = () => {
+  carrinho.value.total = carrinho.value.itens.reduce((total, item) => total + item.total, 0)
+}
 
+const totalDosPrecos = computed(() => {
+  return carrinho.value.itens.reduce((total, item) => total + item.total, 0);
+});
 
 // function addCarrinho(produto) {
 //   carrinho.value.push({
@@ -76,4 +79,4 @@ function subtrair(index) {
 
 const estaCarrinhoVazio = computed(() => carrinho.value.itens.length === 0)
 
-export { carrinho, estaCarrinhoVazio, addAosCarrinho, remove, valorTotal, subtrair, add }
+export { carrinho, estaCarrinhoVazio, addAosCarrinho, remove, valorTotal, aumentarQuantidade, diminuirQuantidade, totalDosPrecos  }

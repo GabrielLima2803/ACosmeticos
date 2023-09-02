@@ -39,7 +39,7 @@ import { addAosFavoritos } from '../../../_data/favorito';
           </div>
           <h5 class="titulo-Cos">{{ produto.nome }}</h5>
           <p class="descricao-Cos">{{ produto.descricao }}</p>
-          <p class="preco-Cos">{{ produto.preco }}</p>
+          <p class="preco-Cos">R$ {{ produto.preco }}</p>
           </router-link>
           <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
               <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />

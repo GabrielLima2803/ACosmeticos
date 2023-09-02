@@ -1,7 +1,7 @@
 <script setup>
 import { corpoBanho } from '@/_data/corpobanho.js'
 import { ref } from 'vue'
-
+import { addAosCarrinho } from '../../../_data/carrinho';
 const tipoSelecionado = ref('') // State to store selected type
 
 // Function to set selected type
@@ -40,8 +40,8 @@ window.addEventListener('resize', () => {
             </div>
             <h5 class="titulo-Cos">{{ produto.nome }}</h5>
             <p class="descricao-Cos">{{ produto.descricao }}</p>
-            <p class="preco-Cos">{{ produto.preco }}</p>
-            <button type="button" class="Button-CardPay">
+            <p class="preco-Cos">R$ {{ produto.preco }}</p>
+            <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
               <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
             </button>
           </div>
