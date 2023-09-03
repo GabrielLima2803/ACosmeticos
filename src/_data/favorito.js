@@ -1,13 +1,14 @@
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const favoritos = ref([])
+const favoritos = ref([]);
 
-function addAosFavoritos({ nome, descricao, preco, img }) {
-    favoritos.value.push({  nome, descricao, preco, img })
+function addAosFavoritos({ nome, descricao, preco, img }, initiallyFavorite = true) {
+  const item = { nome, descricao, preco, img, initiallyFavorite };
+  favoritos.value.push(item);
 }
 
 function remove(index) {
-    favoritos.value.splice(index, 1)
+  favoritos.value.splice(index, 1);
 }
 
-export { favoritos, addAosFavoritos, remove}
+export { favoritos, addAosFavoritos, remove };

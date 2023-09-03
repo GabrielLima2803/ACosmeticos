@@ -1,7 +1,8 @@
 <script setup>
 import { maquiagem } from '@/_data/maquiagem.js'
+import { addAosCarrinho } from '../../../_data/carrinho'
+import { addAosFavoritos } from '../../../_data/favorito'
 import { ref } from 'vue'
-import { addAosCarrinho } from '../../../_data/carrinho';
 
 const tipoSelecionado = ref('') // State to store selected type
 
@@ -12,68 +13,103 @@ const setSelectedType = (tipo) => {
 
 // Call the function to set the initial type
 setSelectedType(maquiagem[0].tipo)
-
 </script>
 
-
 <template>
-    <div class="card-cosmeticos">
-      <div v-for="(categoria, index) in maquiagem" :key="index" class="categoria-card">
-        <div class="wrapH2">
-
+  <div class="card-cosmeticos">
+    <div v-for="(categoria, index) in maquiagem" :key="index" class="categoria-card">
+      <div class="wrapH2">
         <h2 class="texto-principal">{{ categoria.tipo }}</h2>
-        </div>
-        <div class="produtos-card">
-          <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
-            <!-- ... rest of your card content ... -->
-            <div class="img-coracao">
-              <img src="@/img/icon-Header/icon_Coração.png" alt="" class="logo-img" />
-            </div>
+      </div>
+      <div class="produtos-card">
+        <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
+          <div class="img-coracao">
+            <button type="button" @click="addAosFavoritos(produto)">
+              <i class="bi bi-heart logo-icon"></i>
+              <i class="bi bi-heart-fill filled-heart-icon"></i>
+            </button>
+          </div>
+          <router-link to="/produto" class="header-links">
             <div class="tamanho-card">
-              <img :src="produto.img" class="capa-img" />
+              <img
+                :src="produto.img"
+                class="capa-img"
+              />
             </div>
-            <div class="img-oboticario">
-              <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
-            </div>
+            <router-link to="/oboticario">
+              <div class="img-oboticario">
+                <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
+              </div>
+            </router-link>
             <h5 class="titulo-Cos">{{ produto.nome }}</h5>
             <p class="descricao-Cos">{{ produto.descricao }}</p>
             <p class="preco-Cos">R$ {{ produto.preco }}</p>
-            <button type="button" class="Button-CardPay"  @click="addAosCarrinho(produto)">
-              <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
-            </button>
-          </div>
+          </router-link>
+          <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
+            <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+            <img src="@/img/Main-img/Main-Cards/icone.sacolaBranca.png" alt="" class="White-Bag" />
+          </button>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
 
 <style scoped>
+.header-links {
+  font-family: 'Jost', sans-serif;
+  text-decoration: none;
+  color: #000000;
+  cursor: pointer;
+}
 .card-cosmeticos {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 50px;
-
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50px;
 }
 
 .flexCard {
-    flex: 0 0 calc(20% - 5px);
-    /*Vai Colocar cada card em 25%*/
-    /* margin: 10px; */
-    /* align-items: center;  Debater com a equipe*/
-    display: flex;
-    flex-direction: column;
+  flex: 0 0 calc(20% - 5px);
+  /*Vai Colocar cada card em 25%*/
+  /* margin: 10px; */
+  /* align-items: center;  Debater com a equipe*/
+  display: flex;
+  flex-direction: column;
 
-    justify-content: space-around;
+  justify-content: space-around;
 }
-
 .Button-CardPay {
-    margin-left: -1px;
-    width: 68%;
-    border: 2px solid #4d066b;
-    background-color: #F4F4F4;
+  margin-left: -1px;
+  width: 218px;
+  height: 30px;
+  border: 2px solid #4d066b;
+  background-color: transparent; 
+  transition: background-color 0.3s, border-color 0.3s;
+  position: relative;
 }
 
+.Button-CardPay:hover {
+  background-color: #4d066b;
+  border-color: #4d066b; 
+}
 
+.Btn-Pay,
+.White-Bag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  padding-bottom: 2px;
+}
+
+.White-Bag {
+  display: none;
+}
+
+.Button-CardPay:hover .White-Bag {
+  display: block;
+}
 
 .Btn-Pay {
     width: 20px;
@@ -81,32 +117,57 @@ setSelectedType(maquiagem[0].tipo)
 }
 
 .capa-img {
-    max-width: 71%;
-    height: auto;
-    margin-bottom: 10px;
-    padding: 5px;
-    cursor: pointer;
+  max-width: 71%;
+  height: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  cursor: pointer;
 
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
-
 
 .h1-card-main {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
+
 .img-coracao {
-    display: flex;
-    justify-content: flex-end;
-    max-width: 227px;
+  display: flex;
+  justify-content: flex-start;
+  max-width: 227px;
+  position: relative;
+}
+.logo-icon,
+.filled-heart-icon {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  color: #4d066b;
+}
+
+.logo-icon {
+  z-index: 2;
+}
+
+.filled-heart-icon {
+  opacity: 0;
+  transform: scale(0) translateX(100%);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1;
+}
+
+.img-coracao:hover .filled-heart-icon {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  z-index: 2;
 }
 
 .img-oboticario {
-    display: flex;
-    justify-content: flex-end;
-    max-width: 227px;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 227px;
 }
 
 .categoria-card {
@@ -120,7 +181,7 @@ setSelectedType(maquiagem[0].tipo)
   font-size: 120%;
   margin-bottom: 30px;
   margin-top: 30px;
-  background-color: #194B3B;
+  background-color: #194b3b;
 }
 
 .produtos-card {
@@ -131,15 +192,13 @@ setSelectedType(maquiagem[0].tipo)
 
 .produto-card {
   flex: 0 0 calc(20% - 5px);
-  /* rest of your product card styles */
 }
 .texto-principal {
   display: flex;
   align-items: center;
   justify-content: center;
-font-size: 26px;
+  font-size: 26px;
   width: 100%;
   margin-left: -24px;
 }
-
 </style>

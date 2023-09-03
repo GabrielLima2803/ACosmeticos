@@ -1,6 +1,20 @@
 <script setup>
 import { favoritos, remove } from '../../_data/favorito';
+import { ref, computed } from 'vue';
 
+const hoveredProduct = ref(null);
+
+const setHoveredProduct = (item) => {
+  hoveredProduct.value = item;
+};
+
+const getHeartIcon = (item) => {
+  if (hoveredProduct.value === item) {
+    return 'bi bi-heart coracao'; // Outline heart icon on hover
+  } else {
+    return item.initiallyFavorite ? 'bi bi-heart-fill coracao' : 'bi bi-heart coracao'; // Filled heart icon by default
+  }
+};
 </script>
 
 <template>
@@ -8,13 +22,12 @@ import { favoritos, remove } from '../../_data/favorito';
     <div class="wrapFav">
       <h2>Favoritos ({{ favoritos.length }})</h2>
     </div>
-    <div class="card-cosmeticos">
-      <div v-for="(item, index) in favoritos" :key="index" class="produto-card">
-        <div class="img-coracao">
-          <button type="button" @click="remove(item)">
-            <i class="bi bi-heart-fill coracao"></i>
+    <div v-for="(item, index) in favoritos" :key="index" class="produto-card">
+      <div class="img-coracao">
+        <button type="button" @click="remove(index)" @mouseenter="setHoveredProduct(item)" @mouseleave="setHoveredProduct(null)">
+          <i :class="getHeartIcon(item)"></i>
         </button>
-        </div>
+      </div>
         <router-link to="/produto" class="header-links">
           <div class="tamanho-card">
             <img :src="item.img" class="capa-img"  width="200"/>
@@ -26,12 +39,12 @@ import { favoritos, remove } from '../../_data/favorito';
           <p class="descricao-Cos">{{ item.descricao }}</p>
           <p class="preco-Cos">{{ item.preco }}</p>
         </router-link>
-          <button type="button" class="Button-CardPay">
-            <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="Adicionar ao carrinho" class="Btn-Pay" />
+        <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
+            <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+            <img src="@/img/Main-img/Main-Cards/icone.sacolaBranca.png" alt="" class="White-Bag" />
           </button>
       </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
@@ -68,14 +81,44 @@ import { favoritos, remove } from '../../_data/favorito';
 }
 .Button-CardPay {
   margin-left: -1px;
-  width: 68%;
+  width: 218px;
+  height: 30px;
   border: 2px solid #4d066b;
-  background-color: #f4f4f4;
+  background-color: transparent; /* Defina o fundo como transparente por padrão */
+  transition: background-color 0.3s, border-color 0.3s; /* Adicione transição para a cor de fundo e borda */
+  position: relative;
 }
-.Btn-Pay {
+
+/* ... (seu código CSS existente) */
+
+.Button-CardPay:hover {
+  background-color: #4d066b; /* Mude a cor de fundo para roxo ao passar o mouse */
+  border-color: #4d066b; /* Mude a cor da borda para roxo ao passar o mouse */
+}
+
+.Btn-Pay,
+.White-Bag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 20px;
   padding-bottom: 2px;
 }
+
+.White-Bag {
+  display: none;
+}
+
+.Button-CardPay:hover .White-Bag {
+  display: block;
+}
+
+.Btn-Pay {
+    width: 20px;
+    padding-bottom: 2px;
+}
+
 .capa-img {
   max-width: 71%;
   height: auto;
