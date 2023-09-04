@@ -1,7 +1,8 @@
 # ACosméticos
 
-This template should help get you started developing with Vue 3 in Vite.
-
+### Site de cosméticos do Hackthon
+Alunos:<br/>
+Ana Clara Gomes, Gabriel Lima de Souza, Heloisa Lopes Albano, Kelry Silva Rodrigues, Kethelyn Tália Verner, Raissa do Santos Lotin e Vítor Mendes Salomão
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
