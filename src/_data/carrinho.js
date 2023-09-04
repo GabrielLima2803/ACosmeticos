@@ -10,11 +10,24 @@ const carrinho = ref({
 
 
 function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
-  const total = preco * quantidade
-  const novoItem = { nome, descricao, preco, img, quantidade, total };
-  carrinho.value.itens.push(novoItem);
-  carrinho.value.total += total
-  
+  // Check if the item already exists in the cart
+  const existingItem = carrinho.value.itens.find((item) => {
+    return item.nome === nome && item.descricao === descricao;
+  });
+
+  if (existingItem) {
+    // If the item exists, increment the quantity
+    existingItem.quantidade += quantidade;
+    existingItem.total = existingItem.preco * existingItem.quantidade;
+  } else {
+    // If the item doesn't exist, add it to the cart
+    const total = preco * quantidade;
+    const novoItem = { nome, descricao, preco, img, quantidade, total };
+    carrinho.value.itens.push(novoItem);
+  }
+
+  // Recalculate the total
+  calcularTotal();
 }
 
 function remove({ nome, descricao, preco, img, quantidade }) {
@@ -43,39 +56,6 @@ const calcularTotal = () => {
 const totalDosPrecos = computed(() => {
   return carrinho.value.itens.reduce((total, item) => total + item.total, 0);
 });
-
-// function addCarrinho(produto) {
-//   carrinho.value.push({
-//     id: produto.id,
-//     nome: produto.nome,
-//     preco: produto.preco,
-//     quantidade: produto.quantidade,
-//     total: produto.preco * produto.quantidade
-//   })
-//   carrinho.value.total += produto.preco * produto.quantidade
-//   totalL()
-//   produto.quantidade = 1
-// }
-
-
-// function limpaCarrinho() {
-//   carrinho.value = []
-// }
-
-// function removeItem(index) {
-//   if (index >= 0 && index < carrinho.value.length) {
-//     const produtoIndex = carrinho.value.findIndex((p) => p.id === carrinho.value[index].id);
-//     if (carrinho.value[index].quantidade == 1) {
-//       valorTotal.value -= carrinho.value[produtoIndex].preco * carrinho.value[index].quantidade;
-//       carrinho.value.splice(index, 1);
-//     } else {
-//       carrinho.value[index].quantidade--;
-//       carrinho.value[index].total = carrinho.value[produtoIndex].preco * carrinho.value[index].quantidade;
-//       valorTotal.value -= carrinho.value[produtoIndex].preco;
-//     }
-//   }
-// }
-
 
 const estaCarrinhoVazio = computed(() => carrinho.value.itens.length === 0)
 

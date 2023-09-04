@@ -1,6 +1,7 @@
 <script setup>
 // import { getCosmeticosById } from '@/_data/cardPrincipais.js'
 import {  ref } from 'vue'
+// import { perfumaria1 }from '@/_data/carrinho'
 // import { useRoute } from 'vue-router'
 
 // const route = useRoute()
