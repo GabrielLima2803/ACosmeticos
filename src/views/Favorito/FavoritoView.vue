@@ -2,6 +2,7 @@
 import { favoritos, remove } from '../../_data/favorito';
 import { ref, computed } from 'vue';
 
+
 const hoveredProduct = ref(null);
 
 const setHoveredProduct = (item) => {
@@ -22,28 +23,33 @@ const getHeartIcon = (item) => {
     <div class="wrapFav">
       <h2>Favoritos ({{ favoritos.length }})</h2>
     </div>
-    <div v-for="(item, index) in favoritos" :key="index" class="produto-card">
-      <div class="img-coracao">
-        <button type="button" @click="remove(index)" @mouseenter="setHoveredProduct(item)" @mouseleave="setHoveredProduct(null)">
-          <i :class="getHeartIcon(item)"></i>
-        </button>
-      </div>
-        <router-link to="/produto" class="header-links">
-          <div class="tamanho-card">
-            <img :src="item.img" class="capa-img"  width="200"/>
-          </div>
-          <div class="img-oboticario">
-            <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="O Boticário" class="logo-img" />
-          </div>
-          <h5 class="titulo-Cos">{{ item.nome }}</h5>
-          <p class="descricao-Cos">{{ item.descricao }}</p>
-          <p class="preco-Cos">{{ item.preco }}</p>
-        </router-link>
-        <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
+    <div class="wrapFavorito">
+
+      <div v-for="(item, index) in favoritos" :key="index" class="produto-card">
+        <div class="img-coracao">
+          <button type="button" @click="remove(index)" @mouseenter="setHoveredProduct(item)" @mouseleave="setHoveredProduct(null)">
+            <i :class="getHeartIcon(item)"></i>
+          </button>
+        </div>
+          <router-link to="/produto" class="header-links">
+            <div class="tamanho-card">
+              <img :src="item.img" class="capa-img"  width="200"/>
+            </div>
+            <router-link to="/oboticario">
+              <div class="img-oboticario">
+                <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
+              </div>
+            </router-link>
+            <h5 class="titulo-Cos">{{ item.nome }}</h5>
+            <p class="descricao-Cos">{{ item.descricao }}</p>
+            <p class="preco-Cos">R$ {{ item.preco }}</p>
+          </router-link>
+          <button type="button" class="Button-CardPay" @click="addAosCarrinho(item)">
             <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
             <img src="@/img/Main-img/Main-Cards/icone.sacolaBranca.png" alt="" class="White-Bag" />
           </button>
-      </div>
+        </div>
+        </div>
     </div>
 </template>
 
@@ -164,5 +170,8 @@ const getHeartIcon = (item) => {
   flex: 0 0 calc(20% - 5px);
   /* rest of your product card styles */
 }
-
+.wrapFavorito{
+  display: flex;
+  flex-direction: row;
+}
 </style>

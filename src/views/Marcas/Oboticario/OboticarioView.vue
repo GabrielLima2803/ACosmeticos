@@ -24,9 +24,7 @@ import CabeloCard from '@/components/main/PaginaOboticario/CabeloCard.vue';
      </div>
      <h1 class="h1-card-main">Cabelos </h1>
      <div class="perfumaria">
-      <router-link to="/cabelos">
       <cabelo-card/>
-      </router-link>
      </div>
      <h1 class="h1-card-main">Perfumaria</h1>
      <div class="perfumaria">

@@ -17,7 +17,7 @@ import { addAosFavoritos } from '../../../_data/favorito'
 
 <template>
   <div class="card-cosmeticos">
-    <div v-for="(categoria, index) in cabelo" :key="index" class="categoria-card">
+    <div v-for="(categoria, index) in cabelo" :key="index" :id="categoria.link" class="categoria-card">
       <div class="wrapH2">
         <h2 class="texto-principal">{{ categoria.tipo }}</h2>
       </div>

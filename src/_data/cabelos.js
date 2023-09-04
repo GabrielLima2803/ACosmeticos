@@ -1,6 +1,10 @@
 const cabelo = [
     {
       tipo: 'Shampoo',
+      link: 'shampoo',
+      img: 'https://i.ibb.co/Wyqwm54/image-151.png',
+      hover: 'Renove seus cabelos com shampoos que unem cuidado e vitalidade, revelando a beleza natural dos seus fios.',
+      texto_card: 'Shampoo',
       produtos: [
         {
           id: 1,
@@ -46,6 +50,10 @@ const cabelo = [
     },
     {
       tipo: 'Condicionador',
+      link: 'condicionador',
+      img: 'https://i.ibb.co/GQF2Hg1/condicionador.png',
+      hover: 'Alcance cabelos deslumbrantes, nutridos e suaves ao toque, graças a um condicionador que cuida da sua beleza capilar.',
+      texto_card: 'Condicionador',
       produtos: [
         {
           id: 6,
@@ -89,9 +97,12 @@ const cabelo = [
         }
       ]
     },
-  
     {
       tipo: 'Creme de Pentear',
+      link: 'cremes',
+      img: 'https://i.ibb.co/PMTCScr/creme-Pentear.png',
+      hover: 'Obtenha controle total sobre seu estilo capilar com um creme de pentear que transforma cada fio em uma obra-prima.',
+      texto_card: 'Cremes',
       produtos: [
         {
           id: 11,
@@ -137,6 +148,10 @@ const cabelo = [
     },
     {
       tipo: 'Finalizador',
+      link: 'finalizador',
+      img: 'https://i.ibb.co/qxZXRdK/finalizador.png',
+      hover: 'Eleve seu penteado com produtos de finalização capilar, adicionando o toque final para um estilo impressionante.',
+      texto_card: 'Finalizar',
       produtos: [
         {
           id: 17,
@@ -181,7 +196,11 @@ const cabelo = [
       ]
     },
     {
-      tipo: 'Finalizador',
+      tipo: 'Kits Completos',
+      link: 'kits',
+      img: 'https://i.ibb.co/X5B2fgq/kit.png',
+      hover: 'Descubra a solução definitiva para cabelos incríveis com kits completos, projetados para cuidar, estilizar e elevar seus fios a um novo patamar de beleza.',
+      texto_card: 'Kits',
       produtos: [
         {
           id: 22,
@@ -226,6 +245,7 @@ const cabelo = [
       ]
     }
   ]
+
   
   export { cabelo }
   
