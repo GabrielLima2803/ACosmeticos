@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="grudando">
+    <div class="sticky">
       <header class="PBarra">
         <div class="header-roxa"></div>
         <div class="header-logo pt-3">
@@ -100,8 +100,12 @@
     margin-right: 0;
 }
 
-.grudando {
+.sticky {
   z-index: 100000;
+  position: sticky;
+  background-color: white;
+  top: 0;
+  box-shadow: 0px 3px 10px rgb(0, 0, 0);
 }
 
 .logo {

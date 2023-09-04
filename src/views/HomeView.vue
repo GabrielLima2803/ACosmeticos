@@ -5,7 +5,7 @@ import BlackProg from '@/components/main/BlackProg.vue';
 </script>
 <template>
     <div class="z-1">
-        <carrosel />
+    <carrosel />
     </div>
     <full-card />
     <black-prog/>

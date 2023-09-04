@@ -34,16 +34,14 @@
                 <hr>
                 <p>Total: R$ {{totalDosPrecos.toFixed(2)}}</p>
                 <hr>
-                <button class="btn btn-primary w-100">Finalizar Compra</button>
+                <router-link to="/indentificacao"> <button class="btn btn-primary w-100">  Finalizar Compra </button> </router-link>
             </div>
         </div>
     </section>
 </template>
 <script setup>
-import {ref} from 'vue'
+import { ref } from 'vue'
 import { totalDosPrecos } from '../../_data/carrinho'
 const mostrar = ref(false)
 </script >
-<style >
-    
-</style>
+<style ></style>
