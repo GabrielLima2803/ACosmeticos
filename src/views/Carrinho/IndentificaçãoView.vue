@@ -54,6 +54,9 @@ function clear() {
         state[key] = value
     }
 }
+
+
+
 </script>
 
 <template>
@@ -64,11 +67,6 @@ function clear() {
             </div>
             <div class="forms ">
                 <form class="wrapForm">
-                    <v-text-field v-model="state.name" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="40"
-                        label="Insira seu nome" required @input="v$.name.$touch" @blur="v$.name.$touch"
-                        class="marginForm inputForm">
-                    </v-text-field>
-
                     <v-text-field v-model="state.name" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="40"
                         label="Insira seu nome" required @input="v$.name.$touch" @blur="v$.name.$touch"
                         class="marginForm inputForm">
@@ -123,10 +121,13 @@ function clear() {
                     </v-text-field>
 
                     <div class="displayBtn">
-                        <button type="submit" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
-                    </div>
+                     <!-- Use um método personalizado para validar o formulário antes de navegar -->
+                     <button type="button" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
+                     </div>
                     <div class="displayBtn">
-                        <button type="submit" class="BtnSair" @click="v$.$validate">Criar Conta</button>
+                        <router-link to="/carrinho">
+                            <button type="submit" class="BtnSair" @click="v$.$validate">Sair</button>
+                        </router-link>
                     </div>
                 </form>
             </div>

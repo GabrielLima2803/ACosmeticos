@@ -6,8 +6,8 @@ import HeaderPrincipal from '@/components/header/HeaderPrincipal.vue';
 </script>
 
 <template>
-   <header-principal />
-  <div class="container-Principal">
+    <header-principal/>
+    <div class="container-Principal">
       <router-view />
     <div class="container max-footer">
       <full-footer />
@@ -30,5 +30,9 @@ import HeaderPrincipal from '@/components/header/HeaderPrincipal.vue';
 
 .max-footer {
   max-width: 1220px;
+}
+.coisa{
+  position: sticky;
+  top: 0;
 }
 </style>
