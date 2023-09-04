@@ -4,24 +4,23 @@
       <h5>
         Pagamentos
       </h5>
-      <img src="@/img/Footer-img/Footer-Pay/masterCardPay.png" alt="" class="ft-img-Margin">
-      <img src="@/img/Footer-img/Footer-Pay/visaPay.png" alt="" class="ft-img-Margin">
-      <img src="@/img/Footer-img/Footer-Pay/amexPay.png" alt="" class="ft-img-Margin">
-      <img src="@/img/Footer-img/Footer-Pay/eloPay.png" alt="" class="ft-img-Margin">
-      <img src="@/img/Footer-img/Footer-Pay/hiperCardPay.png" alt="" class="ft-img-Margin">
+      <img src="@/assets/img/Footer-img/Footer-Pay/masterCardPay.png" alt="" class="ft-img-Margin">
+      <img src="@/assets/img/Footer-img/Footer-Pay/visaPay.png" alt="" class="ft-img-Margin">
+      <img src="@/assets/img/Footer-img/Footer-Pay/amexPay.png" alt="" class="ft-img-Margin">
+      <img src="@/assets/img/Footer-img/Footer-Pay/eloPay.png" alt="" class="ft-img-Margin">
+      <img src="@/assets/img/Footer-img/Footer-Pay/hiperCardPay.png" alt="" class="ft-img-Margin">
     </div>
 
     <div class="ft-main">
       <h5>
         Nossas Marcas
       </h5>
-      <img src="@/img/Footer-Pay/.png" alt="">
-      <img src="@/img/Footer-img/Footer-Marcas/maryKayMarcas.png" alt="">
-      <img src="@/img/Footer-img/Footer-Marcas/eudoraMarcas.png" alt="">
-      <img src="@/img/Footer-img/Footer-Marcas/oboticarioMarcas.png" alt="">
-      <img src="@/img/Footer-img/Footer-Marcas/jequetiMarcas.png" alt="">
-      <img src="@/img/Footer-img/Footer-Marcas/naturaMarcas.png" alt="">
-      <img src="@/img/Footer-img/Footer-Marcas/avonMarcas.png" alt="">
+      <img src="@/assets/img/Footer-img/Footer-Marcas/maryKayMarcas.png" alt="">
+      <img src="@/assets/img/Footer-img/Footer-Marcas/eudoraMarcas.png" alt="">
+      <img src="@/assets/img/Footer-img/Footer-Marcas/oboticarioMarcas.png" alt="">
+      <img src="@/assets/img/Footer-img/Footer-Marcas/jequetiMarcas.png" alt="">
+      <img src="@/assets/img/Footer-img/Footer-Marcas/naturaMarcas.png" alt="">
+      <img src="@/assets/img/Footer-img/Footer-Marcas/avonMarcas.png" alt="">
     </div>
 
     <div class="ft-main">
@@ -29,9 +28,9 @@
         Nossas Redes
       </h5>
         <div class="ft-redes">
-          <img src="@/img/Footer-img/Footer-Redes/instaRedes.png" alt="" class="ft-img-Margin">
-          <img src="@/img/Footer-img/Footer-Redes/twitterRedes.png" alt="" class="ft-img-Margin">
-          <img src="@/img/Footer-img/Footer-Redes/faceRedes.png" alt="" class="ft-img-Margin">
+          <img src="@/assets/img/Footer-img/Footer-Redes/instaRedes.png" alt="" class="ft-img-Margin">
+          <img src="@/assets/img/Footer-img/Footer-Redes/twitterRedes.png" alt="" class="ft-img-Margin">
+          <img src="@/assets/img/Footer-img/Footer-Redes/faceRedes.png" alt="" class="ft-img-Margin">
         </div>
     </div>
 

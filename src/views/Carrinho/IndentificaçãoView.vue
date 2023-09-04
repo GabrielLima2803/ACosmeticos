@@ -63,7 +63,7 @@ function clear() {
     <div class="wrapContainer">
         <div class="containerPrincipal">
             <div class="logo">
-                <img src="@/img/Main-img/CriarConta/Logo.png" alt="" width="130">
+                <img src="@/assets/img/Main-img/CriarConta/Logo.png" alt="" width="130">
             </div>
             <div class="forms ">
                 <form class="wrapForm">

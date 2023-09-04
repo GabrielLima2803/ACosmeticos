@@ -1,6 +1,6 @@
 <template>
    <div class="sacolaVazia">
-   <img src="@/img/carrinho/sacola.png" alt="" class="imgSacola">
+   <img src="@/assets/img/carrinho/sacola.png" alt="" class="imgSacola">
    <h1>Sua sacola está vazia</h1>
    <p>Você não adicionou nenhum item à sua sacola</p>
    <router-link to="/"><button class="continuarComprando">Continuar comprando</button> </router-link>

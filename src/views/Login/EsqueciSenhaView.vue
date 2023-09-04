@@ -31,7 +31,7 @@ const v$ = useVuelidate(rules, state)
         <div class="containerPrincipal ">
             <div class="FormBot">
                 <div class="FormTop">
-                    <img src="@/img/Main-img/CriarConta/Logo.png" alt="" width="150">
+                    <img src="@/assets/img/Main-img/CriarConta/Logo.png" alt="" width="150">
                 </div>
                 <h4>Verifique seu e-mail e insira uma nova senha.</h4>
                 <p class="FormP">Enviamos um código para</p>

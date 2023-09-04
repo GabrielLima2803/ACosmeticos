@@ -39,7 +39,7 @@ const v$ = useVuelidate(rules, state)
     <div class="wrapContainer">
         <div class="containerPrincipal ">
             <div class="FormTop">
-                <img src="@/img/icon-Header/LogoAcosmeticos.png" alt="" width="220">
+                <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220">
             </div>
             <div class="FormBot">
                 <h4>Olá!</h4>

@@ -7,7 +7,7 @@
         <div class="wrapContainer">
             <div class="containerPrincipal">
                 <div>
-                    <img class="logo" src="@/img/img-sobrenos/icone.png" alt="">
+                    <img class="logo" src="@/assets/img/img-sobrenos/icone.png" alt="">
                     <div>
                         <h1>Sobre Nós</h1>
                         <div>
@@ -21,7 +21,7 @@
                 </div>
                 <div class="wrapGrid">
                     <div class="left-div">
-                        <img class="img1" src="@/img/img-sobrenos/AndreiaPrimeira.png" alt="">
+                        <img class="img1" src="@/assets/img/img-sobrenos/AndreiaPrimeira.png" alt="">
                     </div>
                     <div class="p2 right-div">
                         <p class="pDireita">A vida é mais leve para quem acredita no poder dos seus sonhos e corre atrás
@@ -43,12 +43,12 @@
                             processo de mitigação.</p>
                     </div>
                     <div class=" right-div">
-                        <img class="img" src="@/img/img-sobrenos/AndreiaSegunda.png" alt="">
+                        <img class="img" src="@/assets/img/img-sobrenos/AndreiaSegunda.png" alt="">
                     </div>
                 </div>
                 <div class="wrapGrid">
                     <div class="left-div">
-                        <img class="img1" src="@/img/img-sobrenos/Terceira.png" alt="">
+                        <img class="img1" src="@/assets/img/img-sobrenos/Terceira.png" alt="">
                     </div>
                     <div class="p2 right-div">
                         <h4 class="h4Direita">MAQUIAGENS INCRÍVEIS</h4>
@@ -76,12 +76,12 @@
                             agradar todos os estilos.</p>
                     </div>
                     <div class=" right-div">
-                        <img class="img" src="@/img/img-sobrenos/AndreiaQuarta.png" alt="">
+                        <img class="img" src="@/assets/img/img-sobrenos/AndreiaQuarta.png" alt="">
                     </div>
                 </div>
                 <div class="wrapGrid">
                     <div class="left-div">
-                        <img class="img2" src="@/img/img-sobrenos/Quinta.png" alt="">
+                        <img class="img2" src="@/assets/img/img-sobrenos/Quinta.png" alt="">
                     </div>
                     <div class="p2 right-div">
                         <h4 class="h4Direita">CORPO E BANHO</h4>
@@ -95,7 +95,7 @@
                     </div>
                 </div>
                 <div  class="wrapGrid1">
-                    <img src="@/img/img-sobrenos/AndreiaUltima.png" alt=""> 
+                    <img src="@/assets/img/img-sobrenos/AndreiaUltima.png" alt=""> 
                         <div class="lado">
                             <h4 class="h4Roxo">TIME DE ESTRELAS</h4>
                             <p class="p2">  Encontre o maior time de estrelas e celebridades nacionais e internacionais aqui na Jequiti! Além de assinarem suas próprias fragrâncias, cada artista participa de todo o processo de criação e desenvolvimento dos seus produtos, que acabam representando suas personalidades por completo. No hall da fama da Jequiti temos fragrâncias dos apresentadores mais queridos do Brasil: Patricia Abravanel, Eliana, Celso Portiolli, Adriane Galisteu, Rebeca Abravanel e Rodrigo Faro. Ana Hickmann, Sabrina Sato, Claudia Leitte, Larissa Manoela, Giovanna Antonelli, Lucas Lucco, Carlinhos Maia, Fábio Jr., Luan Santana e até o craque do futebol CR7 completam nosso portfólio de celebridades!A Jequiti é uma marca completa que oferece as mais diversas linhas de cosméticos e beleza para te acompanhar em todos os momentos. Foi pensando nisso que idealizamos as minisséries, que são pequenas fragrâncias de 25ml que se tornaram nosso carro-chefe. São perfeitas para você experimentar diversos cheirinhos diferentes, escolher seu preferido e levá-lo com você para todos os lugares!</p>

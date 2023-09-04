@@ -8,17 +8,17 @@
         <div class="header-roxa"></div>
         <div class="header-logo pt-3">
           <div class="logo">
-            <img src="@/img/icon-Header/LogoAcosmeticos.png" alt="" class="hd-logo-margin">
+            <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" class="hd-logo-margin">
           </div>
           <div class="header-icons">
             <router-link to="/carrinho" class="header-links icons-margin"
-              ><img src="@/img/icon-Header/icon_Bolsa.png" alt=""
+              ><img src="@/assets/img/icon-Header/icon_Bolsa.png" alt=""
             /></router-link>
             <router-link to="/favorito" class="header-links icons-margin"
-              ><img src="@/img/icon-Header/icon_Coração.png" alt=""
+              ><img src="@/assets/img/icon-Header/icon_Coração.png" alt=""
             /></router-link>
             <router-link to="/perfil" class="header-links"
-              ><img src="@/img/icon-Header/icon_Pessoa.png" alt=""
+              ><img src="@/assets/img/icon-Header/icon_Pessoa.png" alt=""
             /></router-link>
           </div>
         </div>

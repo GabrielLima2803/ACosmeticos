@@ -11,7 +11,7 @@
       <v-expansion-panels class="marginPanel">
         <v-expansion-panel class="TamanhoPanel">
           <v-expansion-panel-title >
-            <img src="@/img/Main-img/Main-Panel/bolsa.png" alt="" width="15">
+            <img src="@/assets/img/Main-img/Main-Panel/bolsa.png" alt="" width="15">
             <p class="pTitle">Prazo e Entrega</p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
@@ -68,7 +68,7 @@
 
         <v-expansion-panel class="marginPanel">
           <v-expansion-panel-title>
-            <img src="@/img/Main-img/Main-Panel/seta.png" alt="" width="16">
+            <img src="@/assets/img/Main-img/Main-Panel/seta.png" alt="" width="16">
             <p class="pTitle">Troca e Devoluções</p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
@@ -93,7 +93,7 @@
 
         <v-expansion-panel class="marginPanel">
           <v-expansion-panel-title disable-icon-rotate>
-            <img src="@/img/Main-img/Main-Panel/Book.png" alt="" width="15">
+            <img src="@/assets/img/Main-img/Main-Panel/Book.png" alt="" width="15">
             <p class="pTitle">Termos e Condições</p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
@@ -162,7 +162,7 @@
 
         <v-expansion-panel class="mt-4">
           <v-expansion-panel-title >
-            <img src="@/img/Main-img/Main-Panel/medalha.png" alt="" width="11">
+            <img src="@/assets/img/Main-img/Main-Panel/medalha.png" alt="" width="11">
             <p class="pTitle">Política e Privacidade </p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
@@ -266,7 +266,7 @@
 
         <v-expansion-panel class="marginPanel">
           <v-expansion-panel-title>
-            <img src="@/img/Main-img/Main-Panel/pessoa.png" alt="" width="15">
+            <img src="@/assets/img/Main-img/Main-Panel/pessoa.png" alt="" width="15">
             <p class="pTitle">Perguntas Frequentes</p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
@@ -307,7 +307,7 @@
 
         <v-expansion-panel class="marginPanel">
           <v-expansion-panel-title disable-icon-rotate>
-            <img src="@/img/Main-img/Main-Panel/perigo.png" alt="" width="15">
+            <img src="@/assets/img/Main-img/Main-Panel/perigo.png" alt="" width="15">
             <p class="pTitle">Alerta</p>
           </v-expansion-panel-title>
           <v-expansion-panel-text>
