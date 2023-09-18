@@ -40,7 +40,6 @@ onMounted(buscarmarcas);
     <div v-for="marca in marcas" :key="marca.id">
       {{ marca.tipo_do_Produto}}
     </div>
-  </div>
 </template>
 
 <style scoped>
