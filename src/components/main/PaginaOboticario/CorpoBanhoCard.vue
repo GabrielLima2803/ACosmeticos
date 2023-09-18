@@ -1,5 +1,5 @@
 <script setup>
-
+import { corpoBanho } from '@/_data/corpobanho.js';
 import { onMounted, ref } from 'vue';
 
 function enterImage(index) {
@@ -14,50 +14,21 @@ function leaveImage(index) {
 
 const expand = ref([])
 
-
-const corpo = [
-  {
-    id: 1,
-    marca: 'Cuide-se-bem',
-    img: 'https://i.ibb.co/r5LyhfT/cuide-se-bem.png',
-    hover: 'Com fragrâncias envolventes, os produtos da linha Cuide-se Bem promovem a hidratação que você precisa com ativos que cuidam da pele em diferentes ocasiões de uso.'
-  },
-  {
-    id: 2,
-    marca: 'Liz',
-    img: 'https://i.ibb.co/7V2FgGn/liz.png',
-    hover: 'Liz traz a exclusiva Base de Laire Íris Nobre, uma fórmula quea, para alcançar o seu melhor, leva anos para ser produzida. Conheça a linha completa da nova fragrância intensa e marcante do Boticário!'
-  },
-  {
-    id: 3,
-    marca: 'Nativa-spa',
-    img: 'https://i.ibb.co/cCNGR9X/spa.png',
-    hover: 'Os produtos Nativa Spa são perfeitos para quem valoriza experiencias sensoriais com resultados eficazes. Suas linhas completas entregam tratamentos com ingredientes naturais. '
-  },
-  {
-    id: 4,
-    marca: 'Malbec',
-    img: 'https://i.ibb.co/GW8K50P/malbec-1.png',
-    hover: 'Com fragrâncias marcantes como um bom vinho, as fragrâncias Malbec são as primeiras do mundo a serem feitas com álcool vínico. Um verdadeiro presente para o homem que sabe apreciar o que há de bom na vida.'
-  },
-  {
-    id: 5,
-    marca: 'Zaad',
-    img: 'https://i.ibb.co/qgMZDgW/zaad.png',
-    hover: 'Zaad é ideal para homens sofisticados e sonhadores, que levam a vida com intensidade, sempre seguindo a intuição e se mantendo aberto a grandes paixões.'
-  },
-]
 onMounted(() => {
   corpo.forEach(() =>
     expand.value.push(false)
   )
 })
+function irPara(link) {
+  router.push(`/corpoBanho#${link}`)
+}
+
 </script>
 
 
 <template>
   <v-row>
-    <v-col v-for="(produto, index) in corpo" :key="index" class="col card-perfumaria">      
+    <v-col v-for="(produto, index) in corpo" :key="index" class="col card-perfumaria"  @click="irPara(produto.link)">      
       <img @mouseenter="enterImage(index)" @mouseleave="leaveImage(index)" :src="produto.img" class="image-perfumaria" />
       <div class="card" :class="expand[index] ? 'hover' : ''" @mouseenter="enterImage(index)"
         @mouseleave="leaveImage(index)">

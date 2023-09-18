@@ -38,7 +38,7 @@ import { addAosFavoritos } from '../../../_data/favorito'
             </div>
             <router-link to="/oboticario">
               <div class="img-oboticario">
-                <img src="@/assets/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
+                <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
               </div>
             </router-link>
             <h5 class="titulo-Cos">{{ produto.nome }}</h5>
@@ -46,8 +46,8 @@ import { addAosFavoritos } from '../../../_data/favorito'
             <p class="preco-Cos">R$ {{ produto.preco }}</p>
           </router-link>
           <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
-            <img src="@/assets/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
-            <img src="@/assets/img/Main-img/Main-Cards/icone.sacolaBranca.png" alt="" class="White-Bag" />
+            <img src="@/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
+            <img src="@/img/Main-img/Main-Cards/icone.sacolaBranca.png" alt="" class="White-Bag" />
           </button>
         </div>
       </div>
