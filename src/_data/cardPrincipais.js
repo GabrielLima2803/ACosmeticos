@@ -9,7 +9,7 @@ const cosmeticos =
     descicao: 'Eau De Parfum 95ml',
     preco: 284.90,
     quantidade: 1,
-    img: 'https://shoppingalso2021.vtexassets.com/arquivos/ids/254976/image-f03370532d32414c8b0e40c9820de357.jpg?v=638029428465700000',
+    img: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/products/B46898/zaad_expedition_B46898_segredinhos.jpg',
   },
   {
     id: 2,

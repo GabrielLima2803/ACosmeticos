@@ -178,11 +178,3 @@ a {
   transform: translateY(0);
   /* Move to the top */
 }</style>
-
-
-
-
-
-
-
-
