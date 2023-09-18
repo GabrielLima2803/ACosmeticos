@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { perfumaria1 } from '@/_data/perfumaria.js'
+import { addAosCarrinho } from '@/_data/carrinho';
 import CarrosselProduto from '@/components/main/Carrossel-Produto.vue'
 
 
@@ -43,7 +44,7 @@ const toggleEnviarProdutoDescricao = () => {
 
 const maxRating = 5
 const rating = ref(0)
-  
+
 const setRating = (value) => {
   rating.value = value
 }
@@ -51,7 +52,7 @@ const setRating = (value) => {
 <template>
   <div class="container">
     <div class="carrosel">
-      <carrossel-produto/>
+      <carrossel-produto />
     </div>
     <div class="info-produto">
       <div class="card-cosmeticos">
@@ -75,7 +76,7 @@ const setRating = (value) => {
                 </div>
                 <p class="preco-Cos">{{ produto.preco }}</p>
                 <p class="vezes">9x de R$ 22,21</p>
-                <button type="button" class="Button-CardPay">Comprar</button>
+                <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">Comprar</button>
               </div>
             </div>
           </div>
@@ -196,9 +197,10 @@ const setRating = (value) => {
 </template>
 
 <style scoped>
-*{
+* {
   font-family: 'Jost', sans-serif;
 }
+
 .button-container {
   display: flex;
   justify-content: flex-start;
@@ -307,6 +309,7 @@ button {
   color: white;
   font-size: large;
 }
+
 .info-produto {
   display: flex;
   align-items: flex-start;
@@ -354,11 +357,13 @@ button {
 }
 
 .star-border {
-  color: #d3d3d3; /* Cor da borda da estrela */
+  color: #d3d3d3;
+  /* Cor da borda da estrela */
 }
 
 .filled .star-border {
-  color: #43055d; /* Cor da estrela preenchida */
+  color: #43055d;
+  /* Cor da estrela preenchida */
 }
 
 .rating-status {
@@ -366,5 +371,4 @@ button {
   color: #43055d;
   font-size: x-small;
 
-}
-</style>
+}</style>
