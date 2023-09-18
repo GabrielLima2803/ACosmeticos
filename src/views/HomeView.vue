@@ -35,10 +35,12 @@ onMounted(buscarmarcas);
     <full-card />
     <black-prog/>
 
-    a
-<div v-for="marca in marcas" :key="marca.id">
-    {{ marca.nome_marcas }} 
-</div>
+    <black-prog />
+    aa  
+    <div v-for="marca in marcas" :key="marca.id">
+      {{ marca.tipo_do_Produto}}
+    </div>
+  </div>
 </template>
 
 <style scoped>
