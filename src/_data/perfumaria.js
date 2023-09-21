@@ -3,6 +3,10 @@ import { ref } from 'vue'
 const perfumaria1 = ref([
   {
     tipo: 'Malbec',
+    link: 'malbec',
+    img: 'https://i.ibb.co/qmRY4KH/malbec.png',
+    hover: 'Com fragrâncias marcantes como um bom vinho, as fragrâncias Malbec são as primeiras do mundo a serem feitas com álcool vínico.',
+    texto_card:'Malbec',
     produtos: ref([
       {
         id: 1,
@@ -59,6 +63,10 @@ const perfumaria1 = ref([
   },
   {
     tipo: 'Coffe',
+    link: 'coffe',
+    img: 'https://i.ibb.co/wpT2nhL/coffee.png',
+    hover: 'Inspirada nos mais nobres grãos de café, a marca de perfumaria Coffee do Boticário traz fragrâncias masculinas e femininas que encantam com sua riqueza olfativa! Confira os produtos e sinta o aroma do café no ar!',
+    texto_card:'Coffe',
     produtos: ref([
       {
         id: 1,
@@ -116,6 +124,10 @@ const perfumaria1 = ref([
 
   {
     tipo: 'Dr Botica',
+    link: 'dr botica',
+    img: 'https://i.ibb.co/wpT2nhL/coffee.png',
+    hover: 'Inspirada nos mais nobres grãos de café, a marca de perfumaria Coffee do Boticário traz fragrâncias masculinas e femininas que encantam com sua riqueza olfativa! Confira os produtos e sinta o aroma do café no ar!',
+    texto_card:'Dr Botica',
     produtos: ref([
       {
         id: 1,
@@ -172,6 +184,10 @@ const perfumaria1 = ref([
   },
   {
     tipo: 'Egeo',
+    link: 'egeo',
+    img: 'https://i.ibb.co/s2fqRjY/egeo.png',
+    hover: 'Egeo é assim, aquela vibe boa que você sente de longe. Conheça todas as versões do Egeo Feminino e Egeo Masculino e encontre a fragrância que mais tem a ver com você.',
+    texto_card:'Egeo',
     produtos: ref([
       {
         id: 1,
@@ -228,6 +244,10 @@ const perfumaria1 = ref([
   },
   {
     tipo: 'Lily',
+    link: 'lily',
+    img: 'https://i.ibb.co/jMsVyHd/lily.png',
+    hover: 'Através do raro processo artesanal de enfleurage, os eaux de parfum de Lily possuem em sua essência as melhores notas dos lírios, criando fragrâncias únicas, delicadas e marcantes.',
+    texto_card:'Egeo',
     produtos: ref([
       {
         id: 1,
