@@ -2,6 +2,7 @@
 </script>
 
 <template>
+    
     <div class="tamanhoDivs">
 
         <div class="wrapContainer">

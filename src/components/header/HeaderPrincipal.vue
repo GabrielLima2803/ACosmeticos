@@ -12,13 +12,13 @@
           </div>
           <div class="header-icons">
             <router-link to="/carrinho" class="header-links icons-margin"
-              ><img src="@/assets/img/icon-Header/icon_Bolsa.png" alt=""
+              ><img src="@/assets/img/icon-Header/icon_Bolsa.png" alt="" class="hover" 
             /></router-link>
-            <router-link to="/favorito" class="header-links icons-margin"
-              ><img src="@/assets/img/icon-Header/icon_Coração.png" alt=""
+            <router-link to="/favorito" class="header-links icons-margin "
+              ><img src="@/assets/img/icon-Header/icon_Coração.png" alt="" class="hover"
             /></router-link>
             <router-link to="/perfil" class="header-links"
-              ><img src="@/assets/img/icon-Header/icon_Pessoa.png" alt=""
+              ><img src="@/assets/img/icon-Header/icon_Pessoa.png" alt="" class="hover"
             /></router-link>
           </div>
         </div>
@@ -34,10 +34,6 @@
   </template>
 
 <style scoped>
-/* 
-.p-4 {
-    padding: .5em 0 0 0;
-} */
 
 .header-roxa {
     width: 100%;

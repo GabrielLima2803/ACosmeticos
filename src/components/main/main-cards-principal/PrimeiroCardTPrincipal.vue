@@ -54,6 +54,33 @@ window.addEventListener('resize', () => {
 </template>
 
 <style scoped>
+
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide-item {
+  text-align: center;
+  padding: 10px;
+}
+
+.img-coracao {
+  display: flex;
+  justify-content: flex-start;
+  max-width: 227px;
+  position: relative;
+}
+
+.logo-icon,
+.filled-heart-icon {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  color: #4d066b;
+}
+
 .header-links {
   font-family: 'Jost', sans-serif;
   text-decoration: none;

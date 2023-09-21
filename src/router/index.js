@@ -15,8 +15,6 @@ import MaquiagemView from '@/views/Marcas/Oboticario/Oboticario-Cards/MaquiagemV
 import CabelosView from '@/views/Marcas/Oboticario/Oboticario-Cards/CabelosView.vue'
 import ProdutoView from '@/views/ProdutoView.vue'
 
-
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
