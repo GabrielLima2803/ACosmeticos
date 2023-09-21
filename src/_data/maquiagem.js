@@ -1,6 +1,10 @@
 const maquiagem = [
   {
     tipo: 'Olhos',
+    link: 'olhos',
+    img: 'https://i.ibb.co/Mp2CNg1/image-134.png',
+    hover: 'Realce seus olhos com nossos produtos de maquiagem, destacando sua expressão de maneira autêntica e moderna.',
+    texto_card:'Olhos',
     produtos: [
       {
           id: 1,
@@ -45,6 +49,10 @@ const maquiagem = [
   },
   {
     tipo: 'Blush',
+    link: 'blush',
+    img: 'https://i.ibb.co/TcF51wY/image-119-1.png',
+    hover: 'Com um toque suave de blush, as bochechas ganham um rubor sutil, irradiando um frescor que parece capturar a luminosidade do dia.',
+    texto_card:'Blush',
     produtos: [
       {
           id: 1,
@@ -92,6 +100,10 @@ const maquiagem = [
 
   {
     tipo: 'Boca',
+    link: 'boca',
+    img: 'https://i.ibb.co/bB4W2Yy/image-119.png',
+    hover: 'Um batom cuidadosamente selecionado não apenas colore os lábios, mas também revela sua confiança e estilo de forma sutil e autêntica.',
+    texto_card:'Boca',
     produtos: [
       {
           id: 1,
@@ -137,6 +149,10 @@ const maquiagem = [
   },
   {
     tipo: 'Rosto',
+    link: 'rosto',
+    img: 'https://i.ibb.co/VSzg4k3/image-135.png',
+    hover: 'A maquiagem para o rosto realça a beleza única de cada pessoa, sem exageros, apenas realçando o que já é incrível.',
+    texto_card:'Rosto',
     produtos: [
       {
           id: 1,
@@ -183,6 +199,10 @@ const maquiagem = [
   },
   {
     tipo: 'Brilho',
+    link: 'brilho',
+    img: 'https://i.ibb.co/syy2fFy/image-136.png',
+    hover: 'Descubra a luminosidade sofisticada que sua maquiagem pode ter, proporcionando um brilho que reflete sua beleza autêntica.',
+    texto_card:'Brilho',
     produtos: [
       {
           id: 1,

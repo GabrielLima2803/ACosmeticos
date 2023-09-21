@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from 'vue'
-import { perfumaria1 } from '@/_data/perfumaria.js'
+import { ref, defineProps, onMounted } from 'vue'
+import { getProduto } from '@/_data/produtos.js'
 import { addAosCarrinho } from '@/_data/carrinho';
 import CarrosselProduto from '@/components/main/Carrossel-Produto.vue'
 
@@ -9,6 +9,17 @@ const enviarProduto = ref(false)
 const enviarComoUsar = ref(false)
 const enviarIngredientes = ref(false)
 const enviarProdutoDescricao = ref(false)
+
+const produto = ref({})
+
+const props = defineProps({
+  tipo: String,
+  id: Number
+})
+
+onMounted(() => {
+  produto.value = getProduto(props.tipo, props.id)
+})
 
 const toggleEnviarProduto = () => {
   enviarProduto.value = !enviarProduto.value
@@ -56,31 +67,26 @@ const setRating = (value) => {
     </div>
     <div class="info-produto">
       <div class="card-cosmeticos">
-        <div v-for="(categoria, index) in perfumaria1" :key="index" class="categoria-card">
-          <div v-if="categoria.tipo === 'Malbec'">
-            <div v-for="produto in categoria.produtos" :key="produto.id">
-              <div v-if="produto.id === 3" class="flexCard">
-                <p class="descricao-Cos">{{ produto.nome }} {{ produto.descricao }}</p>
-                <div class="text-center">
-                  <div class="rating-container">
-                    <div class="rating">
-                      <span v-for="n in maxRating" :key="n" class="star" :class="{ 'filled': n <= rating }"
-                        @click="setRating(n)">
-                        <span class="star-border">&#9733;</span>
-                      </span>
-                    </div>
-                    <div class="rating-status">
-                      {{ rating > 0 ? 'AVALIADO' : 'SEM AVALIAÇÃO' }}
-                    </div>
-                  </div>
-                </div>
-                <p class="preco-Cos">{{ produto.preco }}</p>
-                <p class="vezes">9x de R$ 22,21</p>
-                <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">Comprar</button>
+        <div class="categoria-card">
+          <p class="descricao-Cos">{{ produto.nome }} {{ produto.descricao }}</p>
+          <div class="text-center">
+            <div class="rating-container">
+              <div class="rating">
+                <span v-for="n in maxRating" :key="n" class="star" :class="{ 'filled': n <= rating }"
+                  @click="setRating(n)">
+                  <span class="star-border">&#9733;</span>
+                </span>
+              </div>
+              <div class="rating-status">
+                {{ rating > 0 ? 'AVALIADO' : 'SEM AVALIAÇÃO' }}
               </div>
             </div>
           </div>
+          <p class="preco-Cos">{{ produto.preco }}</p>
+          <p class="vezes">9x de R$ 22,21</p>
+          <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">Comprar</button>
         </div>
+
       </div>
     </div>
   </div>
@@ -371,4 +377,5 @@ button {
   color: #43055d;
   font-size: x-small;
 
-}</style>
+}
+</style>
