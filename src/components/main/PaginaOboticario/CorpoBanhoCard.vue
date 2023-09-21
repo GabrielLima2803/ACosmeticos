@@ -15,9 +15,9 @@ function leaveImage(index) {
 const expand = ref([])
 
 onMounted(() => {
-  corpo.forEach(() =>
-    expand.value.push(false)
-  )
+  // corpo.forEach(() =>
+  //   expand.value.push(false)
+  // )
 })
 function irPara(link) {
   router.push(`/corpoBanho#${link}`)
@@ -28,7 +28,7 @@ function irPara(link) {
 
 <template>
   <v-row>
-    <v-col v-for="(produto, index) in corpo" :key="index" class="col card-perfumaria"  @click="irPara(produto.link)">      
+    <!-- <v-col v-for="(produto, index) in corpo" :key="index" class="col card-perfumaria"  @click="irPara(produto.link)">      
       <img @mouseenter="enterImage(index)" @mouseleave="leaveImage(index)" :src="produto.img" class="image-perfumaria" />
       <div class="card" :class="expand[index] ? 'hover' : ''" @mouseenter="enterImage(index)"
         @mouseleave="leaveImage(index)">
@@ -41,7 +41,7 @@ function irPara(link) {
           <p class="card-body" :class="expand[index] ? 'hover' : ''">{{ produto.hover }}</p>
         </div>
       </div>
-    </v-col>
+    </v-col> -->
   </v-row>
 </template>
 

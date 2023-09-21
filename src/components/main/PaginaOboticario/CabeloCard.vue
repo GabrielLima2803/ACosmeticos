@@ -27,7 +27,7 @@ onMounted(() => {
 })
 
 function irPara(link) {
-  router.push(`/cabelos#${link}`)
+  router.push({name: 'cabelos', hash: `#${link}`})
 }
 
 </script>

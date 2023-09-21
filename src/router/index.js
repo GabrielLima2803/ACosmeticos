@@ -91,20 +91,21 @@ const router = createRouter({
       component: CabelosView
     },
     {
-      path: '/produto/',
+      path: '/produto/:tipo/:id',
       name: 'produto',
       component: ProdutoView,
-      // props: true
+      props: true
     },
   ],
-  // scrollBehavior(to, from, savedPosition) {
-  //   if (to.hash) {
-  //     return {
-  //       el: to.hash,
-  //       behavior: 'smooth',
-  //     }
-  //   }
-  // }
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      console.log('oioioio')
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+  }
 })
 
 export default router

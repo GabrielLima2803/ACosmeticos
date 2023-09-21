@@ -6,21 +6,30 @@ import HeaderPrincipal from '@/components/header/HeaderPrincipal.vue';
 </script>
 
 <template>
-    <header-principal/>
+  <div id="main">
+    <header-principal />
     <div class="container-Principal">
       <router-view />
-    <div class="container max-footer">
-      <full-footer />
+      <div class="container max-footer">
+        <full-footer />
+      </div>
     </div>
   </div>
 </template>
 
 
 <style scoped>
+
+#main {
+  display: flex;
+  flex-direction: column;
+}
 .container-Principal {
   max-width: 1420px;
-  clear: both;
+  /* offset-position: 50px; */
+  clear: both; 
   margin: 0 auto
+  /* posi */
 }
 
 .container {
@@ -31,7 +40,8 @@ import HeaderPrincipal from '@/components/header/HeaderPrincipal.vue';
 .max-footer {
   max-width: 1220px;
 }
-.coisa{
+
+.coisa {
   position: sticky;
   top: 0;
 }

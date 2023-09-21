@@ -17,11 +17,11 @@ import { addAosFavoritos } from '../../../_data/favorito'
 
 <template>
   <div class="card-cosmeticos">
-    <div v-for="(categoria, index) in cabelo" :key="index" :id="categoria.link" class="categoria-card">
+    <div v-for="(categoria, index) in cabelo" :id="categoria.link" :key="index" class="categoria-card">
       <div class="wrapH2">
         <h2 class="texto-principal">{{ categoria.tipo }}</h2>
       </div>
-      <div class="produtos-card">
+      <div class="produtos-card" >
         <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
           <div class="img-coracao">
             <button type="button" @click="addAosFavoritos(produto)">
@@ -29,7 +29,7 @@ import { addAosFavoritos } from '../../../_data/favorito'
               <i class="bi bi-heart-fill filled-heart-icon"></i>
             </button>
           </div>
-          <router-link to="/produto" class="header-links">
+          <router-link :to="`/produto/${categoria.tipo}/${produto.id}`" class="header-links">
             <div class="tamanho-card">
               <img
                 :src="produto.img"
@@ -38,7 +38,7 @@ import { addAosFavoritos } from '../../../_data/favorito'
             </div>
             <router-link to="/oboticario">
               <div class="img-oboticario">
-                <img src="@/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
+                <img src="@/assets/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
               </div>
             </router-link>
             <h5 class="titulo-Cos">{{ produto.nome }}</h5>
@@ -179,11 +179,14 @@ import { addAosFavoritos } from '../../../_data/favorito'
   text-align: center;
   color: white;
   font-size: 120%;
-  margin-bottom: 30px;
-  margin-top: 30px;
+  margin-bottom: 50px;
+  margin-top: 120px;
   background-color: #194b3b;
 }
-
+h2{
+  margin-bottom: 70px;
+  margin-top: 80px;
+}
 .produtos-card {
   display: flex;
   flex-wrap: wrap;
