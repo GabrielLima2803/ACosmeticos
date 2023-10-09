@@ -1,42 +1,35 @@
-<script setup>
-import FullCard from '@/components/main/FullCard.vue'
-import Carrosel from '@/components/main/Carrosel.vue'
-import BlackProg from '@/components/main/BlackProg.vue'
-import { ref, onMounted } from 'vue'
-import ProdutosApi from '@/API/produtos.js'
+      <script setup>
+import { ref, onMounted } from 'vue';
+import ProdutosApi from '@/API/produtos.js';
+import MarcasApi from '@/API/marcas.js';
 
-const produtos = ref([])
-const novoProduto = ref({
-})
+const produtos = ref([]);
+const novoProduto = ref({});
+const marcas = ref([]);
 
-
-const carregarProdutos = async () => {
-  const api = new ProdutosApi()
-  produtos.value = await api.buscarTodosOsProdutos()
-}
-
-const adicionarProduto = async () => {
-  const api = new ProdutosApi()
-  await api.adicionarProduto(novoProduto.value)
-  carregarProdutos() 
-}
-
-const atualizarProduto = async (produto) => {
-  const api = new ProdutosApi();
-  await api.atualizarProduto(produto);
-  carregarProdutos(); 
+const carregarMarcas = async () => {
+  const api = new MarcasApi();
+  marcas.value = await api.buscarTodasAsMarcas();
 };
 
-const excluirProduto = async (id) => {
+const carregarProdutos = async () => {
   const api = new ProdutosApi();
-  await api.excluirProduto(id);
-  carregarProdutos(); 
+  const idMarcaDesejada = 3; // ID da marca desejada, neste caso, 2
+  const todosOsProdutos = await api.buscarTodosOsProdutos();
+  produtos.value = todosOsProdutos.filter((produto) => produto.marca.id === idMarcaDesejada);
+};
+
+const adicionarProduto = async () => {
+  const api = new ProdutosApi();
+  await api.adicionarProduto(novoProduto.value);
+  carregarProdutos();
 };
 
 onMounted(() => {
-  carregarProdutos()
-})
-</script>
+  carregarProdutos();
+  carregarMarcas();
+});
+      </script>
 <template>
   <div class="z-1">
     <carrosel />
@@ -45,6 +38,9 @@ onMounted(() => {
   <black-prog />
 
   <black-prog />
+
+  <!-- --- -->
+
   <div>
     <h1>Lista de Produtos</h1>
 
@@ -55,13 +51,24 @@ onMounted(() => {
       <button type="submit">Adicionar Produto</button>
     </form>
 
-    <!-- Lista de Produtos -->
+    <!-- Lista de Produtos da marca com ID 2 -->
     <ul>
       <li v-for="produto in produtos" :key="produto.id">
         {{ produto.nome }}
       </li>
     </ul>
   </div>
+
+  <div>
+    <h1>Lista de Marcas</h1>
+    <!-- Lista de Marcas -->
+    <ul>
+      <li v-for="marca in marcas" :key="marca.id">
+        {{ marca.nome }}
+      </li>
+    </ul>
+  </div>
 </template>
+
 
 <style scoped></style>

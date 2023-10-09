@@ -35,11 +35,11 @@ const vuetify = createVuetify({
 })
 
 const pinia = createPinia()
-app.use(pinia)
 
 const app = createApp(App)
 
 // app.use(createPinia());
+app.use(pinia)
 app.use(router)
 app.use(vuetify)
 

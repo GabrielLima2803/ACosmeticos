@@ -1,35 +1,31 @@
-import { ref, onMounted } from 'vue';
-import { useStore } from '@/store'; // 
+import { createPinia } from 'pinia';
+import ProdutosApi from '@/API/produtos.js';
 
-export default {
-  setup() {
-    const store = useStore();
+const pinia = createPinia();
 
-    const novoProduto = ref({});
-
-    const adicionarProduto = async () => {
-      await store.adicionarProduto(novoProduto.value);
-      novoProduto.value = {}; // Limpa o novoProduto após a adição
-    };
-
-    const atualizarProduto = async (produto) => {
-      await store.atualizarProduto(produto);
-    };
-
-    const excluirProduto = async (id) => {
-      await store.excluirProduto(id);
-    };
-
-    onMounted(() => {
-      store.carregarProdutos();
-    });
-
-    return {
-      store,
-      novoProduto,
-      adicionarProduto,
-      atualizarProduto,
-      excluirProduto,
-    };
+export const useProdutosStore = pinia.defineStore('produtos', {
+  state: () => ({
+    produtos: [],
+  }),
+  actions: {
+    async carregarProdutos() {
+      const api = new ProdutosApi();
+      this.produtos = await api.buscarTodosOsProdutos();
+    },
+    async adicionarProduto(produto) {
+      const api = new ProdutosApi();
+      await api.adicionarProduto(produto);
+      await this.carregarProdutos();
+    },
+    async atualizarProduto(produto) {
+      const api = new ProdutosApi();
+      await api.atualizarProduto(produto);
+      await this.carregarProdutos();
+    },
+    async excluirProduto(id) {
+      const api = new ProdutosApi();
+      await api.excluirProduto(id);
+      await this.carregarProdutos();
+    },
   },
-};
+});
