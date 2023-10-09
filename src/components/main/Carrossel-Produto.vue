@@ -1,27 +1,19 @@
 <script setup>
-// import { getCosmeticosById } from '@/_data/cardPrincipais.js'
-import {  ref } from 'vue'
-// import { perfumaria1 }from '@/_data/carrinho'
-// import { useRoute } from 'vue-router'
+import { ref, defineProps, onMounted } from 'vue'
+import { getProduto } from '@/_data/produtos.js'
 
-// const route = useRoute()
+const produto = ref({})
 
-// const cosmeticos = ref({})
-
-// onMounted(() => {
-//   cosmeticos.value = getCosmeticosById(route.params.id)
-// })
-
-const carouselItems = [
-  {
-    src: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/e162f566-ac87-447d-b805-23782a3f0f8a-malbec-colonia-club-100ml-v3-b49031.jpg',
-    thumbnail: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/e162f566-ac87-447d-b805-23782a3f0f8a-malbec-colonia-club-100ml-v3-b49031.jpg',
-  },
-  {
-    src: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/cf47a92d-9986-4c9d-8a0a-043c9e3e54c3-malbec-colonia-club-100ml-v3-b49031-segredinho.jpg',
-    thumbnail: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/cf47a92d-9986-4c9d-8a0a-043c9e3e54c3-malbec-colonia-club-100ml-v3-b49031-segredinho.jpg', // Using the same thumbnail for simplicity
-  },
-];
+// const carouselItems = [
+//   {
+//     src: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/e162f566-ac87-447d-b805-23782a3f0f8a-malbec-colonia-club-100ml-v3-b49031.jpg',
+//     thumbnail: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/e162f566-ac87-447d-b805-23782a3f0f8a-malbec-colonia-club-100ml-v3-b49031.jpg',
+//   },
+//   {
+//     src: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/cf47a92d-9986-4c9d-8a0a-043c9e3e54c3-malbec-colonia-club-100ml-v3-b49031-segredinho.jpg',
+//     thumbnail: 'https://res.cloudinary.com/beleza-na-web/image/upload/w_1500,f_auto,fl_progressive,q_auto:best/v1/imagens/product/B49031/cf47a92d-9986-4c9d-8a0a-043c9e3e54c3-malbec-colonia-club-100ml-v3-b49031-segredinho.jpg', // Using the same thumbnail for simplicity
+//   },
+// ];
 
 const currentIndex = ref(0);
 
