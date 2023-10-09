@@ -27,7 +27,7 @@ window.addEventListener('resize', () => {
               <i class="bi bi-heart-fill filled-heart-icon"></i>
             </button>
           </div>
-          <router-link to="/produto" class="header-links">
+          <router-link :to="`/produto/${categoria.tipo}/${produto.id}`" class="header-links">
             <div class="tamanho-card">
               <img
                 :src="produto.img"

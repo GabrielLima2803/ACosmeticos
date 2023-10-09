@@ -64,7 +64,7 @@ const perfumaria1 = ref([
   {
     tipo: 'Coffe',
     link: 'coffe',
-    img: 'https://i.ibb.co/wpT2nhL/coffee.png',
+    img: 'https://i.ibb.co/sPDtgKm/dr-botica.png',
     hover: 'Inspirada nos mais nobres grãos de café, a marca de perfumaria Coffee do Boticário traz fragrâncias masculinas e femininas que encantam com sua riqueza olfativa! Confira os produtos e sinta o aroma do café no ar!',
     texto_card:'Coffe',
     produtos: ref([

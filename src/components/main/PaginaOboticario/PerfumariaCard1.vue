@@ -20,14 +20,14 @@ const expand = ref([])
 
 import { perfumaria1 } from '@/_data/perfumaria.js'
 
-onMounted(() => {
-  perfumaria1.forEach(() =>
-    expand.value.push(false)
-  )
-})
+// onMounted(() => {
+//   perfumaria1.forEach(() =>
+//     expand.value.push(false)
+//   )
+// })
 
 function irPara(link) {
-  router.push({name: 'perfumaria1', hash: `#${link}`})
+  router.push({name: 'perfumaria', hash: `#${link}`})
 }
 
 </script>

@@ -83,7 +83,7 @@ const setRating = (value) => {
             </div>
           </div>
           <p class="preco-Cos">{{ produto.preco }}</p>
-          <p class="vezes">9x de R$ 22,21</p>
+          <p class="vezes">9x de R$ {{ ((produto.preco)/9).toFixed(2)}}</p>
           <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">Comprar</button>
         </div>
 
