@@ -5,7 +5,7 @@ import FullCardPerfumaria from '@/components/main/CardsFullOboticario/FullCardPe
 </script>
 
 <template>
-    <h1>Perfumaria</h1>
+    <h1 class="principal">Perfumaria</h1>
 <full-card-perfumaria/>
 </template>
 
@@ -13,6 +13,9 @@ import FullCardPerfumaria from '@/components/main/CardsFullOboticario/FullCardPe
 h1{
     text-decoration: none;
     text-align: center;
+    margin: 50px;
+}
+.principal{
     margin: 50px;
 }
 </style>

@@ -97,7 +97,6 @@ const router = createRouter({
   ],
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
-      console.log('oioioio')
       return {
         el: to.hash,
         behavior: 'smooth',
