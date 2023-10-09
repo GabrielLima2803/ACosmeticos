@@ -68,7 +68,7 @@ const setRating = (value) => {
     <div class="info-produto">
       <div class="card-cosmeticos">
         <div class="categoria-card">
-          <p class="descricao-Cos">{{ produto.nome }} {{ produto.descricao }}</p>
+          <p class="descricao-Cos"> {{ produto.nome }} {{ produto.descricao }}</p>
           <div class="text-center">
             <div class="rating-container">
               <div class="rating">
