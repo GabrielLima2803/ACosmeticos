@@ -30,6 +30,9 @@ function irPara(link) {
   router.push({name: 'cabelos', hash: `#${link}`})
 }
 
+
+
+
 </script>
 
 

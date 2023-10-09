@@ -2,50 +2,42 @@
 import FullCard from '@/components/main/FullCard.vue'
 import Carrosel from '@/components/main/Carrosel.vue';
 import BlackProg from '@/components/main/BlackProg.vue';
+import {ref, onMounted} from 'vue'
+import ProdutosApi from '@/API/produtos.js'; 
 
-import axios from 'axios';
-import { ref, onMounted } from 'vue';
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1MDYwNzg4LCJpYXQiOjE2OTUwNjA0ODgsImp0aSI6IjBhZjZjMzI5ZWMxNTQ4YmY4YWE2MzYxOWQ3MzQxNTgxIiwidXNlcl9pZCI6MX0.ZvnIP3HhiYSTPorvtHBGMh5DFYCB4M1Xy-w6NlvpEVw'
+const produtos = ref([]);
+const novoProduto = ref({
+  // Defina os campos do novo produto aqui
+});
 
-const marcasAPI = async () => {
-  try {
-    const { data } = await axios.get('/marcas/', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return data;
-  } catch (error) {
-    console.error('Erro ao buscar todas as marcas:', error);
-
-    // Se o token expirar, renova o token e tenta novamente a solicitação
-    if (error.response.status === 401) {
-      const newToken = await renovarToken();
-      return marcasAPI({ headers: { Authorization: `Bearer ${newToken}` } });
-    }
-
-    throw error;
-  }
+const carregarProdutos = async () => {
+  const api = new ProdutosApi();
+  produtos.value = await api.buscarTodosOsProdutos();
 };
 
-const renovarToken = async () => {
-  // Renova o token aqui
-  // ...
+const adicionarProduto = async () => {
+  const api = new ProdutosApi();
+  await api.adicionarProduto(novoProduto.value);
+  carregarProdutos(); // Recarregue a lista de produtos após a adição
 };
 
-const marcas = ref([]);
-
-const buscarMarcas = async () => {
-  try {
-    marcas.value = await marcasAPI();
-  } catch (error) {
-    console.error('Erro ao buscar todas as marcas:', error);
-  }
+const atualizarProduto = async (produto) => {
+  const api = new ProdutosApi();
+  await api.atualizarProduto(produto);
+  carregarProdutos(); // Recarregue a lista de produtos após a atualização
 };
 
-onMounted(buscarMarcas);
+const excluirProduto = async (id) => {
+  const api = new ProdutosApi();
+  await api.excluirProduto(id);
+  carregarProdutos(); // Recarregue a lista de produtos após a exclusão
+};
 
+// Chame carregarProdutos no momento da criação do componente
+onMounted(() => {
+  carregarProdutos();
+});
 </script>
 <template>
     <div class="z-1">
@@ -55,10 +47,29 @@ onMounted(buscarMarcas);
     <black-prog/>
 
     <black-prog />
-    aa  
-    <div v-for="marca in marcas" :key="marca.id">
-      {{ marca.tipo_do_Produto}}
-    </div>
+    <div>
+    <h1>Lista de Produtos</h1>
+
+    <!-- Formulário para adicionar um novo produto -->
+    <form @submit.prevent="adicionarProduto">
+      <input v-model="novoProduto.nome" placeholder="Nome do Produto" />
+      <!-- Outros campos do produto aqui -->
+      <button type="submit">Adicionar Produto</button>
+    </form>
+
+    <!-- Lista de Produtos -->
+    <ul>
+      <li v-for="produto in produtos" :key="produto.id">
+        {{ produto.nome }}
+        {{ produto.preco }}
+        <!-- Outros campos do produto aqui -->
+        <button @click="atualizarProduto(produto)">Atualizar</button>
+        <button @click="excluirProduto(produto.id)">Excluir</button>
+      </li>
+    </ul>
+  </div>
+
+
 </template>
 
 <style scoped>
