@@ -1,65 +1,67 @@
 <script setup>
 import FullCard from '@/components/main/FullCard.vue'
-import Carrosel from '@/components/main/Carrosel.vue';
-import BlackProg from '@/components/main/BlackProg.vue';
+import Carrosel from '@/components/main/Carrosel.vue'
+import BlackProg from '@/components/main/BlackProg.vue'
+import { ref, onMounted } from 'vue'
+import ProdutosApi from '@/API/produtos.js'
 
-import axios from 'axios';
-import { ref, onMounted } from 'vue';
+const produtos = ref([])
+const novoProduto = ref({
+})
 
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk1MDYwNzg4LCJpYXQiOjE2OTUwNjA0ODgsImp0aSI6IjBhZjZjMzI5ZWMxNTQ4YmY4YWE2MzYxOWQ3MzQxNTgxIiwidXNlcl9pZCI6MX0.ZvnIP3HhiYSTPorvtHBGMh5DFYCB4M1Xy-w6NlvpEVw'
 
-const marcasAPI = async () => {
-  try {
-    const { data } = await axios.get('/marcas/', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    return data;
-  } catch (error) {
-    console.error('Erro ao buscar todas as marcas:', error);
+const carregarProdutos = async () => {
+  const api = new ProdutosApi()
+  produtos.value = await api.buscarTodosOsProdutos()
+}
 
-    // Se o token expirar, renova o token e tenta novamente a solicitação
-    if (error.response.status === 401) {
-      const newToken = await renovarToken();
-      return marcasAPI({ headers: { Authorization: `Bearer ${newToken}` } });
-    }
+const adicionarProduto = async () => {
+  const api = new ProdutosApi()
+  await api.adicionarProduto(novoProduto.value)
+  carregarProdutos() 
+}
 
-    throw error;
-  }
+const atualizarProduto = async (produto) => {
+  const api = new ProdutosApi();
+  await api.atualizarProduto(produto);
+  carregarProdutos(); 
 };
 
-const renovarToken = async () => {
-  // Renova o token aqui
-  // ...
+const excluirProduto = async (id) => {
+  const api = new ProdutosApi();
+  await api.excluirProduto(id);
+  carregarProdutos(); 
 };
 
-const marcas = ref([]);
-
-const buscarMarcas = async () => {
-  try {
-    marcas.value = await marcasAPI();
-  } catch (error) {
-    console.error('Erro ao buscar todas as marcas:', error);
-  }
-};
-
-onMounted(buscarMarcas);
-
+onMounted(() => {
+  carregarProdutos()
+})
 </script>
 <template>
-    <div class="z-1">
+  <div class="z-1">
     <carrosel />
-    </div>
-    <full-card />
-    <black-prog/>
+  </div>
+  <full-card />
+  <black-prog />
 
-    <black-prog />
-    aa  
-    <div v-for="marca in marcas" :key="marca.id">
-      {{ marca.tipo_do_Produto}}
-    </div>
+  <black-prog />
+  <div>
+    <h1>Lista de Produtos</h1>
+
+    <!-- Formulário para adicionar um novo produto -->
+    <form @submit.prevent="adicionarProduto">
+      <input v-model="novoProduto.nome" placeholder="Nome do Produto" />
+      <!-- Outros campos do produto aqui -->
+      <button type="submit">Adicionar Produto</button>
+    </form>
+
+    <!-- Lista de Produtos -->
+    <ul>
+      <li v-for="produto in produtos" :key="produto.id">
+        {{ produto.nome }}
+      </li>
+    </ul>
+  </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

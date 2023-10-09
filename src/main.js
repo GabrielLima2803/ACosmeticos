@@ -6,6 +6,7 @@ import '@/assets/main.css'
 import App from './App.vue'
 import router from './router'
 import './plugins/axios';
+import { createPinia } from 'pinia'
 
 
 
@@ -33,7 +34,8 @@ const vuetify = createVuetify({
   },
 })
 
-
+const pinia = createPinia()
+app.use(pinia)
 
 const app = createApp(App)
 
