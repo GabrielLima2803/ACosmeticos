@@ -1,8 +1,23 @@
 <script setup>
-import { ref, defineProps, onMounted } from 'vue'
+import { ref, defineProps, computed } from 'vue'
 import { getProduto } from '@/_data/produtos.js'
 
 const produto = ref({})
+
+const props = defineProps(['carouselItems'])
+
+// const carouselItems = computed(() => {
+//   const items = []
+//   if (props.image1) {
+//     items.push(props.image1)
+//   }
+
+//   if (props.image2) {
+//     items.push(props.image2)
+//   }
+
+//   return items
+// })
 
 // const carouselItems = [
 //   {
@@ -29,7 +44,7 @@ function changeCarouselIndex(index) {
         :class="['thumbnail', { active: currentIndex === index }]"
         @click="changeCarouselIndex(index)"
       >
-        <img :src="item.thumbnail" alt="Thumbnail" class="thumbnail-img">
+        <img :src="item" alt="Thumbnail" class="thumbnail-img">
       </div>
     </div>
 
@@ -37,7 +52,7 @@ function changeCarouselIndex(index) {
       <v-carousel-item
         v-for="(item, index) in carouselItems"
         :key="index"
-        :src="item.src"
+        :src="item"
       ></v-carousel-item>
     </v-carousel>
   </div>

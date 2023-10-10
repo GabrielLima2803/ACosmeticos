@@ -2,33 +2,28 @@
 
 import { onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { perfumaria1 } from '@/_data/perfumaria.js'
 
 const router = useRouter()
+const expand = ref([])
 
 function enterImage(index) {
   expand.value[index] = true
 }
 
-
 function leaveImage(index) {
   expand.value[index] = false
 }
 
-
-const expand = ref([])
-
-
-import { perfumaria1 } from '@/_data/perfumaria.js'
-
-// onMounted(() => {
-//   perfumaria1.forEach(() =>
-//     expand.value.push(false)
-//   )
-// })
-
 function irPara(link) {
   router.push({name: 'perfumaria', hash: `#${link}`})
 }
+
+onMounted(() => {
+  perfumaria1.value.forEach(() =>
+    expand.value.push(false)
+  )
+})
 
 </script>
 
