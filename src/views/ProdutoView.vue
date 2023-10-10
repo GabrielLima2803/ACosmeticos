@@ -61,9 +61,10 @@ const setRating = (value) => {
 }
 </script>
 <template>
+
   <div class="container">
     <div class="carrosel">
-      <carrossel-produto />
+      <carrossel-produto :carouselItems="produto.hover ? [produto.img, produto.hover] : [produto.img]" />
     </div>
     <div class="info-produto">
       <div class="card-cosmeticos">
@@ -100,9 +101,9 @@ const setRating = (value) => {
   <div class="borderDiv" v-if="enviarProduto">
     <h6>Produto</h6>
     <div class="marginP">
-      <p class="titulo">Malbec Club Intenso Desodorante Colônia 100ml</p>
+      <p class="titulo">{{produto.nome}}</p>
       <p>
-        Malbec Club Intenso é uma fragrância amadeirada surpreendentemente mais sofisticada e
+        {{produto.nome}} é uma fragrância amadeirada surpreendentemente mais sofisticada e
         intensa que a original, mas com o mesmo DNA sofisticado e irresistível.
       </p>
       <p>
@@ -294,7 +295,7 @@ button {
   font-size: xx-large;
   font-weight: bold;
   margin-bottom: 0px;
-  margin-left: 70px;
+  margin-left: 170px;
 }
 
 .vezes {
@@ -305,7 +306,7 @@ button {
   /* Stack the price and '9x de R$ 22,21' vertically */
   align-items: flex-end;
   /* Align items to the right */
-  margin-right: 140px;
+  margin-right: 130px;
 }
 
 .Button-CardPay {
