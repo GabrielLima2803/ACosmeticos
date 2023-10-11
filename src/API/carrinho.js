@@ -1,4 +1,5 @@
 import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:8000';
 
 export default class CarrinhoApi {
   async listarItensCarrinho() {
@@ -6,10 +7,10 @@ export default class CarrinhoApi {
     return data;
   }
 
-  async adicionarItemCarrinho(item) {
-    const { data } = await axios.post('/itemcarrinhos/', item); // Endpoint para adicionar um item ao carrinho
+  async adicionarItemCarrinho(produto) {
+    const { data } = await axios.post('/itemcarrinhos/', produto); // Endpoint para adicionar um item ao carrinho
     return data;
-  }
+}
 
   async removerItemCarrinho(id) {
     const { data } = await axios.delete(`/itemcarrinhos/${id}/`); // Endpoint para remover um item do carrinho

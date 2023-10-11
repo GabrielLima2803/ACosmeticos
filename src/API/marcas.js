@@ -1,5 +1,8 @@
 import axios from 'axios';
 
+// Configuração global da URL base
+axios.defaults.baseURL = 'http://localhost:8000';
+
 export default class MarcasApi {
   async buscarTodasAsMarcas() {
     const { data } = await axios.get('/marcas/');
