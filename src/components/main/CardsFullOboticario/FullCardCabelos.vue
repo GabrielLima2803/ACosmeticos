@@ -2,17 +2,29 @@
 import { cabelo } from '@/_data/cabelos.js'
 import { addAosCarrinho } from '../../../_data/carrinho'
 import { addAosFavoritos } from '../../../_data/favorito'
-// import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import ProdutosApi from '@/API/produtos.js'
+import MarcasApi from '@/API/marcas.js'
 
-// const tipoSelecionado = ref('') // State to store selected type
+const produtos = ref([]);
+const marcas = ref({ id: 0 });
 
-// Function to set selected type
-// const setSelectedType = (tipo) => {
-//   tipoSelecionado.value = tipo
-// }
+const carregarMarcas = async () => {
+  const api = new MarcasApi();
+  marcas.value = await api.buscarTodasAsMarcas();
+};
 
-// Call the function to set the initial type
-// setSelectedType(perfumaria1[0].tipo)
+const carregarProdutos = async () => {
+  const api = new ProdutosApi();
+  const idMarcaDesejada = 4;
+  const todosOsProdutos = await api.buscarTodosOsProdutos();
+  produtos.value = todosOsProdutos.filter((produto) => produto.marca.id === idMarcaDesejada);
+};
+
+onMounted(() => {
+  carregarMarcas();
+  carregarProdutos();
+});
 </script>
 
 <template>

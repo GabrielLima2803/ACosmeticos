@@ -1,4 +1,3 @@
-
 <script setup>
 import { ref, onMounted } from 'vue'
 import ProdutosApi from '@/API/produtos.js'
@@ -20,7 +19,7 @@ const carregarMarcas = async () => {
 
 const carregarProdutos = async () => {
   const api = new ProdutosApi();
-  const idMarcaDesejada = 4;
+  const idMarcaDesejada = 6;
   const todosOsProdutos = await api.buscarTodosOsProdutos();
   produtos.value = todosOsProdutos.filter((produto) => produto.marca.id === idMarcaDesejada);
 };
@@ -36,7 +35,7 @@ const adicionarProdutoAoCarrinho = async (produto) => {
   console.log('Tentando adicionar ao carrinho', produto);
   try {
     await carrinhoApi.adicionarItemCarrinho({
-      produto_id: produto.id, // Substituído pelo ID real do produto
+      produto_id: produto, // Substituído pelo ID real do produto
       carrinho_id: 1, // ID do carrinho (se aplicável)
       quantidade: 1, // Quantidade desejada
     });
@@ -67,8 +66,10 @@ onMounted(() => {
     </form>
     <ul>
       <li v-for="produto in produtos" :key="produto.id">
-        <img :src="produto.capa ? produto.capa.url : ''" alt="">
+        <img :src="produto.capa.file" alt="Sem img">
         <p>{{ produto.nome }}</p>
+        <p class="font">{{ produto.descricao }}</p>
+        <p>R$ {{ produto.preco }}</p>
         <button class="text-white bg-black ml-3 btn mb-4" @click="adicionarProdutoAoCarrinho(produto)">
           Adicionar ao Carrinho
         </button>
@@ -80,5 +81,8 @@ onMounted(() => {
 <style scoped>
 p {
   font-size: 18px;
+}
+.font{
+  font-size: 14px;
 }
 </style>
