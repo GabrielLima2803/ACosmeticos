@@ -23,7 +23,6 @@ const rules = {
 const v$ = useVuelidate(rules, state)
 
 
-
 </script>
 
 <template>

@@ -1,41 +1,46 @@
 <script setup>
-import { reactive } from 'vue'
-import { useVuelidate } from '@vuelidate/core'
-import { email, required } from '@vuelidate/validators'
+import { ref } from 'vue';
+import axios from 'axios';
 
-const initialState = {
-  name: '',
-  email: '',
-  senha: '',
-  confirmarSenha: '',
-  select: null,
-  checkbox: null,
+const username = ref('');
+const email = ref('');
+const password = ref('');
+const confirmPassword = ref('');
+const message = ref('');
+
+// Função para validar o formato do e-mail
+function validateEmail(email) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
 }
 
-const state = reactive({
-  ...initialState,
-  showPassword: false,
-  showConfirmPassword: false,
-})
-
-
-const rules = {
-  name: { required },
-  email: { required, email },
-  senha: { required },
-  confirmarSenha: { required },
-}
-
-const v$ = useVuelidate(rules, state)
-
-function clear() {
-  v$.value.$reset()
-
-  for (const [key, value] of Object.entries(initialState)) {
-    state[key] = value
+const register = () => {
+  if (password.value !== confirmPassword.value) {
+    message.value = "As senhas não coincidem.";
+    return;
   }
-}
 
+  // Validação de e-mail
+  if (!validateEmail(email.value)) {
+    message.value = "E-mail inválido.";
+    return;
+  }
+
+  const credentials = {
+    username: username.value,
+    email: email.value,
+    password: password.value,
+  };
+
+  // Substitua a URL pelo endpoint da sua API de registro
+  axios.post('http://localhost:3000/api/register', credentials)
+    .then(response => {
+      message.value = response.data.message;
+    })
+    .catch(error => {
+      message.value = error.response.data.message;
+    });
+};
 </script>
 
 <template>
@@ -44,40 +49,21 @@ function clear() {
       <div class="logo">
         <img src="@/assets/img/Main-img/CriarConta/Logo.png" alt="" width="130">
       </div>
-      <div class="forms ">
-        <form class="wrapForm">
-          <v-text-field v-model="state.name" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="40"
-            label="Insira seu nome" required @input="v$.name.$touch" @blur="v$.name.$touch"
-            class="marginForm inputForm">
-          </v-text-field>
-
-          <v-text-field v-model="state.email" :error-messages="v$.email.$errors.map(e => e.$message)"
-            label="Insira seu Email" required @input="v$.email.$touch" @blur="v$.email.$touch"
-            class="marginForm inputForm">
-          </v-text-field>
-
-          <v-text-field v-model="state.senha" :error-messages="v$.senha.$errors.map(e => e.$message)" :counter="16"
-            label="Insira sua senha" required @input="v$.senha.$touch" @blur="v$.senha.$touch"
-            :type="state.showPassword ? 'text' : 'password'" class="marginForm inputForm">
-            <i class="iconMostrar bi" :class="state.showPassword ? 'bi-eye' : 'bi-eye-slash'"
-              @click="state.showPassword = !state.showPassword"></i>
-          </v-text-field>
-
-          <v-text-field v-model="state.confirmarSenha" :error-messages="v$.confirmarSenha.$errors.map(e => e.$message)" :counter="16"
-            label="Insira sua confirmarSenha" required @input="v$.confirmarSenha.$touch" @blur="v$.confirmarSenha.$touch"
-            :type="state.showConfirmPassword ? 'text' : 'password'" class="marginForm inputForm">
-            <i class="iconMostrar bi" :class="state.showConfirmPassword ? 'bi-eye' : 'bi-eye-slash'"
-              @click="state.showConfirmPassword = !state.showConfirmPassword"></i>
-          </v-text-field>
-
+      <div class="forms">
+        <form class="wrapForm" @submit.prevent="register">
+          <label for="username">Username:</label>
+          <input type="text" id="username" v-model="username" class="marginForm inputForm" />
+          <label for="email">Email:</label>
+          <input type="email" id="email" v-model="email" class="marginForm inputForm" />
+          <label for="password">Password:</label>
+          <input type="password" id="password" v-model="password" class="marginForm inputForm" />
+          <label for="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" v-model="confirmPassword" class="marginForm inputForm" />
           <div class="displayBtn">
             <button type="submit" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
           </div>
-
         </form>
-      </div>
-      <div class="wrapBtn">
-        <v-btn @click="clear">Clear</v-btn>
+        <p>{{ message }}</p>
       </div>
     </div>
   </div>
@@ -91,6 +77,10 @@ function clear() {
   flex-wrap: wrap;
 }
 
+v-text-field:hover {
+  background-color: #fff;
+}
+
 .wrapContainer {
   display: flex;
   justify-content: center;
@@ -100,7 +90,7 @@ function clear() {
 
 .containerPrincipal {
   width: 700px;
-  height: 580px;
+  height: 640px;
   border: 1px solid black;
 
 }

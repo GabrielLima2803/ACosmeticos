@@ -1,38 +1,61 @@
 <script setup>
-import { reactive } from 'vue'
-import { useVuelidate } from '@vuelidate/core'
-import { email, required } from '@vuelidate/validators'
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
-const initialState = {
-    name: '',
-    email: '',
-    senha: '',
-    confirmarSenha: '',
-    select: null,
-    checkbox: null,
-}
+const username = ref('');
+const password = ref('');
+const message = ref('');
+const user = ref({ name: '' });
+const userIsLoggedIn = ref(false);
 
-const state = reactive({
-    ...initialState,
-    showPassword: false,
-    showConfirmPassword: false,
-})
+// Verificar o estado de login no carregamento da página
+onMounted(() => {
+    const isLoggedIn = localStorage.getItem('userIsLoggedIn');
+    if (isLoggedIn === 'true') {
+        userIsLoggedIn.value = true;
+        // Se o usuário estiver logado, você pode carregar informações adicionais aqui
+    }
+    // Verificar o nome do usuário no armazenamento local
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+        username.value = storedUsername;
+    }
+});
 
+const login = () => {
+    const credentials = {
+        username: username.value,
+        password: password.value,
+    };
 
-const rules = {
-    name: { required },
-    email: { required, email },
-    senha: { required },
-    confirmarSenha: { required },
-}
+    // Substitua a URL pelo endpoint da sua API de login
+    axios.post('http://localhost:3000/api/login', credentials)
+        .then(response => {
+            console.log(response.data);
+            message.value = response.data.message;
+            if (response.data.user) {
+                user.value.name = response.data.user.name;
+                userIsLoggedIn.value = true;
+                localStorage.setItem('userIsLoggedIn', 'true');
+                                localStorage.setItem('username', username.value);
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            message.value = error.response.data.message;
+        });
+};
 
-const v$ = useVuelidate(rules, state)
+const logout = () => {
+    userIsLoggedIn.value = false;
+    username.value = '';
+    // Limpar outras variáveis de estado, se necessário
 
-
-
-
-
-
+    // Remover o estado de login do localStorage
+    localStorage.removeItem('userIsLoggedIn');
+    // Remover o nome do usuário do localStorage
+    localStorage.removeItem('username');
+};
 </script>
 
 <template>
@@ -42,26 +65,26 @@ const v$ = useVuelidate(rules, state)
                 <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220">
             </div>
             <div class="FormBot">
+                <form action="" @submit.prevent="login" class="wrapForm" v-if="!userIsLoggedIn">
                 <h4>Olá!</h4>
                 <p class="FormP">Para continuar, digite seu e-mail</p>
-                <form action="" @submit.prevent="" class="wrapForm">
-                    <v-text-field v-model="state.name" :error-messages="v$.name.$errors.map(e => e.$message)" :counter="40"
-                        label="Insira seu nome" required @input="v$.name.$touch" @blur="v$.name.$touch"
-                        class="inputForm">
-                    </v-text-field>
-
-                    <v-text-field v-model="state.senha" :error-messages="v$.senha.$errors.map(e => e.$message)"
-                        :counter="16" label="Insira sua senha" required @input="v$.senha.$touch" @blur="v$.senha.$touch"
-                        :type="state.showPassword ? 'text' : 'password'" class="marginForm inputForm marginBot">
-                        <i class="iconMostrar bi" :class="state.showPassword ? 'bi-eye' : 'bi-eye-slash'"
-                            @click="state.showPassword = !state.showPassword"></i>
-                    </v-text-field>
-                    <button type="button" style="margin-top: 10px;"><router-link class="btnSenha" to="/esqueciSenha">Esqueci minha senha</router-link></button>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" v-model="username" class="inputForm" />
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" v-model="password" class="marginForm inputForm" />
+                    <button type="button" style="margin-top: 10px;"><router-link class="btnSenha" to="/esqueciSenha">Esqueci
+                            minha senha</router-link></button>
                     <button type="submit" class="btnLogin mt-3">Entrar</button>
                     <router-link to="/criarLogin"> <button type="button" class="btnCriar mt-3">Criar conta</button>
                     </router-link>
                     <p class="mt-4 FormP Pf">Protegido por reCAPTCHA - Privacidade | Condições </p>
+                    <p class="mt-4 FormP Pf">{{ message }}</p>
                 </form>
+                <div v-if="userIsLoggedIn" class="welcome-section">
+                    <p>Seja bem-vindo, {{ username }}</p>
+                    <button @click="logout">Logout</button>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -156,16 +179,16 @@ const v$ = useVuelidate(rules, state)
     margin-bottom: -5px;
 }
 
-.marginBot{
+.marginBot {
     margin-bottom: 25px;
 }
 
 .iconMostrar {
-  font-size: 25px;
-  cursor: pointer;
-  position: absolute;
-  right: 0px;
-  margin-top: -15px;
-  margin-right: 10px;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    margin-top: -15px;
+    margin-right: 10px;
 }
 </style>
