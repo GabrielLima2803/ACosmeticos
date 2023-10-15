@@ -3,6 +3,7 @@ import { ref, defineProps, onMounted } from 'vue'
 import { getProduto } from '@/_data/produtos.js'
 import { addAosCarrinho } from '@/_data/carrinho';
 import CarrosselProduto from '@/components/main/Carrossel-Produto.vue'
+import Comment from '@/components/main/Comment.vue'
 
 
 const enviarProduto = ref(false)
@@ -10,7 +11,9 @@ const enviarComoUsar = ref(false)
 const enviarIngredientes = ref(false)
 const enviarProdutoDescricao = ref(false)
 
-const produto = ref({})
+const produto = ref({
+  comments: [],
+})
 
 const props = defineProps({
   tipo: String,
@@ -201,6 +204,7 @@ const setRating = (value) => {
       <v-progress-linear color="#43055d" model-value="10" :height="8" class="v-progress"></v-progress-linear>
     </div>
   </div>
+  <comment :comments="produto.comments" />
 </template>
 
 <style scoped>

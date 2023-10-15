@@ -42,7 +42,6 @@ const register = () => {
     });
 };
 </script>
-
 <template>
   <div class="wrapContainer">
     <div class="containerPrincipal">
@@ -51,34 +50,70 @@ const register = () => {
       </div>
       <div class="forms">
         <form class="wrapForm" @submit.prevent="register">
-          <label for="username">Username:</label>
-          <input type="text" id="username" v-model="username" class="marginForm inputForm" />
-          <label for="email">Email:</label>
-          <input type="email" id="email" v-model="email" class="marginForm inputForm" />
-          <label for="password">Password:</label>
-          <input type="password" id="password" v-model="password" class="marginForm inputForm" />
-          <label for="confirmPassword">Confirm Password:</label>
-          <input type="password" id="confirmPassword" v-model="confirmPassword" class="marginForm inputForm" />
+          <div class="input-container">
+            <input type="text" id="username" v-model="username" class="inputForm" placeholder="Informe o usuario"/>
+          </div>
+          <div class="input-container">
+            <input type="email" id="email" v-model="email" class="inputForm" placeholder="Informe sue e-mail" />
+          </div>
+          <div class="input-container">
+            <input type="password" id="password" v-model="password" class="inputForm" placeholder="Informe sua senha" />
+          </div>
+          <div class="input-container">
+            <input type="password" id="confirmPassword" v-model="confirmPassword" class="inputForm" placeholder="Confirme sua senha" />
+  
+          </div>
           <div class="displayBtn">
-            <button type="submit" class="BtnCriar" @click="v$.$validate">Criar Conta</button>
+            <button type="submit" class="BtnCriar">Criar Conta</button>
           </div>
         </form>
-        <p>{{ message }}</p>
+        <div class="message-container">
+          <p>{{ message }}</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.displayBtn {
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
+.input-container {
+  position: relative;
+  margin-top: 25px;
+}
+.message-container {
+  text-align: center;
+  color: #cc0000; 
+  padding: 10px; 
+  margin-top: 10px; 
+  border-radius: 5px;
+  font-weight: bold; 
+}
+.inputForm {
+  width: 610px;
+  height: 50px;
+  padding: 15px;
+  border: 1px solid #43055D;
+  transition: all 0.3s;
+  font-size: 16px;
 }
 
-v-text-field:hover {
-  background-color: #fff;
+.labelForm {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: all 0.3s;
+  font-size: 16px;
+  color: #555;
+}
+
+.inputForm:focus + .labelForm,
+.inputForm:not(:placeholder-shown) + .labelForm {
+  font-size: 12px;
+  color: #555;
+  top: 10px;
+  transform: translateY(0);
 }
 
 .wrapContainer {
@@ -92,7 +127,6 @@ v-text-field:hover {
   width: 700px;
   height: 640px;
   border: 1px solid black;
-
 }
 
 .logo {
@@ -108,50 +142,12 @@ v-text-field:hover {
   align-items: center;
 }
 
-.inputForm {
-  width: 610px;
-  height: 50px;
-  padding: 15px;
-}
-
-.inputForm input {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  font-size: 16px;
-}
-
-.inputForm label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 15px;
-  pointer-events: none;
-  transition: 0.2s ease all;
-  font-size: 16px;
-  color: #333;
-}
-
-.inputForm label:focus {
-  top: -25px;
-  left: 0;
-  font-size: 14px;
-  color: #555;
-  background-color: #fff;
-  padding: 0 5px;
-}
-
-.marginForm {
-  margin-top: 25px;
-}
-
 .BtnCriar {
   width: 350px;
   height: 50px;
   border: none;
   background-color: #43055D;
-  border: black 1px solid;
+  border: 1px solid black;
   text-align: center;
   color: #ffffff;
   font-size: 18px;
@@ -160,35 +156,20 @@ v-text-field:hover {
   margin-top: 80px;
 }
 
-.BtnClear {
-  width: 350px;
-  height: 50px;
-  border: none;
-  background-color: #43055D;
-  border: black 1px solid;
-  text-align: center;
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 5px;
-  margin-top: 10px;
+.marginForm {
+  margin-top: 25px;
 }
 
-.wrapBtn {
+.displayBtn {
   display: flex;
-  /* align-content: flex-end; */
-  justify-content: flex-end;
-  margin: 10px;
-  margin-right: 50px;
-  margin-top: -70px;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.iconMostrar {
-  font-size: 25px;
-  cursor: pointer;
-  position: absolute;
-  right: 0px;
-  margin-top: -15px;
-  margin-right: 10px;
+p {
+  margin-top: 20px;
+  color: #43055D;
+  font-weight: bold;
 }
 </style>

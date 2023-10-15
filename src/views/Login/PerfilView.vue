@@ -37,7 +37,7 @@ const login = () => {
                 user.value.name = response.data.user.name;
                 userIsLoggedIn.value = true;
                 localStorage.setItem('userIsLoggedIn', 'true');
-                                localStorage.setItem('username', username.value);
+                localStorage.setItem('username', username.value);
             }
         })
         .catch(error => {
@@ -60,36 +60,41 @@ const logout = () => {
 
 <template>
     <div class="wrapContainer">
-        <div class="containerPrincipal ">
+        <div class="containerPrincipal">
             <div class="FormTop">
-                <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220">
+                <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220" />
             </div>
             <div class="FormBot">
                 <form action="" @submit.prevent="login" class="wrapForm" v-if="!userIsLoggedIn">
-                <h4>Olá!</h4>
-                <p class="FormP">Para continuar, digite seu e-mail</p>
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" v-model="username" class="inputForm" />
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" v-model="password" class="marginForm inputForm" />
-                    <button type="button" style="margin-top: 10px;"><router-link class="btnSenha" to="/esqueciSenha">Esqueci
-                            minha senha</router-link></button>
+                    <h4>Olá!</h4>
+                    <p class="FormP">Para continuar, digite seu e-mail</p>
+                    <div class="input-container">
+                        <input type="text" id="username" v-model="username" class="inputForm" />
+                        <label for="username" class="labelForm">Username</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="password" v-model="password" class="marginForm inputForm" />
+                        <label for="password" class="labelForm">Password</label>
+                    </div>
+                    <button type="button" style="margin-top: 10px;">
+                        <router-link class="btnSenha" to="/esqueciSenha">Esqueci minha senha</router-link>
+                    </button>
                     <button type="submit" class="btnLogin mt-3">Entrar</button>
-                    <router-link to="/criarLogin"> <button type="button" class="btnCriar mt-3">Criar conta</button>
+                    <router-link to="/criarLogin">
+                        <button type="button" class="btnCriar mt-3">Criar conta</button>
                     </router-link>
                     <p class="mt-4 FormP Pf">Protegido por reCAPTCHA - Privacidade | Condições </p>
-                    <p class="mt-4 FormP Pf">{{ message }}</p>
+                    <p class="mt-4 FormP Pf text">{{ message }}</p>
                 </form>
                 <div v-if="userIsLoggedIn" class="welcome-section">
                     <p>Seja bem-vindo, {{ username }}</p>
-                    <button @click="logout">Logout</button>
+                    <button class="button" @click="logout">Logout</button>
                 </div>
-                
             </div>
         </div>
     </div>
 </template>
-
+  
 <style scoped>
 .containerPrincipal {
     width: 440px;
@@ -114,7 +119,9 @@ const logout = () => {
     border: 1px solid rgb(105, 105, 105);
     padding: 25px;
 }
-
+.text{
+    color: red;
+}
 .FormP {
     color: gray;
 }
@@ -126,14 +133,31 @@ const logout = () => {
     align-items: center;
 }
 
-.marginForm {
+.input-container {
+    position: relative;
     margin-top: 30px;
 }
 
 .inputForm {
     width: 350px;
-    height: 45px;
+    height: 60px;
     padding: 15px;
+    border: 1px solid #43055D;
+    transition: all 0.3s;
+}
+
+.inputForm:focus+.labelForm {
+    top: 10px;
+    font-size: 12px;
+}
+
+.labelForm {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    pointer-events: none;
 }
 
 .btnSenha {
@@ -191,4 +215,34 @@ const logout = () => {
     margin-top: -15px;
     margin-right: 10px;
 }
+
+.welcome-section {
+    background-color: #6a0dad;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.welcome-section p {
+    font-size: 24px;
+    margin: 0;
+}
+
+.welcome-section .button {
+    background-color: #fff;
+    color: #6a0dad;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.welcome-section .button:hover {
+    background-color: #a06ac7;
+    color: #fff;
+}
 </style>
+  

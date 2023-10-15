@@ -6,7 +6,6 @@ import CarrinhoApi from '@/API/carrinho.js'
 import FullCard from '@/components/main/FullCard.vue'
 import Carrosel from '@/components/main/Carrosel.vue'
 import BlackProg from '@/components/main/BlackProg.vue'
-
 const carrinhoApi = new CarrinhoApi();
 const produtos = ref([]);
 const novoProduto = ref({ nome: '' });
@@ -57,6 +56,9 @@ onMounted(() => {
   <FullCard />
   <BlackProg />
   <BlackProg />
+  <br>
+  <br>
+  <br>
   <div>
     <h1>Lista de Produtos</h1>
 
