@@ -1,17 +1,17 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import ProdutosApi from '@/API/produtos.js'
-import MarcasApi from '@/API/marcas.js'
-import CarrinhoApi from '@/API/carrinho.js'
-import FullCard from '@/components/main/FullCard.vue'
-import Carrosel from '@/components/main/Carrosel.vue'
-import BlackProg from '@/components/main/BlackProg.vue'
-
+import { ref, onMounted } from 'vue';
+import ProdutosApi from '@/API/produtos.js';
+import MarcasApi from '@/API/marcas.js';
+import CarrinhoApi from '@/API/carrinho.js';
+import FullCard from '@/components/main/FullCard.vue';
+import Carrosel from '@/components/main/Carrosel.vue';
+import BlackProg from '@/components/main/BlackProg.vue';
 
 const produtos = ref([]);
-const novoProduto = ref({ nome: '' });
+const novoProdutoData = ref({ nome: '' });
 const marcas = ref({ id: 0 });
-const carrinho = ref({ itens: [] })
+const carrinho = ref({ itens: [] });
+const mensagem = ref('');
 
 const carregarMarcas = async () => {
   const api = new MarcasApi();
@@ -27,23 +27,33 @@ const carregarProdutos = async () => {
 
 const adicionarProduto = async () => {
   const api = new ProdutosApi();
-  await api.adicionarProduto(novoProduto.value);
-  novoProduto.value = { nome: '' };
-  carregarProdutos();
+  try {
+    await api.adicionarProduto(novoProdutoData.value);
+    mensagem.value = 'Produto adicionado com sucesso!';
+    novoProdutoData.value = { nome: '' };
+    carregarProdutos();
+  } catch (error) {
+    mensagem.value = 'Erro ao adicionar o produto.';
+  }
 };
 
-const adicionarCarrinho = async () => {
-  const api = new CarrinhoApi
-  await api.adicionarItemCarrinho(carrinho.value)
-  carrinho.value = {itens: []}
-}
-
+const adicionarCarrinho = async (produto) => {
+  const api = new CarrinhoApi();
+  try {
+    await api.adicionarItemCarrinho(produto);
+    mensagem.value = 'Produto adicionado ao carrinho com sucesso!';
+    carrinho.value = { itens: [] };
+  } catch (error) {
+    mensagem.value = 'Erro ao adicionar o produto ao carrinho.';
+  }
+};
 
 onMounted(() => {
   carregarMarcas();
   carregarProdutos();
 });
 </script>
+
 <template>
   <div class="z-1">
     <Carrosel />
@@ -58,7 +68,7 @@ onMounted(() => {
     <h1>Lista de Produtos</h1>
 
     <form @submit.prevent="adicionarProduto">
-      <input v-model="novoProduto.nome" placeholder="Nome do Produto" />
+      <input v-model="novoProdutoData.nome" placeholder="Nome do Produto" />
       <button type="submit">Adicionar Produto</button>
     </form>
     <ul>
@@ -72,14 +82,17 @@ onMounted(() => {
         </button>
       </li>
     </ul>
+    <p v-if="mensagem">{{ mensagem }}</p>
   </div>
 </template>
+
 
 <style scoped>
 p {
   font-size: 18px;
 }
-.font{
+
+.font {
   font-size: 14px;
 }
 </style>

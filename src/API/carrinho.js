@@ -7,8 +7,8 @@ export default class CarrinhoApi {
     return data;
   }
 
-  async adicionarItemCarrinho(produto) {
-    const { data } = await axios.post('/carrinhos/', produto); // Endpoint para adicionar um item ao carrinho
+  async adicionarItemCarrinho(itens) {
+    const { data } = await axios.post('/carrinhos/', itens); // Endpoint para adicionar um item ao carrinho
     return data;
 }
 

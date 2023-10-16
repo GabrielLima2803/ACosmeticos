@@ -1,20 +1,21 @@
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
+import {useToast} from 'vue-toast-notification';
+const $toast = useToast();
+// Recupere o carrinho de compras do armazenamento local (se existir)
+const carrinhoLocalStorage = JSON.parse(localStorage.getItem('carrinho')) || { total: 0, itens: [] }
 
-const valorTotal = ref(0)
+const carrinho = ref(carrinhoLocalStorage)
 
-const carrinho = ref({
-  total: 0,
-  itens: []
-})
-
-
+function salvarCarrinhoNoLocalStorage() {
+  // Salve o carrinho no armazenamento local
+  localStorage.setItem('carrinho', JSON.stringify(carrinho.value))
+}
 
 function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
   // Check if the item already exists in the cart
   const existingItem = carrinho.value.itens.find((item) => {
     return item.nome === nome && item.descricao === descricao;
   });
-
 
   if (existingItem) {
     // If the item exists, increment the quantity
@@ -27,39 +28,51 @@ function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
     carrinho.value.itens.push(novoItem);
   }
 
-  // Recalculate the total
-  calcularTotal();
-
+  // Após adicionar ou modificar itens no carrinho, salve no armazenamento local
+  salvarCarrinhoNoLocalStorage();
+  $toast.success('Produto adicionado ao carrinho!', {
+    position: 'top'
+  })
 }
 
 function remove({ nome, descricao, preco, img, quantidade }) {
-  carrinho.value.itens.splice({ nome, descricao, preco, img, quantidade }, 1)
+  carrinho.value.itens = carrinho.value.itens.filter((item) => {
+    return !(item.nome === nome && item.descricao === descricao && item.preco === preco && item.img === img && item.quantidade === quantidade);
+  });
 
+  // Após remover itens do carrinho, salve no armazenamento local
+  salvarCarrinhoNoLocalStorage();
 }
-
-
 const aumentarQuantidade = (item) => {
-  item.quantidade++
-  item.total = item.preco * item.quantidade
-  calcularTotal()
+  item.quantidade++;
+  item.total = item.preco * item.quantidade;
+  calcularTotal();
+  salvarCarrinhoNoLocalStorage();
 }
 
 const diminuirQuantidade = (item) => {
   if (item.quantidade > 1) {
-    item.quantidade--
-    item.total = item.preco * item.quantidade
-    calcularTotal()
+    item.quantidade--;
+    item.total = item.preco * item.quantidade;
+    calcularTotal();
+    salvarCarrinhoNoLocalStorage();
   }
 }
 
 const calcularTotal = () => {
-  carrinho.value.total = carrinho.value.itens.reduce((total, item) => total + item.total, 0)
+  carrinho.value.total = carrinho.value.itens.reduce((total, item) => total + item.total, 0);
+  salvarCarrinhoNoLocalStorage();
 }
 
 const totalDosPrecos = computed(() => {
   return carrinho.value.itens.reduce((total, item) => total + item.total, 0);
 });
 
-const estaCarrinhoVazio = computed(() => carrinho.value.itens.length === 0)
+const estaCarrinhoVazio = computed(() => carrinho.value.itens.length === 0);
 
-export { carrinho, estaCarrinhoVazio, addAosCarrinho, remove, valorTotal, aumentarQuantidade, diminuirQuantidade, totalDosPrecos  }
+// Defina um ouvinte para salvar o carrinho no armazenamento local sempre que ele for modificado
+watch(carrinho, () => {
+  salvarCarrinhoNoLocalStorage();
+});
+
+export { carrinho, estaCarrinhoVazio, addAosCarrinho, remove, aumentarQuantidade, diminuirQuantidade, totalDosPrecos }

@@ -1,20 +1,19 @@
-// import { defineStore } from 'pinia';
+import { defineStore } from 'vue';
 
-// export const useCartStore = defineStore('cart', {
-//   state: () => ({
-//     cart: [],
-//   }),
-//   getters: {
-//     getCart: (state) => state.cart,
-//   },
-//   actions: {
-//     addToCart(product) {
-//       console.log('product BD', product);
-//       this.cart.push(product);
-//       console.log('cart', this.cart);
-//     },
-//     remove(product) {
-//       this.cart = this.cart.filter((p) => p.id !== product.id);
-//     }
-//   }
-// });
+const Store = defineStore({
+  state: {
+    cart: [],
+  },
+  mutations: {
+    addToCart(state, product) {
+      state.cart.push(product);
+    },
+    removeFromCart(state, product) {
+      state.cart = state.cart.filter((item) => item.id !== product.id);
+    },
+  },
+});
+
+export function useStore() {
+  return Store;
+}
