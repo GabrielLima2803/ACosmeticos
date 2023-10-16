@@ -16,7 +16,7 @@ function leaveImage(index) {
 }
 
 function irPara(link) {
-  router.push({name: 'perfumaria', hash: `#${link}`})
+  router.push({name: 'perfumariaO', hash: `#${link}`})
 }
 
 onMounted(() => {

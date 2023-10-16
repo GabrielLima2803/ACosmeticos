@@ -78,6 +78,10 @@ import { addAosFavoritos } from '../../../_data/favorito'
 
   justify-content: space-around;
 }
+button{
+  border: none;
+  background-color: white;
+}
 .Button-CardPay {
   margin-left: -1px;
   width: 218px;

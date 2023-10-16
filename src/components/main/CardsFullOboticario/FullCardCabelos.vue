@@ -89,6 +89,9 @@ onMounted(() => {
   flex-direction: column;
 
   justify-content: space-around;
+}button{
+  border: none;
+  background-color: white;
 }
 .Button-CardPay {
   margin-left: -1px;

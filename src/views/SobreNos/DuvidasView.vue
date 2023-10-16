@@ -310,7 +310,7 @@
             <img src="@/assets/img/Main-img/Main-Panel/perigo.png" alt="" width="15">
             <p class="pTitle">Alerta</p>
           </v-expansion-panel-title>
-          <v-expansion-panel-text>
+          <v-expansion-panel-text class="text">
             Aproveitando-se das dificuldades que estamos vivendo, golpistas estão usando o nome da ACosmeticos e de alguns
             artistas para enganar as pessoas com ações fraudulentas.
             <br /><br />
@@ -337,6 +337,10 @@
   justify-content: center;
   align-items: center;
 }
+.v-expansion-panel-title__overlay {
+  background-color: #43055D;
+  opacity: 0;
+}
 
 .wrapPanel {
   display: flex;
@@ -345,7 +349,10 @@
   align-items: center;
   justify-content: center;
 }
-
+button{
+  border: none;
+  background-color: white;
+}
 .marginPanel {
   margin-top: 20px;
 }
@@ -367,4 +374,8 @@ h1 {
 
 .marginTop {
   margin-top: 20px;
-}</style>
+}
+.text{
+  font-size: 12px;
+}
+</style>

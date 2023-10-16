@@ -231,6 +231,10 @@ const setRating = (value) => {
   width: 100%;
   z-index: 1;
 }
+button{
+  border: none;
+  background-color: white;
+}
 
 .borderDiv {
   border: 2px solid #43055d;
