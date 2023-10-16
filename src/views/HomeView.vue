@@ -6,10 +6,12 @@ import CarrinhoApi from '@/API/carrinho.js'
 import FullCard from '@/components/main/FullCard.vue'
 import Carrosel from '@/components/main/Carrosel.vue'
 import BlackProg from '@/components/main/BlackProg.vue'
-const carrinhoApi = new CarrinhoApi();
+
+
 const produtos = ref([]);
 const novoProduto = ref({ nome: '' });
 const marcas = ref({ id: 0 });
+const carrinho = ref({ itens: [] })
 
 const carregarMarcas = async () => {
   const api = new MarcasApi();
@@ -30,19 +32,12 @@ const adicionarProduto = async () => {
   carregarProdutos();
 };
 
-const adicionarProdutoAoCarrinho = async (produto) => {
-  console.log('Tentando adicionar ao carrinho', produto);
-  try {
-    await carrinhoApi.adicionarItemCarrinho({
-      produto_id: produto, // Substituído pelo ID real do produto
-      carrinho_id: 1, // ID do carrinho (se aplicável)
-      quantidade: 1, // Quantidade desejada
-    });
-    console.log('Produto adicionado ao carrinho com sucesso');
-  } catch (error) {
-    console.error('Erro ao adicionar o produto ao carrinho', error);
-  }
-};
+const adicionarCarrinho = async () => {
+  const api = new CarrinhoApi
+  await api.adicionarItemCarrinho(carrinho.value)
+  carrinho.value = {itens: []}
+}
+
 
 onMounted(() => {
   carregarMarcas();
@@ -72,7 +67,7 @@ onMounted(() => {
         <p>{{ produto.nome }}</p>
         <p class="font">{{ produto.descricao }}</p>
         <p>R$ {{ produto.preco }}</p>
-        <button class="text-white bg-black ml-3 btn mb-4" @click="adicionarProdutoAoCarrinho(produto)">
+        <button class="text-white bg-black ml-3 btn mb-4" @click="adicionarCarrinho(produto)">
           Adicionar ao Carrinho
         </button>
       </li>

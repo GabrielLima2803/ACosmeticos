@@ -11,8 +11,7 @@ import * as directives from 'vuetify/directives';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@mdi/font/css/materialdesignicons.css';
-import ToastPlugin from 'vue-toast-notification';
-import 'vue-toast-notification/dist/theme-bootstrap.css';
+
 
 const vuetify = createVuetify({
   components,
@@ -33,6 +32,5 @@ const app = createApp(App);
 app.use(pinia);
 app.use(router);
 app.use(vuetify);
-app.use(ToastPlugin);
 
 app.mount('#app');

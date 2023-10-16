@@ -1,6 +1,4 @@
 import { ref, computed } from 'vue'
-import {useToast} from 'vue-toast-notification';
-const $toast = useToast();
 
 const valorTotal = ref(0)
 
@@ -16,9 +14,7 @@ function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
   const existingItem = carrinho.value.itens.find((item) => {
     return item.nome === nome && item.descricao === descricao;
   });
-  $toast.success('Produto adicionado ao carrinho!', {
-    position: 'top'
-  })
+
 
   if (existingItem) {
     // If the item exists, increment the quantity
@@ -38,9 +34,7 @@ function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
 
 function remove({ nome, descricao, preco, img, quantidade }) {
   carrinho.value.itens.splice({ nome, descricao, preco, img, quantidade }, 1)
-  $toast.error('Produto removido do carrinho!', {
-    position: 'top'
-  })
+
 }
 
 

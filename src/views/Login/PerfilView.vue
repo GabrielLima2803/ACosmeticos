@@ -49,12 +49,12 @@ const login = () => {
 const logout = () => {
     userIsLoggedIn.value = false;
     username.value = '';
-    // Limpar outras variáveis de estado, se necessário
-
+    password.value = '';
     // Remover o estado de login do localStorage
     localStorage.removeItem('userIsLoggedIn');
     // Remover o nome do usuário do localStorage
     localStorage.removeItem('username');
+    localStorage.removeItem('password');
 };
 </script>
 
