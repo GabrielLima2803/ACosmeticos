@@ -10,6 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@dafcoe/vue-collapsible-panel": "^0.2.0",
     "@mdi/font": "^7.2.96",
     "@popperjs/core": "^2.11.8",
     "@vuelidate/core": "^2.0.3",

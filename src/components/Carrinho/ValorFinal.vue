@@ -43,5 +43,5 @@
 import { ref } from 'vue'
 import { totalDosPrecos } from '../../_data/carrinho'
 const mostrar = ref(false)
-</script >
+</script>
 <style ></style>

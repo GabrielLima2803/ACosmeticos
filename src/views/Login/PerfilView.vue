@@ -1,98 +1,88 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import axios from 'axios';
 
-const username = ref('');
-const password = ref('');
-const message = ref('');
-const user = ref({ name: '' });
-const userIsLoggedIn = ref(false);
-
-// Verificar o estado de login no carregamento da página
+import { useAuthStore } from '@/store/auth';
+import { onMounted, ref } from 'vue';
+const authStore = useAuthStore();
 onMounted(() => {
-    const isLoggedIn = localStorage.getItem('userIsLoggedIn');
-    if (isLoggedIn === 'true') {
-        userIsLoggedIn.value = true;
-        // Se o usuário estiver logado, você pode carregar informações adicionais aqui
-    }
-    // Verificar o nome do usuário no armazenamento local
-    const storedUsername = localStorage.getItem('username');
-    if (storedUsername) {
-        username.value = storedUsername;
-    }
+  const storedIsLoggedIn = localStorage.getItem('userIsLoggedIn');
+  const storedUsername = localStorage.getItem('username');
+
+  if (storedIsLoggedIn === 'true' && storedUsername) {
+    // Defina o estado de login e nome de usuário no store
+    authStore.userIsLoggedIn = true;
+    authStore.username = storedUsername;
+  }
 });
 
 const login = () => {
-    const credentials = {
-        username: username.value,
-        password: password.value,
-    };
+  const credentials = {
+    username: authStore.username,
+    password: authStore.password,
+  };
+  authStore.login(credentials);
 
-    // Substitua a URL pelo endpoint da sua API de login
-    axios.post('http://localhost:3000/api/login', credentials)
-        .then(response => {
-            console.log(response.data);
-            message.value = response.data.message;
-            if (response.data.user) {
-                user.value.name = response.data.user.name;
-                userIsLoggedIn.value = true;
-                localStorage.setItem('userIsLoggedIn', 'true');
-                localStorage.setItem('username', username.value);
-            }
-        })
-        .catch(error => {
-            console.error(error);
-            message.value = error.response.data.message;
-        });
+  // Salve informações no localStorage
+  localStorage.setItem('userIsLoggedIn', authStore.userIsLoggedIn.toString());
+  localStorage.setItem('username', authStore.username);
 };
 
 const logout = () => {
-    userIsLoggedIn.value = false;
-    username.value = '';
-    password.value = '';
-    // Remover o estado de login do localStorage
-    localStorage.removeItem('userIsLoggedIn');
-    // Remover o nome do usuário do localStorage
-    localStorage.removeItem('username');
-    localStorage.removeItem('password');
+  authStore.logout();
+
+  // Limpe as informações no localStorage ao fazer logout
+  localStorage.removeItem('userIsLoggedIn');
+  localStorage.removeItem('username');
 };
+
+
+const isUsernameFilled = ref(false);
+const isPasswordFilled = ref(false);
+
+const checkInputFields = () => {
+    isUsernameFilled.value = authStore.username.value !== '';
+    isPasswordFilled.value = authStore.password.value !== '';
+};
+
+onMounted(() => {
+    checkInputFields();
+});
 </script>
 
 <template>
-    <div class="wrapContainer">
-        <div class="containerPrincipal">
-            <div class="FormTop">
-                <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220" />
-            </div>
-            <div class="FormBot">
-                <form action="" @submit.prevent="login" class="wrapForm" v-if="!userIsLoggedIn">
-                    <h4>Olá!</h4>
-                    <p class="FormP">Para continuar, digite seu e-mail</p>
-                    <div class="input-container">
-                        <input type="text" id="username" v-model="username" class="inputForm" />
-                        <label for="username" class="labelForm">Username</label>
-                    </div>
-                    <div class="input-container">
-                        <input type="password" id="password" v-model="password" class="marginForm inputForm" />
-                        <label for="password" class="labelForm">Password</label>
-                    </div>
-                    <button type="button" style="margin-top: 10px;">
-                        <router-link class="btnSenha" to="/esqueciSenha">Esqueci minha senha</router-link>
-                    </button>
-                    <button type="submit" class="btnLogin mt-3">Entrar</button>
-                    <router-link to="/criarLogin">
-                        <button type="button" class="btnCriar mt-3">Criar conta</button>
-                    </router-link>
-                    <p class="mt-4 FormP Pf">Protegido por reCAPTCHA - Privacidade | Condições </p>
-                    <p class="mt-4 FormP Pf text">{{ message }}</p>
-                </form>
-                <div v-if="userIsLoggedIn" class="welcome-section">
-                    <p>Seja bem-vindo, {{ username }}</p>
-                    <button class="button" @click="logout">Logout</button>
-                </div>
-            </div>
+   <div class="wrapContainer">
+    <div class="containerPrincipal">
+      <div class="FormTop">
+        <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220" />
+      </div>
+      <div class="FormBot">
+        <form action="" @submit.prevent="login" class="wrapForm" v-if="!authStore.userIsLoggedIn">
+          <h4>Olá!</h4>
+          <p class="FormP">Para continuar, digite seu e-mail</p>
+         <div class="input-container">
+  <input type="text" id="username" v-model="authStore.username" class="inputForm" @input="checkInputFields" />
+  <label for="username" class="labelForm" :class="{ active: isUsernameFilled }">Username</label>
+</div>
+<div class="input-container">
+  <input type="password" id="password" v-model="authStore.password" class="marginForm inputForm" @input="checkInputFields" />
+  <label for="password" class="labelForm" :class="{ active: isPasswordFilled }">Password</label>
+</div>
+          <button type="button" style="margin-top: 10px;">
+            <router-link class="btnSenha" to="/esqueciSenha">Esqueci minha senha</router-link>
+          </button>
+          <button type="submit" class="btnLogin mt-3">Entrar</button>
+          <router-link to="/criarLogin">
+            <button type="button" class="btnCriar mt-3">Criar conta</button>
+          </router-link>
+          <p class="mt-4 FormP Pf">Protegido por reCAPTCHA - Privacidade | Condições </p>
+          <p class="mt-4 FormP Pf text">{{ authStore.message }}</p>
+        </form>
+        <div v-if="authStore.userIsLoggedIn" class="welcome-section">
+          <p>Seja bem-vindo, {{ authStore.username }}</p>
+          <button class="button" @click="logout">Logout</button>
         </div>
+      </div>
     </div>
+  </div>
 </template>
   
 <style scoped>
@@ -114,14 +104,19 @@ const logout = () => {
     justify-content: center;
     padding: 10px;
 }
-
+.labelForm.active {
+    top: 10px;
+    font-size: 12px;
+}
 .FormBot {
     border: 1px solid rgb(105, 105, 105);
     padding: 25px;
 }
-.text{
+
+.text {
     color: red;
 }
+
 .FormP {
     color: gray;
 }

@@ -1,9 +1,4 @@
 <script setup>
-import {
-  VueCollapsiblePanelGroup,
-  VueCollapsiblePanel,
-} from '@dafcoe/vue-collapsible-panel'
-import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
 
 </script>
 
@@ -13,13 +8,13 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
       <div class="marginTop">
         <h2>Dúvidas Frequentes</h2>
       </div>
-      <vue-collapsible-panel-group class="mt-4">
-        <vue-collapsible-panel class="panel">
-          <template   #title >
+      <v-expansion-panels class="marginPanel">
+        <v-expansion-panel class="TamanhoPanel">
+          <v-expansion-panel-title >
             <img src="@/assets/img/Main-img/Main-Panel/bolsa.png" alt="" width="15">
             <p class="pTitle">Prazo e Entrega</p>
-          </template>
-          <template #content>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
             Após escolher o(s) produto(s) que deseja adquirir, o USUÁRIO terá à disposição diversos tipos de frete, os
             quais podem variar de acordo com sua localização e tipo de produto adquirido. O processo de entrega do(s)
             produto(s) adquirido(s) se dará após a confirmação do pagamento pela Loja Virtual Acosméticos. Maiores
@@ -68,14 +63,15 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
             receber o produto no local de entrega. Recusa no recebimento da mercadoria por terceiros. Fatores naturais
             como chuvas, acidentes, entre outros. Apontamento pelos nossos transportadores de anomalia com a qualidade da
             embalagem ou do produto.
-          </template>
-        </vue-collapsible-panel>
-        <vue-collapsible-panel class="panel">
-          <template   #title >
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+
+        <v-expansion-panel class="marginPanel">
+          <v-expansion-panel-title>
             <img src="@/assets/img/Main-img/Main-Panel/seta.png" alt="" width="16">
             <p class="pTitle">Troca e Devoluções</p>
-          </template>
-          <template #content>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
             O USUÁRIO poderá exercer o seu direito de arrependimento, bem como solicitar a troca ou devolução do(s)
             produto(s) adquirido(s) em até 07 (sete) dias úteis contados do seu recebimento. Pedimos ao USUÁRIO que acesse
             a Política de Troca e Devoluções para maiores informações sobre como proceder e os procedimentos envolvidos.
@@ -90,15 +86,17 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
             <br />
             <br />
             O produto que não atender às condições exigidas acima, não será aceito como devolução e automaticamente será
-            remetido de volta ao endereço de origem. </template>
-        </vue-collapsible-panel >
-        
-        <vue-collapsible-panel class="panel" >
-          <template   #title >
+            remetido de volta ao endereço de origem.
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+
+
+        <v-expansion-panel class="marginPanel">
+          <v-expansion-panel-title disable-icon-rotate>
             <img src="@/assets/img/Main-img/Main-Panel/Book.png" alt="" width="15">
             <p class="pTitle">Termos e Condições</p>
-          </template>
-          <template #content>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
             Obrigado por acessar a Loja Virtual Acosméticos (Acosméticos.com.br)! A seguir apresentamos a você (USUÁRIO)
             as
             principais regras para a utilização e efetivação de compras em nosso site. Como condição para acesso e uso do
@@ -157,14 +155,17 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
             1.5 O site funcionará de forma contínua e permanente. No entanto, pode ocorrer, eventualmente, alguma
             indisponibilidade temporária decorrente de manutenção necessária ou mesmo gerada por motivo de força maior,
             como desastres naturais, falhas ou colapsos nos sistemas centrais de comunicação e acesso à Internet ou fatos
-            de terceiro que fogem de sua esfera de vigilância e responsabilidade. </template>
-        </vue-collapsible-panel>
-        <vue-collapsible-panel class="panel">
-          <template   #title >
+            de terceiro que fogem de sua esfera de vigilância e responsabilidade.
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+
+
+        <v-expansion-panel class="mt-4">
+          <v-expansion-panel-title >
             <img src="@/assets/img/Main-img/Main-Panel/medalha.png" alt="" width="11">
             <p class="pTitle">Política e Privacidade </p>
-          </template>
-          <template #content>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
             Agradecemos por utilizar os serviços da Acosméticos e queremos dividir com você a forma como valorizamos a sua
             privacidade. Nesta Política de Privacidade, explicamos como coletamos, usamos, compartilhamos e protegemos as
             suas informações pessoais. Ao utilizar nossos serviços, você concorda com as práticas descritas neste
@@ -259,14 +260,16 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
             <br />
             Podemos compartilhar suas informações com nossos parceiros comerciais e empresas pertencentes ao Grupo Silvio
             Santos exclusivamente para a divulgação de nossos produtos e promoções.
-          </template>
-        </vue-collapsible-panel>
-        <vue-collapsible-panel class="panel">
-          <template   #title >
+
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+
+        <v-expansion-panel class="marginPanel">
+          <v-expansion-panel-title>
             <img src="@/assets/img/Main-img/Main-Panel/pessoa.png" alt="" width="15">
             <p class="pTitle">Perguntas Frequentes</p>
-          </template>
-          <template #content>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
             <strong>1. ONDE E COMO COMPRAR? </strong>
             <br />
             <br />
@@ -297,14 +300,17 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
             <strong>5. EXISTE DIFERENÇA ENTRE PRODUTOS E PREÇOS DISPONÍVEIS NO SITE E NA VENDA DIRETA?</strong>
             <br /><br />
             Na maior parte dos casos não. Os preços e produtos serão os mesmos. Podem ocorrer exceções com descontos
-            exclusivos para a Loja Online. </template>
-        </vue-collapsible-panel>
-        <vue-collapsible-panel class="panel">
-          <template   #title >
+            exclusivos para a Loja Online.
+            <br /><br />
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+
+        <v-expansion-panel class="marginPanel">
+          <v-expansion-panel-title disable-icon-rotate>
             <img src="@/assets/img/Main-img/Main-Panel/perigo.png" alt="" width="15">
             <p class="pTitle">Alerta</p>
-          </template>
-          <template #content>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text class="text">
             Aproveitando-se das dificuldades que estamos vivendo, golpistas estão usando o nome da ACosmeticos e de alguns
             artistas para enganar as pessoas com ações fraudulentas.
             <br /><br />
@@ -316,10 +322,11 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
             <br /><br />
             As pessoas que são sorteadas para participarem dos programas <strong>ACosmeticos </strong>, são contatadas
             somente por ligação telefônica e nunca por links em redes sociais, SMS ou Whatsapp. Caso você receba esse tipo
-            de contato, desconsidere imediatamente e informe as autoridades competentes. </template>
-        </vue-collapsible-panel>
+            de contato, desconsidere imediatamente e informe as autoridades competentes.
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+      </v-expansion-panels>
 
-      </vue-collapsible-panel-group>
     </div>
   </div>
 </template>
@@ -330,19 +337,14 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
   justify-content: center;
   align-items: center;
 }
-
 .v-expansion-panel-title__overlay {
   background-color: #43055D;
   opacity: 0;
 }
-
 .v-expansion-panel--active:focus {
-  background-color: #efefef;
-  /* Substitua pela cor desejada */
-  border-color: #333;
-  /* Substitua pela cor desejada */
+  background-color: #efefef; /* Substitua pela cor desejada */
+  border-color: #333; /* Substitua pela cor desejada */
 }
-
 .wrapPanel {
   display: flex;
   flex-wrap: wrap;
@@ -350,12 +352,10 @@ import '@dafcoe/vue-collapsible-panel/dist/vue-collapsible-panel.css'
   align-items: center;
   justify-content: center;
 }
-
-button {
+button{
   border: none;
   background-color: white;
 }
-
 .marginPanel {
   margin-top: 20px;
 }
@@ -369,7 +369,6 @@ h1 {
   margin-left: 10px;
 }
 
-
 .focus1:focus {
   background-color: #43055D;
   color: white;
@@ -379,10 +378,7 @@ h1 {
 .marginTop {
   margin-top: 20px;
 }
-
-.text {
+.text{
   font-size: 12px;
 }
-
-
 </style>
