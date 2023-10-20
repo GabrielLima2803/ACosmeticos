@@ -1,5 +1,6 @@
 import { ref, onMounted } from 'vue';
 import { useToast } from 'vue-toast-notification';
+const $toast = useToast();
 
 const FAVORITOS_LOCAL_STORAGE_KEY = 'favoritos';
 const favoritos = ref(JSON.parse(localStorage.getItem(FAVORITOS_LOCAL_STORAGE_KEY)) || []);
@@ -24,15 +25,24 @@ function addAosFavoritos({ nome, descricao, preco, img }, initiallyFavorite = tr
 
     // Após adicionar aos favoritos, salve no armazenamento local
     salvarFavoritosNoLocalStorage();
-    alert('Produto adicionado ao favorito!')
-    console.log('Produto adicionado ao favorito!'); // Adicione este console.log para depurar
-    toast.success('Produto adicionado ao favorito!', {
+  
+    const customStyle = {
+      backgroundColor: '#4d066b', // Cor de fundo
+      color: 'white', // Cor do texto
+      fontSize: '16px', // Tamanho da fonte
+      display: 'flex', // Permite alinhar o ícone e o texto horizontalmente
+      alignItems: 'center', // Alinha o conteúdo verticalmente
+    };
+  
+    const iconHTML = '<i class="bi bi-heart" style="font-size: 24px; margin-right: 10px;"></i>'; // Ícone de sacola Bootstrap Icons
+  
+    $toast.success(`${iconHTML} Produto adicionado ao carrinho!`, {
       position: 'top',
-    
+      duration: 3000, // Define a duração do toast (em milissegundos)
+      style: customStyle, // Aplica o estilo personalizado
     });
+
   } else {
-    alert('Produto já está nos favoritos!')
-    console.log('Produto já está nos favoritos!'); // Adicione este console.log para depurar
     toast.error('Produto já está nos favoritos!', {
       position: 'top',
     });

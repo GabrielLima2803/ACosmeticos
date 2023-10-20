@@ -33,6 +33,8 @@ import { addAosFavoritos } from '../../../_data/favorito'
             <div class="tamanho-card">
               <img
                 :src="produto.img"
+                @mouseover="produto.img = produto.hover"
+                @mouseleave="produto.img = produto.original"
                 class="capa-img"
               />
             </div>
@@ -80,7 +82,7 @@ import { addAosFavoritos } from '../../../_data/favorito'
 }
 button{
   border: none;
-  background-color: whi;
+  background-color: white;
 }
 .Button-CardPay {
   margin-left: -1px;

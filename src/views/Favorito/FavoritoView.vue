@@ -85,6 +85,10 @@ const getHeartIcon = (item) => {
 .coracao{
   color: #4d066b;
 }
+button{
+  border: none;
+  background-color: white;
+}
 .Button-CardPay {
   margin-left: -1px;
   width: 218px;

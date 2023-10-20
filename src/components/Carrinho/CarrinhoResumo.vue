@@ -118,4 +118,8 @@ import { totalDosPrecos } from '../../_data/carrinho'
     font-size: 1em;
     text-decoration: underline;
 }
+button{
+  border: none;
+  background-color: white;
+}
 </style>

@@ -30,10 +30,24 @@ function addAosCarrinho({ nome, descricao, preco, img, quantidade }) {
 
   // Após adicionar ou modificar itens no carrinho, salve no armazenamento local
   salvarCarrinhoNoLocalStorage();
-  $toast.success('Produto adicionado ao carrinho!', {
-    position: 'top'
-  })
+
+  const customStyle = {
+    backgroundColor: '#4d066b', // Cor de fundo
+    color: 'white', // Cor do texto
+    fontSize: '16px', // Tamanho da fonte
+    display: 'flex', // Permite alinhar o ícone e o texto horizontalmente
+    alignItems: 'center', // Alinha o conteúdo verticalmente
+  };
+
+  const iconHTML = '<i class="bi bi-bag-check" style="font-size: 24px; margin-right: 10px;"></i>'; // Ícone de sacola Bootstrap Icons
+
+  $toast.success(`${iconHTML} Produto adicionado ao carrinho!`, {
+    position: 'top',
+    duration: 3000, // Define a duração do toast (em milissegundos)
+    style: customStyle, // Aplica o estilo personalizado
+  });
 }
+
 
 function remove({ nome, descricao, preco, img, quantidade }) {
   carrinho.value.itens = carrinho.value.itens.filter((item) => {

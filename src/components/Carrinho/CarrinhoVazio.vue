@@ -30,8 +30,10 @@ h1{
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
-
-   
+}
+button{
+  border: none;
+  background-color: white;
 }
 
 
