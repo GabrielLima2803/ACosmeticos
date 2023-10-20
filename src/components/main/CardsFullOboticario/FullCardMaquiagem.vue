@@ -1,23 +1,31 @@
 <script setup>
-import { maquiagem } from '@/_data/maquiagem.js'
 import { addAosCarrinho } from '../../../_data/carrinho'
 import { addAosFavoritos } from '../../../_data/favorito'
-// import { ref } from 'vue'
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
-// const tipoSelecionado = ref('') // State to store selected type
+const subcategorias = ref([]);
 
-// Function to set selected type
-// const setSelectedType = (tipo) => {
-//   tipoSelecionado.value = tipo
-// }
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/api/subcategorias/marca3');
+    subcategorias.value = response.data;
+    for (let i = 0; i < subcategorias.value.length; i++) {
+      const subcategoria = subcategorias.value[i];
+      const produtosResponse = await axios.get(`http://localhost:3000/api/subcategoria/${subcategoria.id}/produtos`);
+      subcategoria.produtos = produtosResponse.data;
+    }
+  } catch (error) {
+    console.error(error);
+  }
+});
 
-// Call the function to set the initial type
-// setSelectedType(perfumaria1[0].tipo)
+
 </script>
 
 <template>
   <div class="card-cosmeticos">
-    <div v-for="(categoria, index) in maquiagem" :id="categoria.link" :key="index" class="categoria-card">
+    <div v-for="(categoria, index) in subcategorias" :id="categoria.link" :key="index" class="categoria-card">
       <div class="wrapH2">
         <h2 class="texto-principal">{{ categoria.tipo }}</h2>
       </div>

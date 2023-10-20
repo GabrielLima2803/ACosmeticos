@@ -42,6 +42,7 @@
 import { ref } from 'vue'
 import { totalDosPrecos } from '../../_data/carrinho'
 const mostrar = ref(false)
+<<<<<<< HEAD
 </script >
 <style >
 .botaoCalcular {
@@ -68,3 +69,7 @@ const mostrar = ref(false)
 }
 
 </style>
+=======
+</script>
+<style ></style>
+>>>>>>> 40c61816eff2da1ece651ebf32c25b4abc305e9a

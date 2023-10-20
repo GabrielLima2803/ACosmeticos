@@ -1,30 +1,11 @@
 <script setup>
-import { cabelo } from '@/_data/cabelos.js'
-import { addAosCarrinho } from '../../../_data/carrinho'
 import { addAosFavoritos } from '../../../_data/favorito'
-import { ref, onMounted } from 'vue'
-import ProdutosApi from '@/API/produtos.js'
-import MarcasApi from '@/API/marcas.js'
+import { addAosCarrinho } from '../../../_data/carrinho'
 
-const produtos = ref([]);
-const marcas = ref({ id: 0 });
+import { cabelo } from '@/_data/cabelos.js'
 
-const carregarMarcas = async () => {
-  const api = new MarcasApi();
-  marcas.value = await api.buscarTodasAsMarcas();
-};
 
-const carregarProdutos = async () => {
-  const api = new ProdutosApi();
-  const idMarcaDesejada = 4;
-  const todosOsProdutos = await api.buscarTodosOsProdutos();
-  produtos.value = todosOsProdutos.filter((produto) => produto.marca.id === idMarcaDesejada);
-};
 
-onMounted(() => {
-  carregarMarcas();
-  carregarProdutos();
-});
 </script>
 
 <template>
@@ -33,7 +14,7 @@ onMounted(() => {
       <div class="wrapH2">
         <h2 class="texto-principal">{{ categoria.tipo }}</h2>
       </div>
-      <div class="produtos-card" >
+      <div class="produtos-card">
         <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
           <div class="img-coracao">
             <button type="button" @click="addAosFavoritos(produto)">
@@ -43,10 +24,7 @@ onMounted(() => {
           </div>
           <router-link :to="`/produto/${categoria.tipo}/${produto.id}`" class="header-links">
             <div class="tamanho-card">
-              <img
-                :src="produto.img"
-                class="capa-img"
-              />
+              <img :src="produto.img" class="capa-img" />
             </div>
             <router-link to="/oboticario">
               <div class="img-oboticario">
@@ -74,6 +52,7 @@ onMounted(() => {
   color: #000000;
   cursor: pointer;
 }
+
 .card-cosmeticos {
   display: flex;
   flex-wrap: wrap;
@@ -89,23 +68,26 @@ onMounted(() => {
   flex-direction: column;
 
   justify-content: space-around;
-}button{
+}
+
+button {
   border: none;
   background-color: white;
 }
+
 .Button-CardPay {
   margin-left: -1px;
   width: 218px;
   height: 30px;
   border: 2px solid #4d066b;
-  background-color: transparent; 
+  background-color: transparent;
   transition: background-color 0.3s, border-color 0.3s;
   position: relative;
 }
 
 .Button-CardPay:hover {
   background-color: #4d066b;
-  border-color: #4d066b; 
+  border-color: #4d066b;
 }
 
 .Btn-Pay,
@@ -127,8 +109,8 @@ onMounted(() => {
 }
 
 .Btn-Pay {
-    width: 20px;
-    padding-bottom: 2px;
+  width: 20px;
+  padding-bottom: 2px;
 }
 
 .capa-img {
@@ -154,6 +136,7 @@ onMounted(() => {
   max-width: 227px;
   position: relative;
 }
+
 .logo-icon,
 .filled-heart-icon {
   position: absolute;
@@ -198,10 +181,12 @@ onMounted(() => {
   margin-top: 120px;
   background-color: #194b3b;
 }
-h2{
+
+h2 {
   margin-bottom: 70px;
   margin-top: 80px;
 }
+
 .produtos-card {
   display: flex;
   flex-wrap: wrap;
@@ -211,6 +196,7 @@ h2{
 .produto-card {
   flex: 0 0 calc(20% - 5px);
 }
+
 .texto-principal {
   display: flex;
   align-items: center;

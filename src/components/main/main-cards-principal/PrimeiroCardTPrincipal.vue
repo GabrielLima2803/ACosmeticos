@@ -1,22 +1,17 @@
 <script setup>
-import { ref } from 'vue';
 import { cosmeticos } from '@/_data/cardPrincipais.js'
 import { addAosCarrinho } from '../../../_data/carrinho';
 import { addAosFavoritos } from '../../../_data/favorito'
 // import { add } from '@/_data/carrinho.js'
 
 
-const screenWidth = ref(window.innerWidth);
-window.addEventListener('resize', () => {
-  screenWidth.value = window.innerWidth;
-});
 </script>
 
 <template>
   <div class="card-cosmeticos">
     <div v-for="(categoria, index) in cosmeticos" :key="index" class="categoria-card">
       <div class="m">
-      <h1 style="text-align: center;">{{ categoria.tipo }}</h1>
+        <h1 style="text-align: center;">{{ categoria.tipo }}</h1>
       </div>
       <div class="produtos-card">
         <div v-for="produto in categoria.produtos" :key="produto.id" class="flexCard">
@@ -29,10 +24,7 @@ window.addEventListener('resize', () => {
           </div>
           <router-link :to="`/produto/${categoria.tipo}/${produto.id}`" class="header-links">
             <div class="tamanho-card">
-              <img
-                :src="produto.img"
-                class="capa-img"
-              />
+              <img :src="produto.img" class="capa-img" />
             </div>
             <router-link to="/oboticario">
               <div class="img-oboticario">
@@ -51,11 +43,11 @@ window.addEventListener('resize', () => {
       </div>
     </div>
   </div>
+
+  
 </template>
 
 <style scoped>
-
-
 .carousel {
   width: 100%;
   overflow: hidden;
@@ -87,6 +79,7 @@ window.addEventListener('resize', () => {
   color: #000000;
   cursor: pointer;
 }
+
 .card-cosmeticos {
   display: flex;
   flex-wrap: wrap;
@@ -104,23 +97,25 @@ window.addEventListener('resize', () => {
 
   justify-content: space-around;
 }
-button{
+
+button {
   border: none;
   background-color: white;
 }
+
 .Button-CardPay {
   margin-left: -1px;
   width: 218px;
   height: 30px;
   border: 2px solid #4d066b;
-  background-color: transparent; 
+  background-color: transparent;
   transition: background-color 0.3s, border-color 0.3s;
   position: relative;
 }
 
 .Button-CardPay:hover {
   background-color: #4d066b;
-  border-color: #4d066b; 
+  border-color: #4d066b;
 }
 
 .Btn-Pay,
@@ -142,8 +137,8 @@ button{
 }
 
 .Btn-Pay {
-    width: 20px;
-    padding-bottom: 2px;
+  width: 20px;
+  padding-bottom: 2px;
 }
 
 
@@ -163,12 +158,14 @@ button{
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
 .img-coracao {
   display: flex;
   justify-content: flex-start;
   max-width: 227px;
   position: relative;
 }
+
 .logo-icon,
 .filled-heart-icon {
   position: absolute;
@@ -201,59 +198,62 @@ button{
 }
 
 .categoria-card {
-width: 100%;
-margin-bottom: 30px;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .wrapH2 {
-text-align: center;
-color: white;
-font-size: 24px;
-margin-bottom: 20px;
-background-color: #194B3B;
-padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  margin-bottom: 20px;
+  background-color: #194B3B;
+  padding: 10px;
 
-@media (max-width: 768px) {
-  font-size: 20px;
-  padding: 8px;
-}
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding: 8px;
+  }
 }
 
 .produtos-card {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .produto-card {
-flex: 0 0 calc(20% - 5px);
-/* rest of your product card styles */
+  flex: 0 0 calc(20% - 5px);
+  /* rest of your product card styles */
 }
+
 .texto-principal {
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 26px;
-width: 100%;
-margin-left: -24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  width: 100%;
+  margin-left: -24px;
 }
 
 @media screen and (max-width: 768px) {
-.flexCard {
-  flex: 0 0 calc(50% - 20px);
-}
+  .flexCard {
+    flex: 0 0 calc(50% - 20px);
+  }
 }
 
 @media screen and (max-width: 576px) {
-.flexCard {
-  flex: 0 0 100%;
+  .flexCard {
+    flex: 0 0 100%;
+  }
 }
-}
-h1{
+
+h1 {
   text-decoration: none;
   margin-left: -45px;
 }
-.m{
+
+.m {
   margin-top: 60px;
   margin-bottom: 60px;
 }

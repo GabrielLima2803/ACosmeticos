@@ -1,105 +1,98 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-import axios from 'axios'
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
-const username = ref('')
-const password = ref('')
-const message = ref('')
-const user = ref({ name: '' })
-const userIsLoggedIn = ref(false)
+const username = ref('');
+const password = ref('');
+const message = ref('');
+const user = ref({ name: '' });
+const userIsLoggedIn = ref(false);
 
 // Verificar o estado de login no carregamento da página
 onMounted(() => {
-  const isLoggedIn = localStorage.getItem('userIsLoggedIn')
-  if (isLoggedIn === 'true') {
-    userIsLoggedIn.value = true
-    // Se o usuário estiver logado, você pode carregar informações adicionais aqui
-  }
-  // Verificar o nome do usuário no armazenamento local
-  const storedUsername = localStorage.getItem('username')
-  if (storedUsername) {
-    username.value = storedUsername
-  }
-})
+    const isLoggedIn = localStorage.getItem('userIsLoggedIn');
+    if (isLoggedIn === 'true') {
+        userIsLoggedIn.value = true;
+        // Se o usuário estiver logado, você pode carregar informações adicionais aqui
+    }
+    // Verificar o nome do usuário no armazenamento local
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+        username.value = storedUsername;
+    }
+});
 
 const login = () => {
-  const credentials = {
-    username: username.value,
-    password: password.value
-  }
+    const credentials = {
+        username: username.value,
+        password: password.value,
+    };
 
-  // Substitua a URL pelo endpoint da sua API de login
-  axios
-    .post('http://localhost:3000/api/login', credentials)
-    .then((response) => {
-      console.log(response.data)
-      message.value = response.data.message
-      if (response.data.user) {
-        user.value.name = response.data.user.name
-        userIsLoggedIn.value = true
-        localStorage.setItem('userIsLoggedIn', 'true')
-        localStorage.setItem('username', username.value)
-      }
-    })
-    .catch((error) => {
-      console.error(error)
-      message.value = error.response.data.message
-    })
-}
+    // Substitua a URL pelo endpoint da sua API de login
+    axios.post('http://localhost:3000/api/login', credentials)
+        .then(response => {
+            console.log(response.data);
+            message.value = response.data.message;
+            if (response.data.user) {
+                user.value.name = response.data.user.name;
+                userIsLoggedIn.value = true;
+                localStorage.setItem('userIsLoggedIn', 'true');
+                localStorage.setItem('username', username.value);
+            }
+        })
+        .catch(error => {
+            console.error(error);
+            message.value = error.response.data.message;
+        });
+};
 
 const logout = () => {
-  userIsLoggedIn.value = false
-  username.value = ''
-  password.value = ''
-  // Remover o estado de login do localStorage
-  localStorage.removeItem('userIsLoggedIn')
-  // Remover o nome do usuário do localStorage
-  localStorage.removeItem('username')
-  localStorage.removeItem('password')
-}
+    userIsLoggedIn.value = false;
+    username.value = '';
+    password.value = '';
+    // Remover o estado de login do localStorage
+    localStorage.removeItem('userIsLoggedIn');
+    // Remover o nome do usuário do localStorage
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+};
 </script>
 
 <template>
-  <div class="wrapContainer">
-    <div class="containerPrincipal">
-      <div class="FormTop">
-        <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220" />
-      </div>
-      <div :class="{ FormBot: !userIsLoggedIn, FormBotNoBorder: userIsLoggedIn }">
-        <form action="" @submit.prevent="login" class="wrapForm" v-if="!userIsLoggedIn">
-          <h4>Olá!</h4>
-          <p class="FormP">Para continuar, digite seu e-mail</p>
-          <div class="input-container">
-            <input type="text" id="username" v-model="username" class="inputForm" />
-            <label for="username" class="labelForm">Username</label>
-          </div>
-          <div class="input-container">
-            <input type="password" id="password" v-model="password" class="marginForm inputForm" />
-            <label for="password" class="labelForm">Password</label>
-          </div>
-          <button type="button" style="margin-top: 10px">
-            <router-link class="btnSenha" to="/esqueciSenha">Esqueci minha senha</router-link>
-          </button>
-          <button type="submit" class="btnLogin mt-3">Entrar</button>
-          <router-link to="/criarLogin">
-            <button type="button" class="btnCriar mt-3">Criar conta</button>
-          </router-link>
-          <p class="mt-4 FormP Pf">Protegido por reCAPTCHA - Privacidade | Condições</p>
-          <p class="mt-4 FormP Pf text">{{ message }}</p>
-        </form>
-        <div v-if="userIsLoggedIn" class="welcome-section">
-        <img class="logo" src="@/assets/img/img-sobrenos/icone.png" alt="" />
-          <p class="bemVindo">Seja Bem-Vindo, {{ username }}</p>
-          <button class="logout-button" @click="logout">Logout</button>
+    <div class="wrapContainer">
+        <div class="containerPrincipal">
+            <div class="FormTop">
+                <img src="@/assets/img/icon-Header/LogoAcosmeticos.png" alt="" width="220" />
+            </div>
+            <div class="FormBot">
+                <form action="" @submit.prevent="login" class="wrapForm" v-if="!userIsLoggedIn">
+                    <h4>Olá!</h4>
+                    <p class="FormP">Para continuar, digite seu e-mail</p>
+                    <div class="input-container">
+                        <input type="text" id="username" v-model="username" class="inputForm" />
+                        <label for="username" class="labelForm">Username</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="password" v-model="password" class="marginForm inputForm" />
+                        <label for="password" class="labelForm">Password</label>
+                    </div>
+                    <button type="button" style="margin-top: 10px;">
+                        <router-link class="btnSenha" to="/esqueciSenha">Esqueci minha senha</router-link>
+                    </button>
+                    <button type="submit" class="btnLogin mt-3">Entrar</button>
+                    <router-link to="/criarLogin">
+                        <button type="button" class="btnCriar mt-3">Criar conta</button>
+                    </router-link>
+                    <p class="mt-4 FormP Pf">Protegido por reCAPTCHA - Privacidade | Condições </p>
+                    <p class="mt-4 FormP Pf text">{{ message }}</p>
+                </form>
+                <div v-if="userIsLoggedIn" class="welcome-section">
+                    <p>Seja bem-vindo, {{ username }}</p>
+                    <button class="button" @click="logout">Logout</button>
+                </div>
+            </div>
         </div>
-        <div class="social-icons" v-if="userIsLoggedIn">
-            <a href="https://www.instagram.com/cosmeticosvendasa/" target="_blank"><i class="bi bi-instagram social-icon"></i></a>
-          <a href="https://api.whatsapp.com/send/?phone=5547991216433&text=Ol%C3%A1%2C" target="_blank"><i class="bi bi-whatsapp social-icon"></i></a>
-          <i class="bi bi-facebook social-icon"></i>
-        </div>
-      </div>
     </div>
-  </div>
 </template>
 
 <style scoped>
@@ -130,14 +123,16 @@ const logout = () => {
   justify-content: center;
   padding: 10px;
 }
-
+.labelForm.active {
+    top: 10px;
+    font-size: 12px;
+}
 .FormBot {
   border: 1px solid rgb(105, 105, 105);
   padding: 25px;
 }
-
-.text {
-  color: red;
+.text{
+    color: red;
 }
 
 .FormP {
