@@ -267,7 +267,7 @@ const perfumaria1 = ref([
     link: 'lily',
     img: 'https://i.ibb.co/jMsVyHd/lily.png',
     hover: 'Através do raro processo artesanal de enfleurage, os eaux de parfum de Lily possuem em sua essência as melhores notas dos lírios, criando fragrâncias únicas, delicadas e marcantes.',
-    texto_card:'Egeo',
+    texto_card:'Lily',
     produtos: ref([
       {
         id: 1,
