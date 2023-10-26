@@ -43,8 +43,6 @@ import { addAosFavoritos } from '../../../_data/favorito'
       </div>
     </div>
   </div>
-
-  
 </template>
 
 <style scoped>
@@ -210,10 +208,7 @@ button {
   background-color: #194B3B;
   padding: 10px;
 
-  @media (max-width: 768px) {
-    font-size: 20px;
-    padding: 8px;
-  }
+
 }
 
 .produtos-card {
@@ -236,6 +231,16 @@ button {
   margin-left: -24px;
 }
 
+h1 {
+  text-decoration: none;
+  margin-left: -45px;
+}
+
+.m {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
 @media screen and (max-width: 768px) {
   .flexCard {
     flex: 0 0 calc(50% - 20px);
@@ -246,15 +251,5 @@ button {
   .flexCard {
     flex: 0 0 100%;
   }
-}
-
-h1 {
-  text-decoration: none;
-  margin-left: -45px;
-}
-
-.m {
-  margin-top: 60px;
-  margin-bottom: 60px;
 }
 </style>

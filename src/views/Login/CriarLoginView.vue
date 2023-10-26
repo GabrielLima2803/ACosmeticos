@@ -172,4 +172,19 @@ p {
   color: #43055D;
   font-weight: bold;
 }
+
+/* Responsividade Estranha */
+
+
+@media screen and (min-width: 268px) {
+    .containerPrincipal {
+       margin: 10px;
+       width: 500px;
+       height: 580px;
+    }
+    .inputForm{
+      width: 400px;
+    }
+}
+
 </style>

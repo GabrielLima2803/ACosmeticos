@@ -218,4 +218,39 @@ img {
     width: 550px;
     height: 530px;
 }
+@media screen and (max-width: 768px) {
+  .wrapContainer {
+    margin-top: 20px; /* Ajuste a margem superior conforme necessário */
+  }
+
+  .containerPrincipal {
+    width: 100%;
+  }
+
+  .content {
+    padding: 0 20px; /* Adicione algum espaço interno */
+  }
+
+  .section {
+    grid-template-columns: 1fr; /* Altere a grade para uma única coluna */
+    gap: 10px; /* Ajuste o espaço entre as seções */
+  }
+
+  .img1,
+  .img2,
+  .img {
+    width: 100%; /* Imagens ocupam toda a largura */
+    max-width: 100%; /* Imagens não ultrapassam seu tamanho original */
+  }
+
+  .right-div,
+  .left-div {
+    text-align: center; /* Centralizar o conteúdo em telas menores */
+  }
+
+  .pDireita,
+  .pEsquerda {
+    margin: 0; /* Remover margens nas laterais das seções */
+  }
+}
 </style>

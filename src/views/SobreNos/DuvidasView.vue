@@ -383,6 +383,11 @@ h1 {
 .text {
   font-size: 12px;
 }
+@media screen and (max-width: 768px) {
 
+  .wrapPanel{
+    margin: 10px;
+  }
+}
 
 </style>
