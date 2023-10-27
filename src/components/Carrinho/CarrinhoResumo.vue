@@ -1,37 +1,37 @@
 <template>
     <main class="d-flex justify-center flex-column align-items-center container">
-        <TopoCarrinho />
-        <section class="pt-5 container w-75">
-            <div class="w-100">
-                <div class="row pb-4">
-                    <div class="col-5 d-flex justify-start">
-                        Produtos
-                    </div>
-                    <div class="col-2 d-flex justify-center">
-                        Quantidade
-                    </div>
-                    <div class="col-2 d-flex justify-center">
-                        Valor Unitário
-                    </div>
-                    <div class="col-2 d-flex justify-center">
-                        Valor Total
-                    </div>
-                    <div class="col">
-                        <div class="w-100 h-100 d-flex justify-center align-items-center">
-                          Excluir
-                        </div>
-                    </div>
-                </div>
-                <!-- <ProdutoCarrinho v-for="(produtos, index) in carrinho" :key="index" :produtos="produtos" /> -->
-                <ProdutoCarrinho />
+      <TopoCarrinho />
+      <section class="pt-5 container">
+        <div class="w-100">
+          <div class="row pb-4">
+            <div class="col-12 col-md-5 d-flex justify-start">
+              Produtos
             </div>
-            <div class="w-100 d-flex justify-end pr-5 mt-5 bold text-xl bg-gray2">
-                <p><span class="pr-5">Valor Total:</span> R$ {{ totalDosPrecos.toFixed(2) }}</p>
+            <div class="col-6 col-md-2 d-flex justify-center">
+              Quantidade
             </div>
-            <ValorFinal />
-        </section>
+            <div class="col-6 col-md-2 d-flex justify-center">
+              Valor Unitário
+            </div>
+            <div class="col-6 col-md-2 d-flex justify-center">
+              Valor Total
+            </div>
+            <div class="col-6 col-md-1">
+              <div class="w-100 h-100 d-flex justify-center align-items-center">
+                Excluir
+              </div>
+            </div>
+          </div>
+          <!-- <ProdutoCarrinho v-for="(produtos, index) in carrinho" :key="index" :produtos="produtos" /> -->
+          <ProdutoCarrinho />
+        </div>
+        <div class="w-100 d-flex justify-end pr-5 mt-5 bold text-xl bg-gray2">
+          <p><span class="pr-5">Valor Total:</span> R$ {{ totalDosPrecos.toFixed(2) }}</p>
+        </div>
+        <ValorFinal />
+      </section>
     </main>
-</template>
+  </template>
 
 <script setup> 
 import ProdutoCarrinho from '@/components/Carrinho/ProdutoCarrinho.vue';

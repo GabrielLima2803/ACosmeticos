@@ -21,10 +21,9 @@ const getHeartIcon = (item) => {
 <template>
   <div>
     <div class="wrapFav">
-      <h2>Favoritos ({{ favoritos.length }})</h2>
+      <h2 class="H2">Favoritos ({{ favoritos.length }})</h2>
     </div>
     <div class="wrapFavorito">
-
       <div v-for="(item, index) in favoritos" :key="index" class="produto-card">
         <div class="img-coracao">
           <button type="button" @click="remove(index)" @mouseenter="setHoveredProduct(item)" @mouseleave="setHoveredProduct(null)">
@@ -177,5 +176,48 @@ button{
 .wrapFavorito{
   display: flex;
   flex-direction: row;
+}
+
+@media (max-width: 767px) {
+  
+  .wrapFavorito{
+    display: flex;
+    flex-direction: column;
+  }
+  .produto-card {
+    flex: 0 0 100%; 
+    flex-wrap: wrap;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+  body {
+    overflow-x: hidden; 
+  }
+}
+
+/* Media query for tablet screens */
+@media (min-width: 768px) {
+  .wrapFav {
+    margin-left: 10px; /* Adjust margins for better spacing */
+  }
+  .wrapFavorito {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Display cards in a row with equal spacing */
+  }
+  .produto-card {
+    flex: 0 0 calc(33.33% - 10px); /* Display 3 cards per row */
+    margin-bottom: 20px; /* Add some space between rows */
+  }
+}
+
+/* Media query for larger screens (e.g., desktop) */
+@media (min-width: 1024px) {
+  .wrapFav {
+    margin-left: 100px; /* Reset margin for larger screens */
+  }
+  .produto-card {
+    flex: 0 0 calc(25% - 10px); /* Display 4 cards per row */
+  }
 }
 </style>

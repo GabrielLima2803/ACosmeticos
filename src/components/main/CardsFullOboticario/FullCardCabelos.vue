@@ -3,14 +3,16 @@ import { addAosFavoritos } from '../../../_data/favorito'
 import { addAosCarrinho } from '../../../_data/carrinho'
 
 import { cabelo } from '@/_data/cabelos.js'
-
-
-
 </script>
 
 <template>
   <div class="card-cosmeticos">
-    <div v-for="(categoria, index) in cabelo" :id="categoria.link" :key="index" class="categoria-card">
+    <div
+      v-for="(categoria, index) in cabelo"
+      :id="categoria.link"
+      :key="index"
+      class="categoria-card"
+    >
       <div class="wrapH2">
         <h2 class="texto-principal">{{ categoria.tipo }}</h2>
       </div>
@@ -28,7 +30,11 @@ import { cabelo } from '@/_data/cabelos.js'
             </div>
             <router-link to="/oboticario">
               <div class="img-oboticario">
-                <img src="@/assets/img/Main-img/Main-Cards/logo.oboticário.png" alt="" class="logo-img" />
+                <img
+                  src="@/assets/img/Main-img/Main-Cards/logo.oboticário.png"
+                  alt=""
+                  class="logo-img"
+                />
               </div>
             </router-link>
             <h5 class="titulo-Cos">{{ produto.nome }}</h5>
@@ -37,7 +43,11 @@ import { cabelo } from '@/_data/cabelos.js'
           </router-link>
           <button type="button" class="Button-CardPay" @click="addAosCarrinho(produto)">
             <img src="@/assets/img/Main-img/Main-Cards/icone.sacola.png" alt="" class="Btn-Pay" />
-            <img src="@/assets/img/Main-img/Main-Cards/icone.sacolaBranca.png" alt="" class="White-Bag" />
+            <img
+              src="@/assets/img/Main-img/Main-Cards/icone.sacolaBranca.png"
+              alt=""
+              class="White-Bag"
+            />
           </button>
         </div>
       </div>
@@ -129,7 +139,6 @@ button {
   margin-bottom: 30px;
 }
 
-
 .img-coracao {
   display: flex;
   justify-content: flex-start;
@@ -179,7 +188,6 @@ button {
   font-size: 120%;
   margin-bottom: 50px;
   margin-top: 120px;
-  background-color: #194b3b;
 }
 
 h2 {
@@ -204,5 +212,58 @@ h2 {
   font-size: 26px;
   width: 100%;
   margin-left: -24px;
+  background-color: #194b3b;
+
+}
+
+@media (max-width: 768px) {
+  .flexCard {
+    flex: 0 0 calc(50% - 20px);
+  }
+  .produto-card {
+    margin: 0 auto;
+  }
+  .capa-img {
+    max-width: 55%; /* Ajusta a largura máxima para 100% */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+  .texto-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 100%;
+    margin-left: -24px;
+  }
+  .wrapH2{
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .flexCard {
+    flex: 0 0 calc(100% - 20px);
+    justify-content: center; /* Centraliza os produtos horizontalmente */
+  }
+  .capa-img {
+    max-width: 35%; /* Ajusta a largura máxima para 100% */
+    height: auto; /* Mantém a proporção da imagem */
+  }
+  .texto-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    width: 50%;
+  }
+  .card-cosmeticos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+ .flexCard{
+  margin-top: 30px;
+ }
 }
 </style>

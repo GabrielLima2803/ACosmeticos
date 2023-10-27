@@ -1,27 +1,5 @@
 <script setup>
 import { carrinho, remove, aumentarQuantidade, diminuirQuantidade} from '../../_data/carrinho'
-// import {onMounted} from 'vue'
-// import { useCarrinhoStore } from '@/store/cart';
-
-// const carrinhoStore = useCarrinhoStore();
-
-
-// onMounted(async () => {
-//   await carrinhoStore.carregarCarrinho();
-// });
-
-// const aumentarQuantidade = (item) => {
-//   carrinhoStore.aumentarQuantidade(item);
-// };
-
-// const diminuirQuantidade = (item) => {
-//   carrinhoStore.diminuirQuantidade(item);
-// };
-
-// const removerDoCarrinho = async (produto) => {
-//   await carrinhoStore.removerProdutoDoCarrinho(produto);
-// };
-
 </script>
 
 <template>

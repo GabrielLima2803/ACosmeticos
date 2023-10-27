@@ -21,4 +21,12 @@ h1{
     margin-top: 50px;
     margin-bottom: 0px;
 }
+
+@media (max-width: 480px) {
+    .titulo{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 45px;
+}
+}
 </style>
